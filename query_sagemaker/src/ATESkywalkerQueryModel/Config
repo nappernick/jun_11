@@ -1,0 +1,41 @@
+package.ATESkywalkerQueryModel = {
+    interfaces = (1.0);
+
+    build-system = brazil-gradle;
+    build-tools = {
+        JDK21 = 1.0;
+        BrazilGradle = 8.x;
+        AwsSmithyModelPackageGradlePlugin = 8.x;
+    };
+
+    dependencies = {
+        # Including a dependency on the Smithy2CoralLib allows you
+        # to receive new Coral support of features that are added
+        # to Smithy2Coral without breaking.
+        Smithy2CoralLib = 3.0;
+        SmithyAwsCoreModelInternal = 3.0;
+        # Including a dependency on the SmithyPreludeCoralModel allows
+        # you to disable prelude exporting, for a more direct output to
+        # your previous Coral model.
+        SmithyPreludeCoralModel = 3.0;
+        # For utilizing the Smithy RPC v2 CBOR protocol.
+        Maven-software-amazon-smithy_smithy-protocol-traits = 1.x;
+    };
+
+    targets = {
+        model = {
+            type = coralmodel;
+        };
+
+        # Export Smithy models so they can be found through BrazilPath.
+        smithy = {
+            type = smithymodel;
+        };
+
+        # Exports the Smithy models in a JAR so that the model can be
+        # discovered at runtime.
+        ATESkywalkerQueryModel-1.0 = {
+            type = javalibrary;
+        };
+    };
+};

@@ -1,0 +1,6 @@
+{"set_id": "c18-s01", "batch": 18, "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c18-s02", "batch": 18, "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c18-s03", "batch": 18, "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c18-s04", "batch": 18, "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "b9ce83b0-b104-421f-82bd-52202ac1382c"], "answerability": "full"}
+{"set_id": "c18-s05", "batch": 18, "turn": 1, "gold_node_ids": ["2f61b560-d323-4e34-8bf1-1e871017c5a8"], "answerability": "partial"}
+{"set_id": "c18-s06", "batch": 18, "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}

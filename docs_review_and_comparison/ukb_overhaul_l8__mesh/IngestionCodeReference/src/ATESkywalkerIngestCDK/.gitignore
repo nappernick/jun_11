@@ -1,0 +1,8 @@
+.DS_Store
+.eslintcache
+.npmrc
+build
+dist/
+node_modules
+# SAM CLI local configuration and build artifacts (environment-specific; not source-controlled)
+.aws-sam/

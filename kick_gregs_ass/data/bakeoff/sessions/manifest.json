@@ -1,0 +1,126 @@
+{
+  "active_session_id": "20260611_140952_one-more",
+  "sessions": {
+    "20260611_123520_inline-run": {
+      "archived": true,
+      "created_at": "2026-06-11T12:35:20.520912+00:00",
+      "id": "20260611_123520_inline-run",
+      "judge_scores_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123520_inline-run/judge_scores.jsonl",
+      "kind": "session",
+      "label": "Inline run",
+      "notes": "",
+      "outcomes_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123520_inline-run/outcomes.jsonl",
+      "prompt_path": "/Users/nmatnich/Work/kick_gregs_ass/data/prompts/XML_short.txt",
+      "reports_dir": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123520_inline-run/reports",
+      "root": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123520_inline-run",
+      "roster": [
+        "claude-sonnet-4.6-thinking-off-inline",
+        "claude-haiku-4.5-inline"
+      ],
+      "roster_signature": "claude-haiku-4.5-inline|claude-sonnet-4.6-thinking-off-inline",
+      "run_errors_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123520_inline-run/run_errors.jsonl",
+      "updated_at": "2026-06-11T12:38:42.363488+00:00"
+    },
+    "20260611_123639_inline-run": {
+      "archived": true,
+      "created_at": "2026-06-11T12:36:39.665476+00:00",
+      "id": "20260611_123639_inline-run",
+      "judge_scores_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123639_inline-run/judge_scores.jsonl",
+      "kind": "session",
+      "label": "Inline run",
+      "notes": "Boop",
+      "outcomes_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123639_inline-run/outcomes.jsonl",
+      "prompt_path": "/Users/nmatnich/Work/kick_gregs_ass/data/prompts/XML_short.txt",
+      "reports_dir": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123639_inline-run/reports",
+      "root": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123639_inline-run",
+      "roster": [
+        "claude-sonnet-4.6-thinking-off-inline",
+        "claude-haiku-4.5-inline"
+      ],
+      "roster_signature": "claude-haiku-4.5-inline|claude-sonnet-4.6-thinking-off-inline",
+      "run_errors_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123639_inline-run/run_errors.jsonl",
+      "updated_at": "2026-06-11T12:38:45.743679+00:00"
+    },
+    "20260611_123702_inline-run": {
+      "archived": true,
+      "created_at": "2026-06-11T12:37:02.484969+00:00",
+      "id": "20260611_123702_inline-run",
+      "judge_scores_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123702_inline-run/judge_scores.jsonl",
+      "kind": "session",
+      "label": "Inline run",
+      "notes": "aseafsdffa",
+      "outcomes_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123702_inline-run/outcomes.jsonl",
+      "prompt_path": "/Users/nmatnich/Work/kick_gregs_ass/data/prompts/XML_short.txt",
+      "reports_dir": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123702_inline-run/reports",
+      "root": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123702_inline-run",
+      "roster": [
+        "claude-sonnet-4.6-thinking-off-inline",
+        "claude-haiku-4.5-inline"
+      ],
+      "roster_signature": "claude-haiku-4.5-inline|claude-sonnet-4.6-thinking-off-inline",
+      "run_errors_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123702_inline-run/run_errors.jsonl",
+      "updated_at": "2026-06-11T12:38:51.160862+00:00"
+    },
+    "20260611_123847_inline-run": {
+      "archived": false,
+      "created_at": "2026-06-11T12:38:47.385841+00:00",
+      "id": "20260611_123847_inline-run",
+      "judge_scores_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123847_inline-run/judge_scores.jsonl",
+      "kind": "session",
+      "label": "Inline run",
+      "notes": "",
+      "outcomes_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123847_inline-run/outcomes.jsonl",
+      "prompt_path": "/Users/nmatnich/Work/kick_gregs_ass/data/prompts/XML_short.txt",
+      "reports_dir": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123847_inline-run/reports",
+      "root": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123847_inline-run",
+      "roster": [
+        "claude-sonnet-4.6-thinking-off-inline",
+        "claude-haiku-4.5-inline"
+      ],
+      "roster_signature": "claude-haiku-4.5-inline|claude-sonnet-4.6-thinking-off-inline",
+      "run_errors_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_123847_inline-run/run_errors.jsonl",
+      "updated_at": "2026-06-11T12:38:47.385841+00:00"
+    },
+    "20260611_140952_one-more": {
+      "archived": false,
+      "created_at": "2026-06-11T14:09:52.574109+00:00",
+      "id": "20260611_140952_one-more",
+      "judge_scores_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_140952_one-more/judge_scores.jsonl",
+      "kind": "session",
+      "label": "One More",
+      "notes": "",
+      "outcomes_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_140952_one-more/outcomes.jsonl",
+      "prompt_path": "/Users/nmatnich/Work/kick_gregs_ass/data/prompts/XML_short.txt",
+      "reports_dir": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_140952_one-more/reports",
+      "root": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_140952_one-more",
+      "roster": [
+        "claude-sonnet-4.6-thinking-off-inline",
+        "claude-haiku-4.5-inline"
+      ],
+      "roster_signature": "claude-haiku-4.5-inline|claude-sonnet-4.6-thinking-off-inline",
+      "run_errors_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/sessions/20260611_140952_one-more/run_errors.jsonl",
+      "updated_at": "2026-06-11T14:09:52.574109+00:00"
+    },
+    "legacy-root": {
+      "archived": false,
+      "created_at": "",
+      "id": "legacy-root",
+      "judge_scores_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/judge_scores.jsonl",
+      "kind": "legacy",
+      "label": "Legacy root Bake-Off data",
+      "notes": "",
+      "outcomes_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/outcomes.jsonl",
+      "prompt_path": "/Users/nmatnich/Work/kick_gregs_ass/data/prompts/XML_short.txt",
+      "reports_dir": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/reports",
+      "root": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff",
+      "roster": [
+        "claude-sonnet-4.6-thinking-off-inline",
+        "claude-haiku-4.5-inline"
+      ],
+      "roster_signature": "claude-haiku-4.5-inline|claude-sonnet-4.6-thinking-off-inline",
+      "run_errors_path": "/Users/nmatnich/Work/kick_gregs_ass/data/bakeoff/run_errors.jsonl",
+      "updated_at": ""
+    }
+  },
+  "version": 1
+}

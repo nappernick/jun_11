@@ -1,0 +1,9 @@
+{
+  "chat.modelDefaults": {
+    "claude-opus-4.8": {
+      "output_config": {
+        "effort": "high"
+      }
+    }
+  }
+}

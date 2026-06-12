@@ -1,0 +1,56 @@
+# macOS
+.DS_Store
+
+# Python virtual environments
+.venv/
+venv/
+env/
+.ragas_venv/
+**/.venv/
+**/venv/
+**/*venv/
+
+# Python caches / build
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+**/node_modules/
+dist/
+build/
+.next/
+.turbo/
+
+# IaC / CDK / Terraform
+cdk.out/
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Models / large binaries / data
+*.bin
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.ckpt
+*.h5
+*.tar
+*.tar.gz
+*.zip
+
+# Logs / env
+*.log
+.env
+.env.*
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3

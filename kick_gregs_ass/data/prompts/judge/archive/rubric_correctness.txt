@@ -1,0 +1,1 @@
+Would a subject-matter expert, looking at the same question and the same reference fragments, judge this answer correct? 5 = correct; 3 = partially correct with a notable error or omission; 1 = wrong or contradicts the fragments.

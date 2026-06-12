@@ -1,0 +1,21 @@
+{
+  "triad_score": 0.6331018518518519,
+  "per_dimension": {
+    "faithfulness": 0.7777777777777778,
+    "correctness": 0.7152777777777778,
+    "completeness": 0.6875
+  },
+  "starved_baseline": {
+    "faithfulness": 0.6,
+    "correctness": 0.4,
+    "completeness": 0.33,
+    "triad": 0.44
+  },
+  "routing": {
+    "alpha (aoss-sign)": 1,
+    "alpha": 1,
+    "execution": 4,
+    "embed": 6,
+    "judge": 2
+  }
+}

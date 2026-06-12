@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OSS Reranker Bakeoff — Verdict Dashboard</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin:0; max-width:100%; overflow-x:hidden; }
+  body { background:#0f1115; color:#e6e6e6; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .plot, .js-plotly-plot { max-width:100%; }
+  .verdict-note, header { max-width:100%; }
+  header { position:sticky; top:0; z-index:20; padding:12px 20px; background:#12151c; border-bottom:1px solid #262b36;
+           display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  header h1 { margin:0; font-size:16px; font-weight:600; }
+  .subhead { font-size:11px; color:#9aa4b2; line-height:1.5; }
+  .controls { margin-left:auto; display:flex; gap:8px; align-items:center; font-size:11px; color:#9aa4b2; }
+  .seg { display:inline-flex; border:1px solid #2c333f; border-radius:7px; overflow:hidden; }
+  .seg button { background:#161a22; color:#9aa4b2; border:none; padding:4px 10px; font-size:11px; cursor:pointer; }
+  .seg button.active { background:#243049; color:#cfe2ff; }
+  .verdict-note { margin:12px 16px 0; padding:11px 14px; background:#12211c; border:1px solid #1f4a36;
+                  border-radius:8px; font-size:12.5px; color:#cdeede; line-height:1.5; }
+  .verdict-note b { color:#3fb950; }
+  main { padding:12px 16px; display:flex; flex-direction:column; gap:10px; }
+  .card { background:#161a22; border:1px solid #262b36; border-radius:8px; padding:12px 14px; }
+  .alert-card { border-color:#6b5a2d; background:#1a1612; }
+  .missing-card { border-color:#6b2d2d; background:#1a1212; }
+  .card-title { font-size:13px; font-weight:600; color:#cdd3dc; margin-bottom:2px; }
+  .card-sub { font-size:11px; color:#6a737d; margin-bottom:8px; line-height:1.45; }
+  .plot { width:100%; min-height:330px; }
+  .plot.short { min-height:240px; }
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  @media (max-width:900px){ .grid-2 { grid-template-columns:1fr; } }
+  .stat-pill { display:inline-block; font-size:11px; color:#9aa4b2; background:#1c212b; border:1px solid #2c333f;
+               border-radius:10px; padding:2px 8px; margin:0 6px 4px 0; }
+  .badge { display:inline-block; font-size:10px; font-weight:600; border-radius:4px; padding:1px 6px;
+           text-transform:uppercase; letter-spacing:.03em; }
+  .badge.green { background:#1a3a24; color:#3fb950; border:1px solid #2d6b3a; }
+  .badge.blue  { background:#15263f; color:#79c0ff; border:1px solid #2b4f7e; }
+  .badge.gray  { background:#21262d; color:#9aa4b2; border:1px solid #30363d; }
+  table.data-table { width:100%; border-collapse:collapse; font-size:12px; }
+  table.data-table th { text-align:left; padding:6px 8px; color:#9aa4b2; border-bottom:1px solid #262b36;
+                        font-weight:500; cursor:pointer; user-select:none; white-space:nowrap; }
+  table.data-table th:hover { color:#cdd3dc; }
+  table.data-table th .arrow { color:#58a6ff; font-size:10px; margin-left:3px; }
+  table.data-table td { padding:6px 8px; border-bottom:1px solid #1e2330; white-space:nowrap; }
+  table.data-table tr.reco td { background:#10241a; }
+  table.data-table tr.reco td:first-child { box-shadow:inset 3px 0 0 #3fb950; }
+  table.data-table tr.dim td { opacity:.5; }
+  .mono { font-family:"SF Mono","Fira Code",ui-monospace,monospace; }
+  .small { font-size:11px; }
+  select, input[type=number] { background:#0f1115; color:#e6e6e6; border:1px solid #2c333f; border-radius:6px;
+                               padding:4px 8px; font-size:12px; }
+  .drill { display:flex; flex-direction:column; gap:8px; max-height:520px; overflow-y:auto; margin-top:8px; }
+  .verdict-card { border:1px solid #262b36; border-radius:8px; padding:10px 12px; background:#12151c; }
+  .verdict-card .q { font-size:12.5px; color:#cdd3dc; font-weight:600; margin-bottom:6px; }
+  .verdict-card .rat { font-size:12px; color:#b9c2cc; line-height:1.5; margin-top:6px;
+                       border-left:2px solid #2d6b3a; padding-left:10px; }
+  .vmodels { display:flex; gap:14px; font-size:11px; color:#9aa4b2; flex-wrap:wrap; }
+  .win { color:#3fb950; font-weight:600; }
+  .lose { color:#f78166; }
+  .file-status { font-size:11px; color:#6a737d; margin-top:6px; }
+  .file-status .ok { color:#3fb950; } .file-status .fail { color:#f78166; }
+  code { font-family:"SF Mono",ui-monospace,monospace; font-size:.9em; background:#21262d; border-radius:3px; padding:1px 4px; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>OSS Reranker Bakeoff — Verdict</h1>
+    <div class="subhead">Ettin-1b · Qwen3-Reranker 0.6B/4B · Nemotron-1b-v2 &nbsp;vs&nbsp; Cohere Rerank 3.5 / v4 &nbsp;·&nbsp; 42 real BM25 pools</div>
+  </div>
+  <div class="controls">
+    <span>frontier x-axis:</span>
+    <span class="seg" id="latseg">
+      <button data-lat="p50" class="active">p50</button>
+      <button data-lat="p99">p99</button>
+    </span>
+  </div>
+</header>
+
+<div class="verdict-note">
+  <b>Primary verdict = Opus-4.8 judge win-rate</b> on the real-pool disagreement set (hero + leaderboard).
+  Pointwise rerankers add no new ranking signal across combos, so separation/latency are supporting axes, not the decision.
+  Slicers (channel/intent/etc.) are intentionally absent — this eval has no per-query slice metadata.
+</div>
+
+<main id="root">
+  <div class="card"><div class="card-title">Loading artifacts…</div><div class="file-status" id="filestatus"></div></div>
+</main>
+
+<script>
+/* OSS Reranker Bakeoff — verdict dashboard. Single file, no build step.
+ * Fetches scored/metrics/judge/latency_gpu/pools JSON from this dir and renders:
+ *   HERO: quality(judge)·latency frontier  +  judge win-rate heatmap
+ *   LEADERBOARD: judge win-rate, agreement, latency, qps, params, license, deploy, ctx
+ *   SWEEPS: latency vs pool size  +  latency vs budget (p50/p90/p99)
+ *   DRILL-DOWN: judge disagreements with Opus's rationale (why a model wins/loses)
+ * Degrades gracefully per missing file. Works over file:// and python -m http.server. */
+
+var BG_CARD="#161a22", FONT_COLOR="#cdd3dc", AXIS_COLOR="#9aa4b2", GRID_COLOR="#262b36";
+var PALETTE=["#58a6ff","#3fb950","#d29922","#bc8cff","#f78166","#79c0ff","#56d4dd"];
+var MODEL_COLOR={ "ettin-1b":"#58a6ff","qwen3-0.6b":"#3fb950","qwen3-4b":"#2d8a3e",
+  "nemotron-1b-v2":"#d29922","cohere-3.5":"#bc8cff","cohere-v4-pro":"#f78166","cohere-v4-fast":"#79c0ff" };
+function colorFor(m,i){ return MODEL_COLOR[m]||PALETTE[i%PALETTE.length]; }
+
+// Static, honest metadata (params/license/deploy/context). cohere params "n/d" = not disclosed.
+var MODEL_META={
+  "ettin-1b":      {params:"1B",  license:"Apache-2.0", deploy:"GPU g5.2xl",  ctx:7999,   fam:"oss"},
+  "qwen3-0.6b":    {params:"0.6B",license:"Apache-2.0", deploy:"GPU g5.2xl",  ctx:131072, fam:"oss"},
+  "qwen3-4b":      {params:"4B",  license:"Apache-2.0", deploy:"GPU g5.2xl",  ctx:131072, fam:"oss"},
+  "nemotron-1b-v2":{params:"1B",  license:"NVIDIA OM",  deploy:"GPU g5.2xl",  ctx:4096,   fam:"oss"},
+  "cohere-3.5":    {params:"n/d", license:"Commercial", deploy:"Bedrock",     ctx:4096,   fam:"cohere"},
+  "cohere-v4-pro": {params:"n/d", license:"Commercial", deploy:"SM g5.xl",    ctx:4096,   fam:"cohere"},
+  "cohere-v4-fast":{params:"n/d", license:"Commercial", deploy:"SM g5.xl",    ctx:4096,   fam:"cohere"}
+};
+
+var BASE_LAYOUT={ paper_bgcolor:BG_CARD, plot_bgcolor:BG_CARD,
+  font:{color:FONT_COLOR,size:11,family:"system-ui,sans-serif"}, margin:{t:24,r:16,b:60,l:60} };
+var PLOT_CONFIG={ responsive:true, displayModeBar:false };
+function axis(t,extra){ var b={title:{text:t,font:{color:AXIS_COLOR,size:11}},color:AXIS_COLOR,gridcolor:GRID_COLOR,zerolinecolor:GRID_COLOR};
+  if(extra){for(var k in extra)b[k]=extra[k];} return b; }
+function mergeLayout(o){ var m={}; for(var k in BASE_LAYOUT)m[k]=BASE_LAYOUT[k]; if(o)for(var j in o)m[j]=o[j]; return m; }
+function num(v){ return (typeof v==="number"&&isFinite(v))?v:0; }
+
+function el(tag,attrs,kids){ var n=document.createElement(tag);
+  if(attrs)for(var k in attrs){ if(k==="class")n.className=attrs[k]; else if(k==="html")n.innerHTML=attrs[k];
+    else if(k==="text")n.textContent=attrs[k]; else n.setAttribute(k,attrs[k]); }
+  if(kids)for(var i=0;i<kids.length;i++){ var c=kids[i]; if(c==null)continue;
+    n.appendChild(typeof c==="string"?document.createTextNode(c):c); } return n; }
+function card(t,s){ var n=el("div",{class:"card"}); if(t)n.appendChild(el("div",{class:"card-title",text:t}));
+  if(s)n.appendChild(el("div",{class:"card-sub",html:s})); return n; }
+function plotInto(parent,traces,layout,opts){ var d=el("div",{class:"plot"+(opts&&opts.short?" short":"")});
+  parent.appendChild(d); Plotly.newPlot(d,traces,mergeLayout(layout),PLOT_CONFIG); return d; }
+function missingSub(filename){ return el("div",{class:"card-sub",html:
+  "<code>"+filename+"</code> not present yet. Run its producer and reload. "+
+  "(Over <code>file://</code> with fetch blocked, serve via <code>python -m http.server</code>.)"}); }
+function loadJson(f){ return fetch(f,{cache:"no-store"}).then(function(r){ if(!r.ok)return {ok:false,error:"HTTP "+r.status};
+  return r.json().then(function(d){return {ok:true,data:d};},function(e){return {ok:false,error:"bad JSON"};}); })
+  .catch(function(e){ return {ok:false,error:String(e)}; }); }
+
+// ---- unified latency accessors (OSS = GPU latency_gpu.json; cohere = scored.json round-trip) ----
+// Callers pass the WRAPPED {ok,data} fetch results; unwrap to the payload here.
+function _d(x){ return (x && x.data) ? x.data : x; }
+function gpuCell(LAT,model,pool){ var d=_d(LAT); return (d && d[model] && d[model][String(pool)]) ? d[model][String(pool)] : null; }
+function latencyP(LAT,SCO,model,which){          // which: 'p50' | 'p99'
+  var c=gpuCell(LAT,model,10); if(c && typeof c[which]==="number") return c[which];
+  // fallback: per-query latency from scored.json (cohere via API)
+  var sm=_d(SCO)&&_d(SCO).models;
+  if(sm && sm[model]){ var qs=sm[model].queries, v=[];
+    for(var q in qs) if(typeof qs[q].latency_ms==="number") v.push(qs[q].latency_ms);
+    if(v.length){ v.sort(function(a,b){return a-b;}); return which==="p99"?v[Math.min(v.length-1,Math.floor(v.length*0.99))]:v[Math.floor(v.length/2)]; } }
+  return null;
+}
+function agreementVs(SCO,model,ref){ var sm=_d(SCO)&&_d(SCO).models; if(!sm||!sm[model]||!sm[ref])return null;
+  var a=sm[model].queries, b=sm[ref].queries, shared=0, same=0;
+  for(var q in a){ if(b[q]){ shared++; if(a[q].top_id===b[q].top_id)same++; } }
+  return shared? same/shared : null; }
+
+// ===================================================================
+//  HERO LEFT — Quality (judge) vs Latency frontier
+// ===================================================================
+function renderFrontier(root, JUD, LAT, SCO, latWhich){
+  var node=card("Cost/quality frontier — judge win-rate vs latency",
+    "y = Opus-4.8 overall judge score (quality). x = latency ("+latWhich+", log): OSS = GPU pool-10, Cohere = API round-trip. "+
+    "Up-and-left is better. The best OSS model is badged ★. Toggle p50/p99 in the header.");
+  if(!JUD.ok || !JUD.data.model_score){ node.appendChild(missingSub("judge.json")); root.appendChild(node); return; }
+  var scores=JUD.data.model_score;
+  var models=Object.keys(scores).filter(function(m){ return latencyP(LAT,SCO,m,latWhich)!=null; });
+  if(!models.length){ node.appendChild(el("div",{class:"card-sub",html:"No model has both a judge score and a latency yet."})); root.appendChild(node); return; }
+  // best OSS by judge score = recommended
+  var oss=models.filter(function(m){ return (MODEL_META[m]||{}).fam==="oss"; });
+  var reco=oss.sort(function(a,b){return num(scores[b])-num(scores[a]);})[0];
+  var traces=models.map(function(m,i){ var x=latencyP(LAT,SCO,m,latWhich), y=num(scores[m]);
+    return { x:[x], y:[y], mode:"markers+text", type:"scatter", name:m,
+      text:[ (m===reco?"★ ":"")+m ], textposition:"top center", textfont:{size:10,color:colorFor(m,i)},
+      marker:{ size:(MODEL_META[m]||{}).fam==="oss"?15:12, color:colorFor(m,i),
+               symbol:(MODEL_META[m]||{}).fam==="oss"?"circle":"diamond",
+               line:{ color:m===reco?"#3fb950":"#0f1115", width:m===reco?2:1 } },
+      hovertemplate:m+"<br>judge "+y.toFixed(3)+"<br>"+latWhich+" %{x:.0f} ms<extra></extra>" }; });
+  plotInto(node,traces,{ showlegend:false,
+    xaxis:axis(latWhich+" latency (ms, log)",{type:"log"}),
+    yaxis:axis("judge score (0–1)",{range:[0,1.05]}),
+    margin:{t:20,r:20,b:56,l:60} });
+  if(reco) node.appendChild(el("div",{class:"file-status",html:"★ best open-source by judge score: <b class='win'>"+reco+"</b>"}));
+  root.appendChild(node);
+}
+
+// ===================================================================
+//  HERO RIGHT — judge win-rate head-to-head heatmap
+// ===================================================================
+function renderHeatmap(root, JUD){
+  var node=card("Head-to-head win-rate (Opus-4.8 judge)",
+    "Row beats column at this rate on their disagreements (anonymized, both orderings, ties=0.5). Diagonal blank.");
+  if(!JUD.ok || !JUD.data.winrate_matrix || !Object.keys(JUD.data.winrate_matrix).length){
+    node.appendChild(missingSub("judge.json")); root.appendChild(node); return; }
+  var M=JUD.data.winrate_matrix, rows=Object.keys(M), set={};
+  rows.forEach(function(r){ Object.keys(M[r]).forEach(function(c){set[c]=1;}); });
+  var all=rows.slice(); Object.keys(set).forEach(function(c){ if(all.indexOf(c)<0)all.push(c); });
+  var z=[], ann=[];
+  for(var i=0;i<all.length;i++){ var zr=[]; for(var j=0;j<all.length;j++){
+    var rn=all[i], cn=all[j], cell=(M[rn]&&M[rn][cn])?M[rn][cn]:null, wr=(cell&&typeof cell.winrate==="number")?cell.winrate:null;
+    zr.push(rn===cn?null:wr);
+    if(rn!==cn&&wr!=null) ann.push({x:cn,y:rn,text:(wr*100).toFixed(0)+"%",showarrow:false,font:{color:wr>=0.5?"#0f1115":"#e6e6e6",size:10}});
+  } z.push(zr); }
+  plotInto(node,[{ z:z,x:all,y:all,type:"heatmap",colorscale:[[0,"#3a1414"],[0.5,"#1c212b"],[1,"#1a3a24"]],
+    zmin:0,zmax:1,hoverongaps:false,hovertemplate:"%{y} vs %{x}<br>win-rate %{z:.2f}<extra></extra>",
+    colorbar:{title:{text:"win",font:{color:AXIS_COLOR,size:10}},tickfont:{color:AXIS_COLOR}} }],
+    { xaxis:axis("opponent",{tickangle:-25,automargin:true}), yaxis:axis("model",{automargin:true}),
+      annotations:ann, margin:{t:20,r:10,b:96,l:110} });
+  root.appendChild(node);
+}
+
+// ===================================================================
+//  LEADERBOARD
+// ===================================================================
+function renderLeaderboard(root, JUD, LAT, SCO){
+  var node=card("Leaderboard",
+    "Sortable. Recommended OSS row lit green. Quality = Opus-4.8 judge score. agree=top-1 agreement with Cohere 3.5. "+
+    "qps = single-call 1000/p50. Latency: OSS = GPU pool-10, Cohere = API round-trip.");
+  var scores=(JUD.ok&&JUD.data.model_score)?JUD.data.model_score:{};
+  // model universe = everything present in scored.json (∪ judge scores)
+  var present={}; if(SCO.ok&&SCO.data.models)Object.keys(SCO.data.models).forEach(function(m){present[m]=1;});
+  Object.keys(scores).forEach(function(m){present[m]=1;});
+  var models=Object.keys(present);
+  if(!models.length){ node.appendChild(missingSub("scored.json")); root.appendChild(node); return; }
+  var oss=models.filter(function(m){return (MODEL_META[m]||{}).fam==="oss";});
+  var reco=oss.filter(function(m){return m in scores;}).sort(function(a,b){return num(scores[b])-num(scores[a]);})[0];
+  var rows=models.map(function(m){ var p50=latencyP(LAT,SCO,m,"p50"), p99=latencyP(LAT,SCO,m,"p99"), meta=MODEL_META[m]||{};
+    return { model:m, fam:meta.fam||"?", params:meta.params||"?", license:meta.license||"?", deploy:meta.deploy||"?",
+      judge:(m in scores)?num(scores[m]):null, agree:agreementVs(SCO,m,"cohere-3.5"),
+      p50:p50, p99:p99, qps:(p50?1000/p50:null), ctx:(SCO.ok&&SCO.data.models&&SCO.data.models[m]&&SCO.data.models[m].max_context)||meta.ctx||null }; });
+  var cols=[ {k:"model",l:"model",t:"s"},{k:"params",l:"params",t:"s"},{k:"license",l:"license",t:"s"},
+    {k:"deploy",l:"deploy",t:"s"},{k:"judge",l:"judge ▾",t:"n",f:function(v){return v==null?"—":v.toFixed(3);}},
+    {k:"agree",l:"agree vs 3.5",t:"n",f:function(v){return v==null?"—":(v*100).toFixed(0)+"%";}},
+    {k:"p50",l:"p50 ms",t:"n",f:function(v){return v==null?"—":Math.round(v);}},
+    {k:"p99",l:"p99 ms",t:"n",f:function(v){return v==null?"—":Math.round(v);}},
+    {k:"qps",l:"qps",t:"n",f:function(v){return v==null?"—":v.toFixed(1);}},
+    {k:"ctx",l:"max ctx",t:"n",f:function(v){return v==null?"—":v.toLocaleString();}} ];
+  var sort={k:"judge",asc:false};
+  var table=el("table",{class:"data-table"}), thead=el("thead"), hr=el("tr");
+  cols.forEach(function(col){ var th=el("th"); th.appendChild(document.createTextNode(col.l));
+    th.appendChild(el("span",{class:"arrow"}));
+    th.addEventListener("click",function(){ if(sort.k===col.k)sort.asc=!sort.asc; else {sort.k=col.k;sort.asc=(col.t!=="n");} draw(); });
+    hr.appendChild(th); });
+  thead.appendChild(hr); table.appendChild(thead); var tbody=el("tbody"); table.appendChild(tbody);
+  function draw(){ var s=rows.slice().sort(function(a,b){ var x=a[sort.k],y=b[sort.k];
+      if(x==null&&y==null)return 0; if(x==null)return 1; if(y==null)return -1;
+      if(x<y)return sort.asc?-1:1; if(x>y)return sort.asc?1:-1; return 0; });
+    for(var c=0;c<cols.length;c++){ var ar=hr.children[c].querySelector(".arrow");
+      ar.textContent=(cols[c].k===sort.k)?(sort.asc?"▲":"▼"):""; }
+    tbody.innerHTML="";
+    s.forEach(function(r){ var tr=el("tr"); if(r.model===reco)tr.className="reco";
+      cols.forEach(function(col){ var v=r[col.k], txt=col.f?col.f(v):(v==null?"—":String(v));
+        var td=el("td",{class:(col.t==="n"?"mono small":"small")});
+        if(col.k==="model"){ td.appendChild(el("span",{text:r.model}));
+          td.appendChild(document.createTextNode(" "));
+          td.appendChild(el("span",{class:"badge "+(r.fam==="oss"?"blue":"gray"),text:r.fam==="oss"?"OSS":"cohere"}));
+          if(r.model===reco)td.appendChild(el("span",{class:"badge green",text:"★ pick"})); }
+        else td.textContent=txt;
+        tr.appendChild(td); });
+      tbody.appendChild(tr); }); }
+  draw(); node.appendChild(table); root.appendChild(node);
+}
+
+// ===================================================================
+//  SWEEP — latency vs pool size (where tail latency grows)
+// ===================================================================
+function renderSweep(root, LAT){
+  var node=card("Latency vs pool size",
+    "GPU p50 latency at pool {5,10,20} per model (<code>latency_gpu.json</code>). Diverging slopes = different scaling with candidate count.");
+  if(!LAT.ok || !Object.keys(LAT.data).length){ node.appendChild(missingSub("latency_gpu.json")); root.appendChild(node); return; }
+  var data=LAT.data, models=Object.keys(data), pools=["5","10","20"];
+  var traces=models.map(function(m,i){ return { x:pools.map(Number),
+    y:pools.map(function(p){ return data[m][p]?data[m][p].p50:null; }),
+    mode:"lines+markers", name:m, line:{color:colorFor(m,i)}, marker:{color:colorFor(m,i)},
+    hovertemplate:m+"<br>pool %{x}: %{y:.0f} ms p50<extra></extra>" }; });
+  plotInto(node,traces,{ xaxis:axis("pool size (candidates)",{dtick:5}), yaxis:axis("p50 latency (ms)"),
+    legend:{orientation:"h",y:1.12,font:{size:10,color:FONT_COLOR}}, margin:{t:36,r:16,b:50,l:60} });
+  root.appendChild(node);
+}
+
+// ===================================================================
+//  SWEEP — latency vs budget (p50/p90/p99 at pool 10 + budget line)
+// ===================================================================
+function renderBudget(root, LAT){
+  var node=card("Latency distribution vs budget",
+    "p50 / p90 / p99 GPU latency at pool 10. Set a budget (ms) — bars over it tint red. Tail (p99) is what a budget must survive.");
+  if(!LAT.ok || !Object.keys(LAT.data).length){ node.appendChild(missingSub("latency_gpu.json")); root.appendChild(node); return; }
+  var ctl=el("div",{class:"card-sub"}); ctl.appendChild(document.createTextNode("budget (ms): "));
+  var input=el("input",{type:"number",value:"500",min:"0",step:"50"}); ctl.appendChild(input); node.appendChild(ctl);
+  var data=LAT.data, models=Object.keys(data);
+  var holder=el("div"); node.appendChild(holder);
+  function draw(){ var budget=Number(input.value)||0;
+    var stats=["p50","p90","p99"]; var traces=stats.map(function(st,si){
+      return { x:models, y:models.map(function(m){ return data[m]["10"]?data[m]["10"][st]:null; }),
+        type:"bar", name:st, marker:{ color:models.map(function(m){ var v=data[m]["10"]?data[m]["10"][st]:null;
+          return (v!=null&&v>budget)?"#f78166":["#58a6ff","#79c0ff","#bc8cff"][si]; }) },
+        hovertemplate:"%{x}<br>"+st+" %{y:.0f} ms<extra></extra>" }; });
+    holder.innerHTML="";
+    plotInto(holder,traces,{ barmode:"group", xaxis:axis("model",{tickangle:-20}), yaxis:axis("latency (ms)"),
+      shapes:[{type:"line",x0:-0.5,x1:models.length-0.5,y0:budget,y1:budget,line:{color:"#d29922",width:1.5,dash:"dash"}}],
+      legend:{orientation:"h",y:1.12,font:{size:10,color:FONT_COLOR}}, margin:{t:36,r:16,b:70,l:60} }); }
+  input.addEventListener("input",draw); draw();
+  root.appendChild(node);
+}
+
+// ===================================================================
+//  DRILL-DOWN — judge disagreements with Opus's rationale
+// ===================================================================
+function renderDrilldown(root, JUD, POOLS){
+  var node=card("Disagreement drill-down — why a model wins or loses",
+    "Every judged disagreement with Opus-4.8's verdict + rationale (the qualitative layer the aggregates hide). "+
+    "Filter by model pair. Winner side in green. This is where you see WHY a reranker loses a query.");
+  if(!JUD.ok || !JUD.data.verdicts || !JUD.data.verdicts.length){ node.appendChild(missingSub("judge.json")); root.appendChild(node); return; }
+  var verdicts=JUD.data.verdicts.slice();
+  var poolIndex={}; if(POOLS.ok&&POOLS.data.pools){ for(var q in POOLS.data.pools)
+    POOLS.data.pools[q].forEach(function(it){ if(!(it.node_id in poolIndex))poolIndex[it.node_id]=it.title||it.node_id; }); }
+  var pairs={}; verdicts.forEach(function(v){ pairs[v.model_a+" vs "+v.model_b]=1; });
+  var ctl=el("div",{class:"card-sub"}); ctl.appendChild(document.createTextNode("pair: "));
+  var sel=el("select"); sel.appendChild(el("option",{value:"__all"},["all pairs ("+verdicts.length+")"]));
+  Object.keys(pairs).sort().forEach(function(p){ sel.appendChild(el("option",{value:p},[p])); });
+  ctl.appendChild(sel); node.appendChild(ctl);
+  var list=el("div",{class:"drill"}); node.appendChild(list);
+  function titleOf(id){ return poolIndex[id]||id; }
+  function draw(){ var f=sel.value, shown=verdicts.filter(function(v){ return f==="__all"||(v.model_a+" vs "+v.model_b)===f; });
+    list.innerHTML="";
+    shown.forEach(function(v){ var wa=v.winner==="a", wb=v.winner==="b";
+      var vc=el("div",{class:"verdict-card"});
+      vc.appendChild(el("div",{class:"q",text:"“"+v.query+"”"}));
+      var mm=el("div",{class:"vmodels"});
+      mm.appendChild(el("span",{class:wa?"win":(wb?"lose":""),html:(wa?"▲ ":"")+v.model_a+" → "+titleOf(v.top_a||"?").slice(0,46)}));
+      mm.appendChild(el("span",{class:wb?"win":(wa?"lose":""),html:(wb?"▲ ":"")+v.model_b+" → "+titleOf(v.top_b||"?").slice(0,46)}));
+      vc.appendChild(mm);
+      var verdictTxt = v.winner==="tie" ? "tie" : ("winner: "+(wa?v.model_a:v.model_b))+(v.consistent?"":" (orderings disagreed → tie-leaning)");
+      vc.appendChild(el("div",{class:"file-status",html:"<b>"+verdictTxt+"</b>"+(typeof v.confidence==="number"?(" · conf "+v.confidence.toFixed(2)):"")}));
+      if(v.rationale)vc.appendChild(el("div",{class:"rat",text:v.rationale}));
+      list.appendChild(vc); }); }
+  sel.addEventListener("change",draw); draw();
+  root.appendChild(node);
+}
+
+// ===================================================================
+//  AGGREGATE (headline) — per-model accuracy + latency over the dataset
+// ===================================================================
+function renderAggregate(root, JUD, LAT, SCO){
+  var grid=el("div",{class:"grid-2"});
+  // LEFT: accuracy = Opus judge win-rate (the headline quality number)
+  var acc=card("Aggregate accuracy — Opus-4.8 judge win-rate",
+    "How often Opus judges each model's ranking the better one, aggregated over the disagreement set (0–1). The headline quality number; best at top.");
+  if(JUD.ok && JUD.data.model_score && Object.keys(JUD.data.model_score).length){
+    var sc=JUD.data.model_score, ms=Object.keys(sc).sort(function(a,b){return num(sc[a])-num(sc[b]);});
+    plotInto(acc,[{ x:ms.map(function(m){return num(sc[m]);}), y:ms, type:"bar", orientation:"h",
+      marker:{color:ms.map(function(m,i){return colorFor(m,i);})},
+      text:ms.map(function(m){return num(sc[m]).toFixed(2);}), textposition:"outside", cliponaxis:false,
+      hovertemplate:"%{y}<br>judge win-rate %{x:.3f}<extra></extra>" }],
+      { xaxis:axis("judge win-rate (0–1)",{range:[0,1.05]}), yaxis:axis("",{automargin:true}), margin:{t:16,r:40,b:44,l:120} },{short:true});
+  } else acc.appendChild(missingSub("judge.json"));
+  grid.appendChild(acc);
+  // RIGHT: latency p50 per model
+  var lat=card("Aggregate latency — p50 per model",
+    "Median scoring latency over the 42 queries. OSS = GPU pool-10; Cohere = API round-trip (incl. laptop RTT). Lower is better; fastest at top.");
+  var present={}; if(SCO.ok&&SCO.data.models)Object.keys(SCO.data.models).forEach(function(m){present[m]=1;});
+  if(JUD.ok&&JUD.data.model_score)Object.keys(JUD.data.model_score).forEach(function(m){present[m]=1;});
+  var lm=Object.keys(present).filter(function(m){return latencyP(LAT,SCO,m,"p50")!=null;})
+    .sort(function(a,b){return latencyP(LAT,SCO,b,"p50")-latencyP(LAT,SCO,a,"p50");});
+  if(lm.length){ plotInto(lat,[{ x:lm.map(function(m){return latencyP(LAT,SCO,m,"p50");}), y:lm, type:"bar", orientation:"h",
+      marker:{color:lm.map(function(m,i){return colorFor(m,i);})},
+      text:lm.map(function(m){return Math.round(latencyP(LAT,SCO,m,"p50"))+" ms";}), textposition:"outside", cliponaxis:false,
+      hovertemplate:"%{y}<br>p50 %{x:.0f} ms<extra></extra>" }],
+      { xaxis:axis("p50 latency (ms)"), yaxis:axis("",{automargin:true}), margin:{t:16,r:52,b:44,l:120} },{short:true});
+  } else lat.appendChild(missingSub("latency / scored.json"));
+  grid.appendChild(lat);
+  root.appendChild(grid);
+}
+
+// ===================================================================
+//  DISTRIBUTIONS — box & whisker for spread / consistency
+// ===================================================================
+function perQueryLatencies(SCO,m){ var out=[]; if(SCO.ok&&SCO.data.models&&SCO.data.models[m]){
+  var qs=SCO.data.models[m].queries; for(var q in qs)if(typeof qs[q].latency_ms==="number")out.push(qs[q].latency_ms); } return out; }
+function perQuerySpread(SCO,m){ var out=[]; if(SCO.ok&&SCO.data.models&&SCO.data.models[m]){
+  var qs=SCO.data.models[m].queries; for(var q in qs){ var e=qs[q]; if(e.ranking&&e.raw&&e.ranking.length>=2){
+    var a=e.raw[e.ranking[0]], b=e.raw[e.ranking[1]]; if(typeof a==="number"&&typeof b==="number")out.push(a-b); } } } return out; }
+function boxTraces(models,getter){ var out=[]; for(var i=0;i<models.length;i++){ var y=getter(models[i]);
+  if(y.length)out.push({ y:y, type:"box", name:models[i], boxpoints:"outliers", boxmean:true,
+    marker:{size:3,color:colorFor(models[i],i)}, line:{color:colorFor(models[i],i)} }); } return out; }
+function renderDistributions(root, SCO){
+  var grid=el("div",{class:"grid-2"});
+  var models=(SCO.ok&&SCO.data.models)?Object.keys(SCO.data.models):[];
+  var latNode=card("Latency spread & consistency (per-query box, log)",
+    "Distribution of per-query latency per model on a LOG axis (dashed = mean). Tight box = consistent steady-state; "+
+    "the high outliers are first-query cold-loads (model weights load on the first call), i.e. tail/warm-up cost, not steady latency.");
+  var latT=boxTraces(models,function(m){return perQueryLatencies(SCO,m);});
+  if(latT.length) plotInto(latNode,latT,{showlegend:false,xaxis:axis("model",{tickangle:-20}),yaxis:axis("per-query latency (ms, log)",{type:"log"}),margin:{t:16,r:16,b:80,l:64}});
+  else latNode.appendChild(missingSub("scored.json"));
+  grid.appendChild(latNode);
+  var sepNode=card("Ranking-confidence spread (per-query top − 2nd, raw)",
+    "Distribution of (top − 2nd) RAW score per query — how consistently each model separates its #1 from the field. "+
+    "Read SHAPE/consistency WITHIN a model; absolute values are NOT comparable across families (logit vs yes/no-margin vs unit[0,1]). Cross-model quality is the judge, above.");
+  var sepT=boxTraces(models,function(m){return perQuerySpread(SCO,m);});
+  if(sepT.length) plotInto(sepNode,sepT,{showlegend:false,xaxis:axis("model",{tickangle:-20}),yaxis:axis("top − 2nd (raw)"),margin:{t:16,r:16,b:80,l:64}});
+  else sepNode.appendChild(missingSub("scored.json"));
+  grid.appendChild(sepNode);
+  root.appendChild(grid);
+}
+
+// ---- bootstrap ----
+var STATE={ latWhich:"p50", data:null };
+function fileLine(f,r){ var s=el("span"); s.appendChild(document.createTextNode(f+": "));
+  s.appendChild(el("span",{class:r.ok?"ok":"fail",text:r.ok?"loaded":("missing")})); s.appendChild(document.createTextNode("   ")); return s; }
+function renderAll(){ var d=STATE.data; var root=document.getElementById("root"); root.innerHTML="";
+  var status=el("div",{class:"card"}); status.appendChild(el("div",{class:"card-title",text:"Artifacts"}));
+  var sl=el("div",{class:"file-status"});
+  [["scored.json",d.SCO],["metrics.json",d.MET],["judge.json",d.JUD],["latency_gpu.json",d.LAT],["pools.json",d.POOLS]]
+    .forEach(function(p){ sl.appendChild(fileLine(p[0],p[1])); });
+  status.appendChild(sl); root.appendChild(status);
+  // HEADLINE (user priority): aggregate accuracy + latency, then spread/consistency.
+  renderAggregate(root,d.JUD,d.LAT,d.SCO);
+  renderDistributions(root,d.SCO);
+  // Analytical layer: frontier + head-to-head, leaderboard, sweeps, qualitative drill-down.
+  var hero=el("div",{class:"grid-2"}); root.appendChild(hero);
+  renderFrontier(hero,d.JUD,d.LAT,d.SCO,STATE.latWhich);
+  renderHeatmap(hero,d.JUD);
+  renderLeaderboard(root,d.JUD,d.LAT,d.SCO);
+  var sweeps=el("div",{class:"grid-2"}); root.appendChild(sweeps);
+  renderSweep(sweeps,d.LAT);
+  renderBudget(sweeps,d.LAT);
+  renderDrilldown(root,d.JUD,d.POOLS);
+}
+function main(){ Promise.all([loadJson("scored.json"),loadJson("metrics.json"),loadJson("judge.json"),
+    loadJson("latency_gpu.json"),loadJson("pools.json")]).then(function(r){
+  STATE.data={ SCO:r[0],MET:r[1],JUD:r[2],LAT:r[3].ok?r[3]:{ok:true,data:{}},POOLS:r[4] };
+  if(!r[3].ok)STATE.data.LAT={ok:false,data:{}};
+  renderAll(); }); }
+document.querySelectorAll("#latseg button").forEach(function(b){ b.addEventListener("click",function(){
+  document.querySelectorAll("#latseg button").forEach(function(x){x.classList.remove("active");});
+  b.classList.add("active"); STATE.latWhich=b.getAttribute("data-lat"); if(STATE.data)renderAll(); }); });
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",main); else main();
+</script>
+</body>
+</html>

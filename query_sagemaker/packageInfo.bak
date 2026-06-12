@@ -1,0 +1,12 @@
+base = {
+  workspace = nmatnich_query_sagemaker; 
+  versionSet = "ATESkywalkerIngest/development";
+  dependencyModel = brazil;
+};
+packages = { 
+  ATESkywalkerQuery-1.0 = .; 
+  ATESkywalkerQueryCDK-1.0 = .;
+  ATESkywalkerQueryModel-1.0 = .;
+  ATESkywalkerIngest-1.0 = .;
+  ATESkywalkerIngestCDK-1.0 = .;
+};

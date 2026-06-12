@@ -1,0 +1,346 @@
+{
+  "summary": {
+    "n_turns": 18,
+    "faithfulness": {
+      "old": 0.472,
+      "new": 0.569,
+      "delta": 0.097
+    },
+    "correctness": {
+      "old": 0.292,
+      "new": 0.306,
+      "delta": 0.014
+    },
+    "completeness": {
+      "old": 0.194,
+      "new": 0.208,
+      "delta": 0.014
+    }
+  },
+  "rows": [
+    {
+      "item_id": "c1-s01",
+      "turn": 1,
+      "answerability": "full",
+      "question": "hotel over policy limit berlin approval who",
+      "answer": "I already answered this one \u2014 based on my reference materials, manager approval is needed. But I want to be transparent: that came from your message telling me ",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c1-s01",
+      "turn": 2,
+      "answerability": "full",
+      "question": "ok manager approve. but how much over allowed before block, exact number",
+      "answer": "I still don't have any reference fragments available to me in this conversation, so I genuinely can't give you an exact number \u2014 and I won't guess at one, as th",
+      "old": {
+        "faithfulness": 0.75,
+        "correctness": 0.75,
+        "completeness": 0.5
+      },
+      "new": {
+        "faithfulness": 0.75,
+        "correctness": 0.5,
+        "completeness": 0.25
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c1-s01",
+      "turn": 3,
+      "answerability": "full",
+      "question": "and if no manager reply before trip? i still book or no",
+      "answer": "I still don't have any reference materials covering this, so I can't tell you what your policy says about this situation. Getting it wrong could leave you out o",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c1-s02",
+      "turn": 1,
+      "answerability": "full",
+      "question": "hey so i rented car in seattle and somebody scratched it in lot do i pay or amazon",
+      "answer": "Great question, and sorry to hear about the scratch \u2014 that's frustrating. Let me check my reference materials for you.\n\nUnfortunately, I don't have any fragment",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c1-s02",
+      "turn": 2,
+      "answerability": "full",
+      "question": "wait no sorry it wasnt parking lot, i actually bumped pole myself while reversing. changes anything?",
+      "answer": "I appreciate you clarifying, but honestly it doesn't change my answer \u2014 I still don't have any reference material covering rental car damage or how fault/liabil",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c1-s02",
+      "turn": 3,
+      "answerability": "full",
+      "question": "and the insurance from booking tool covers that or i needed buy extra one",
+      "answer": "I still don't have any reference fragments that cover rental car insurance \u2014 whether that's what the booking tool includes, what it covers, or whether supplemen",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.5,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.25
+    },
+    {
+      "item_id": "c2-s01",
+      "turn": 1,
+      "answerability": "partial",
+      "question": "hi ... so I have a flight booked to Seattle for the re/Invent thing ...\nit is leaving the 28 November ...\nand I would li",
+      "answer": "That's a nice trip! However, I don't have any reference material that covers adding a personal travel companion (like a spouse travelling privately) to a compan",
+      "old": {
+        "faithfulness": 1.0,
+        "correctness": 1.0,
+        "completeness": 0.75
+      },
+      "new": {
+        "faithfulness": 1.0,
+        "correctness": 0.75,
+        "completeness": 0.5
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c2-s01",
+      "turn": 2,
+      "answerability": "full",
+      "question": "ok and also ... not really same thing but ...\nwe want to stay 3 extra nights after, private ...\nthe hotel is 312 CHF the",
+      "answer": "I don't have reference material that covers which nights the company pays for in a scenario where you extend a business trip for personal reasons. I wouldn't wa",
+      "old": {
+        "faithfulness": 1.0,
+        "correctness": 0.75,
+        "completeness": 0.5
+      },
+      "new": {
+        "faithfulness": 1.0,
+        "correctness": 0.25,
+        "completeness": 0.25
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c2-s01",
+      "turn": 3,
+      "answerability": "full",
+      "question": "mhm ok ... so the part you said about the personal nights ...\nthen the flight, if it is more expensive because of the ex",
+      "answer": "I'm in the same position here \u2014 I don't have reference material that covers how flight cost differences are handled when a business trip is extended for persona",
+      "old": {
+        "faithfulness": 1.0,
+        "correctness": 0.75,
+        "completeness": 0.5
+      },
+      "new": {
+        "faithfulness": 0.75,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "faith_delta": -0.25
+    },
+    {
+      "item_id": "c2-s03",
+      "turn": 1,
+      "answerability": "partial",
+      "question": "hi i would like to kindly ask abt the rental car in austin, the daily mileage and which category i may book, my drive is",
+      "answer": "I'd be happy to help, but I don't have any reference fragments loaded for this conversation yet that cover rental car policies for Austin (or mileage limits and",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.5,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.25
+    },
+    {
+      "item_id": "c2-s03",
+      "turn": 2,
+      "answerability": "full",
+      "question": "ok and the insurance on the rental, do i take the one from the desk or the company has already, dont want to pay 24usd a",
+      "answer": "That's a very sensible thing to check before you get to the counter! Unfortunately, I don't have any reference material loaded that covers your company's rental",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c2-s03",
+      "turn": 3,
+      "answerability": "full",
+      "question": "so that insurance u mentioned, if i actually have a small accident with the rental what do i do, is it still coverd same",
+      "answer": "To be straightforward with you: I haven't actually confirmed that you have any coverage \u2014 I don't have reference materials on your company's insurance policy at",
+      "old": {
+        "faithfulness": 0.0,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.25
+    },
+    {
+      "item_id": "c0-s01",
+      "turn": 1,
+      "answerability": "none",
+      "question": "i lost the recipt for hotel can i still claim it pls",
+      "answer": "Good news \u2014 lost receipts happen, and there's usually a way to handle it. However, **I don't have any reference material in front of me right now** that covers ",
+      "old": {
+        "faithfulness": 0.5,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "faith_delta": -0.25
+    },
+    {
+      "item_id": "c0-s01",
+      "turn": 2,
+      "answerability": "full",
+      "question": "ok but the missing recipt form u said, where i find am",
+      "answer": "Just to be straightforward with you \u2014 I actually didn't mention a specific \"missing receipt form\" in my previous reply, and I don't have any reference material ",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.25,
+        "correctness": 0.25,
+        "completeness": 0.25
+      },
+      "faith_delta": 0.0
+    },
+    {
+      "item_id": "c0-s01",
+      "turn": 3,
+      "answerability": "full",
+      "question": "if i fill that form will my manager still see it and reject",
+      "answer": "I don't have any reference material that covers how missing receipt declarations are reviewed or what approval steps are involved, so I can't give you a reliabl",
+      "old": {
+        "faithfulness": 0.5,
+        "correctness": 0.25,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 1.0,
+        "correctness": 0.75,
+        "completeness": 0.75
+      },
+      "faith_delta": 0.5
+    },
+    {
+      "item_id": "c0-s02",
+      "turn": 1,
+      "answerability": "none",
+      "question": "so i am wanting to no if the miles i get from the work flight booking is mine to keep or it belong to the company you no",
+      "answer": "Based on my reference materials, I don't have any fragments that cover the policy on frequent flyer miles or loyalty points earned from business travel. I can't",
+      "old": {
+        "faithfulness": 0.25,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "new": {
+        "faithfulness": 0.75,
+        "correctness": 0.0,
+        "completeness": 0.0
+      },
+      "faith_delta": 0.5
+    },
+    {
+      "item_id": "c0-s02",
+      "turn": 2,
+      "answerability": "full",
+      "question": "ok and if i use my own miles to upgrade the sit can the company pay me back for it or no",
+      "answer": "That's a related question, but I'm in the same position \u2014 my reference materials don't cover reimbursement for personal miles or points used for upgrades, so I ",
+      "old": {
+        "faithfulness": 0.5,
+        "correctness": 0.25,
+        "completeness": 0.25
+      },
+      "new": {
+        "faithfulness": 1.0,
+        "correctness": 1.0,
+        "completeness": 0.75
+      },
+      "faith_delta": 0.5
+    },
+    {
+      "item_id": "c0-s02",
+      "turn": 3,
+      "answerability": "full",
+      "question": "by the way the stock i was promise when does it vest is it also true travel team or different",
+      "answer": "Stock vesting is well outside my area \u2014 I only cover Travel, Events & Expenses topics, and my reference materials don't include anything on equity or stock vest",
+      "old": {
+        "faithfulness": 1.0,
+        "correctness": 1.0,
+        "completeness": 1.0
+      },
+      "new": {
+        "faithfulness": 1.0,
+        "correctness": 1.0,
+        "completeness": 1.0
+      },
+      "faith_delta": 0.0
+    }
+  ]
+}

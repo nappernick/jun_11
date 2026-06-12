@@ -1,0 +1,45 @@
+{
+    "folders": [
+        {
+            "name": "src",
+            "path": "src"
+        },
+        {
+            "name": "ATESkywalkerIngest",
+            "path": "src/ATESkywalkerIngest"
+        },
+        {
+            "name": "ATESkywalkerIngestCDK",
+            "path": "src/ATESkywalkerIngestCDK"
+        },
+        {
+            "name": "ATESkywalkerQuery",
+            "path": "src/ATESkywalkerQuery"
+        },
+        {
+            "name": "ATESkywalkerQueryCDK",
+            "path": "src/ATESkywalkerQueryCDK"
+        },
+        {
+            "name": "ATESkywalkerQueryModel",
+            "path": "src/ATESkywalkerQueryModel"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            ".viceroy": true,
+            "apollo-overrides": true,
+            "release-info": true,
+            "src/*/build": false,
+            "build": false,
+            "env": false,
+            "packageInfo*": true,
+            ".bemol": true
+        },
+        "search.exclude": {
+            "env": false,
+            "src/*/build": true,
+            "build": true
+        }
+    }
+}

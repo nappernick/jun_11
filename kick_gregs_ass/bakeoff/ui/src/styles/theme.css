@@ -1,0 +1,51 @@
+/* Design tokens. Visual direction adapted (not copied) from the provided
+   inspiration's "Squid Ink" dark-console palette: IBM Plex, warm amber accent,
+   calm semantic colors. A light scheme is available via [data-scheme="light"]. */
+:root {
+  --rad: 14px;
+  --rad-sm: 9px;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --bg: #0c1623;
+  --bg2: #0f1c2e;
+  --panel: #13243a;
+  --panel2: #172a43;
+  --panel-hi: #1d3552;
+  --line: #23415f;
+  --line-soft: #1a3048;
+  --ink: #eaf1fa;
+  --ink2: #aebfd4;
+  --ink3: #7488a3;
+  --accent: #f7a14b;
+  --accent2: #ffc684;
+  --good: #4cc38a;
+  --warn: #f7a14b;
+  --bad: #e5688b;
+  --chip: rgba(255, 255, 255, 0.05);
+  --grid: rgba(140, 165, 200, 0.1);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03), 0 18px 40px -24px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+
+:root[data-scheme="light"] {
+  --bg: #eef1f5;
+  --bg2: #e7ebf1;
+  --panel: #ffffff;
+  --panel2: #f6f8fb;
+  --panel-hi: #eef2f7;
+  --line: #dde3ec;
+  --line-soft: #e8edf3;
+  --ink: #16202e;
+  --ink2: #475569;
+  --ink3: #8493a6;
+  --accent: #c2591a;
+  --accent2: #e07b34;
+  --good: #1d8a5e;
+  --warn: #c2591a;
+  --bad: #c43c63;
+  --chip: rgba(20, 32, 46, 0.045);
+  --grid: rgba(40, 60, 90, 0.07);
+  --shadow: 0 1px 2px rgba(20, 32, 46, 0.04), 0 14px 30px -22px rgba(20, 32, 46, 0.28);
+  color-scheme: light;
+}

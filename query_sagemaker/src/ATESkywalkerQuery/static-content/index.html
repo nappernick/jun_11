@@ -1,0 +1,176 @@
+<head>
+<title>ATESkywalkerQuery</title>
+<style>
+pre {
+ background-color:#EEEEEE;
+ font-size:11px;
+ padding:10px;
+}
+
+html, body {
+ height:100%;
+ font-size: 12px;
+}
+
+body {
+ color:#59595B;
+ font-family:Arial,Helvetica,sans-serif;
+ list-style-type: square;
+}
+
+a {
+ color:#146EB4;
+ text-decoration:none;
+}
+
+a:hover, a:active, a.active {
+ color:#E47911;
+}
+
+a:hover {
+ text-decoration:underline;
+}
+
+h1, h2 {
+ color:#E47911;
+ font-size:18px;
+ font-weight:normal;
+ margin:0 0 9px;
+ padding:0;
+}
+
+h1 {
+ border-bottom:1px solid #59595B;
+ margin:19px 0 2px;
+ padding-bottom:3px;
+}
+
+img {
+ border:0 none;
+}
+
+label {
+ font-weight:bold;
+}
+
+#footer, #push {
+ height:49px;
+ padding-top: 10px;
+}
+#footer {
+ clear:both;
+ text-align:center;
+ width:100%;
+}
+
+#footer .logo {
+margin-bottom:7px;
+}
+
+#footer .disclaimer {
+ background-color:#59595B;
+ clear:right;
+ color:white;
+ font-size:9px;
+ height:18px;
+ padding-top:8px;
+ text-align:center;
+ width:100%;
+}
+
+
+#page {
+ height:auto !important;
+ margin-left: 10px;
+ margin-bottom: 10px;
+ min-height:100%;
+}
+
+h2.subtitle {
+	color: #59595B;
+	font-size: 16px;
+	border-bottom: 1px solid #59595B;
+        font-weight: bold;
+}
+
+h1.title {
+	border-bottom-style: none;
+	margin-bottom: 1em;
+}
+
+</style>
+</head>
+<body>
+<div id="page">
+<center>
+<h1 class='title'>Welcome to your new Coral service, ATESkywalkerQuery!</h1>
+</center>
+<br>
+<div id="started">
+<h2 class='subtitle'>Getting Started</h2>
+<strong>Try out the example service we have provided:</strong>
+<ul>
+ <li>Connect to your desktop's <a href="/explorer/">service explorer</a>
+ <li>Try out some commands, for example getAllBeers() or createBeer()</li>
+ <li><i>NOTE: This service is connected to a centralized database for all example Coral services, so the data is shared across the company</i></li>
+</ul>
+<br>
+<strong>What is included in this service setup?</strong>
+<ul>
+ <li>A model package, which defines the datatypes, exceptions, operations and service definition. It is pre-configured with a working example.</li>
+ <li>A working example service implementation, which is setup out of the box with:
+  <ul>
+   <li>BrazilGradle and Coral generation all configured with dependencies and targets</li>
+   <li>Monitoring, log scanning/pulling and the service explorer all setup and ready to go</li>
+   <li>Everything configured with best practices in mind, for example GMT time and UTF-8 encodings</li>
+  </ul>
+ </li>
+ <li>Client for Java created and ready to go</li>
+</ul>
+</div>
+<br>
+<div id="customize">
+<br>
+<h2 class='subtitle'>Your Service's Packages</h2>
+<br>
+<strong>ATESkywalkerQueryModel</strong><br>
+<i>This package contains all of the Smithy model files for your service</i>
+<ul>
+<li><code>src/main/smithy/main.smithy</code> - Service definition</li>
+</ul>
+<strong>ATESkywalkerQuery</strong><br>
+<i>This package contains all of your Service implementation and configuration code, including Activity classes, Guice configuration, etc.</i><br>
+<ul>
+<li><code>/src/</code> - Service Implementation
+ <ul>
+  <li><code>com.amazon.ateskywalkerquery.activity</code> - Example service Activity class, where the meat of the service is contained</li>
+ </ul>
+<li><code>/monitoring/</code> - Monitoring configuration
+<li><code>/src/com/amazon/ateskywalkerquery</code> - Guice configuration for application startup
+  <ul>
+    <li><code>ATESkywalkerQuery.java</code> - Main application entry point</li>
+    <li><code>ATESkywalkerQueryModule.java</code> - Main application Guice configuration</li>
+    <li><code>CoralModule.java</code> - Coral service chain and HTTP server configuration</li>
+ </ul>
+</li>
+<li><code>/</code> - Gradle build scripts
+ <ul>
+  <li><code> build.gradle.kts</code> - The main BrazilGradle build script, defining your releases and the overrides for launching the rapid development Brazil server</li>
+ </ul>
+</li>
+</ul>
+</div>
+<br><br>
+<div id="customize">
+<h2 class='subtitle'>Help</h2>
+<strong>Documentation</strong>
+<ul>
+  <li><a href="https://create.hub.amazon.dev/source-applications/coral-fargate" target="_blank">Coral Fargate Sample Application</a></li>
+  <li><a href="https://builderhub.corp.amazon.com/docs/builderhub/user-guide/create.html" target="_blank">BuilderHub Create Documentation</a></li>
+  <li><a href="https://w.amazon.com/?Coral" target="_blank">Coral Documentation Portal</a></li>
+</ul>
+<strong>Other questions? Please file <a href="https://sage.amazon.com/questions/ask?tags=coral" target="_blank"> a Sage question.</a></strong>
+<br><br>
+<div>
+</div>
+</body>

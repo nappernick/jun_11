@@ -1,0 +1,78 @@
+/* Dark monospace "console" theme. Dense, calm, information-first. */
+
+:root {
+  --bg: #0f1115;
+  --panel: #161a22;
+  --panel-alt: #12151c;
+  --border: #262b36;
+  --text: #e6e6e6;
+  --dim: #9aa4b2;
+
+  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: 0.1px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--mono);
+}
+
+select {
+  font-family: var(--mono);
+}
+
+/* Thin custom scrollbars to match the dense console aesthetic. */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--panel-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #323a48;
+}
+
+/* Smooth anchor scrolling for the header nav tabs. */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.28);
+}

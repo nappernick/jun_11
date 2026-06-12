@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rerank 3.5 Combinations Analysis</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+  body { font: 14px/1.4 system-ui, sans-serif; margin: 0; background: #0f1115; color: #e6e6e6; }
+  header { padding: 14px 20px; background: #161a22; border-bottom: 1px solid #262b36; }
+  h1 { margin: 0; font-size: 18px; }
+  #status { font-size: 12px; color: #9aa4b2; margin-top: 4px; }
+  .controls { padding: 10px 20px; background: #12151c; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .controls label { font-size: 12px; color: #9aa4b2; }
+  select { background: #1c212b; color: #e6e6e6; border: 1px solid #2c333f; border-radius: 4px; padding: 4px 6px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; }
+  .card { background: #161a22; border: 1px solid #262b36; border-radius: 6px; padding: 4px; min-height: 360px; }
+  #drop { padding: 30px; text-align: center; color: #9aa4b2; border: 2px dashed #2c333f; margin: 20px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Cohere Rerank 3.5 &mdash; Combinations Analysis</h1>
+  <div id="status">loading results.json&hellip;</div>
+</header>
+
+<div id="drop">Drag a combinations <code>results.json</code> here (run <code>python rerank_bench.py --combo 5</code> first)</div>
+
+<div class="controls" style="display:none" id="controls">
+  <label>query <select id="qsel"></select></label>
+  <span id="note" style="color:#9aa4b2"></span>
+</div>
+
+<div class="grid" id="grid" style="display:none">
+  <div class="card" id="dominance"></div>
+  <div class="card" id="rankdist"></div>
+  <div class="card" id="winscatter"></div>
+  <div class="card" id="scoreslot"></div>
+</div>
+
+<script>
+const LAYOUT = { paper_bgcolor: "#161a22", plot_bgcolor: "#161a22",
+  font: { color: "#cdd3dc", size: 11 }, margin: { t: 40, r: 16, b: 90, l: 90 } };
+const CFG = { responsive: true, displayModeBar: false };
+let DATA = [];
+
+const short = id => { id = String(id); return id.length > 16 ? id.slice(0, 15) + "\u2026" : id; };
+const rowsFor = q => q === "ALL" ? DATA : DATA.filter(r => r.query === q);
+
+function docsByAvgRank(rows) {
+  const sum = {}, n = {};
+  rows.forEach(r => r.ranking.forEach((d, i) => { sum[d] = (sum[d] || 0) + i + 1; n[d] = (n[d] || 0) + 1; }));
+  return Object.keys(n).sort((a, b) => sum[a] / n[a] - sum[b] / n[b]);
+}
+
+function drawDominance(rows, docs) {
+  const co = {}, beat = {};
+  rows.forEach(r => {
+    const rank = {}; r.ranking.forEach((d, i) => rank[d] = i);
+    const present = r.ranking;
+    for (const a of present) for (const b of present) {
+      if (a === b) continue;
+      const key = a + "|" + b;
+      co[key] = (co[key] || 0) + 1;
+      if (rank[a] < rank[b]) beat[key] = (beat[key] || 0) + 1;
+    }
+  });
+  const z = docs.map(a => docs.map(b => {
+    if (a === b) return null;
+    const c = co[a + "|" + b];
+    return c ? +((beat[a + "|" + b] || 0) / c).toFixed(2) : null;
+  }));
+  Plotly.newPlot("dominance", [{ z, x: docs.map(short), y: docs.map(short), type: "heatmap",
+    zmin: 0, zmax: 1, colorscale: "RdYlGn", hoverongaps: false,
+    text: z, texttemplate: "%{text}", textfont: { size: 9 } }],
+    { ...LAYOUT, title: "Pairwise dominance: P(row ranks above col)",
+      xaxis: { tickangle: -45 } }, CFG);
+}
+
+function drawRankDist(rows, docs) {
+  const ranks = {}; docs.forEach(d => ranks[d] = []);
+  rows.forEach(r => r.ranking.forEach((d, i) => ranks[d].push(i + 1)));
+  const traces = docs.map(d => ({ y: ranks[d], type: "box", name: short(d),
+    boxpoints: "all", jitter: 0.4, marker: { size: 3 } }));
+  Plotly.newPlot("rankdist", traces,
+    { ...LAYOUT, title: "Rank-position spread per document (1 = best)", showlegend: false,
+      xaxis: { tickangle: -45 }, yaxis: { title: "rank", autorange: "reversed" } }, CFG);
+}
+
+function drawWinScatter(rows, docs) {
+  const app = {}, win = {}, sum = {};
+  docs.forEach(d => { app[d] = 0; win[d] = 0; sum[d] = 0; });
+  rows.forEach(r => r.ranking.forEach((d, i) => { app[d]++; sum[d] += i + 1; if (i === 0) win[d]++; }));
+  Plotly.newPlot("winscatter", [{
+    x: docs.map(d => sum[d] / app[d]), y: docs.map(d => win[d] / app[d]),
+    text: docs.map(short), mode: "markers+text", type: "scatter",
+    textposition: "top center", textfont: { size: 8 },
+    marker: { size: docs.map(d => 8 + app[d]), color: docs.map(d => win[d] / app[d]),
+      colorscale: "Viridis", showscale: true, colorbar: { title: "win", thickness: 10 } } }],
+    { ...LAYOUT, title: "Win rate vs avg rank (bubble = appearances)",
+      xaxis: { title: "avg rank (lower = better)" }, yaxis: { title: "top-1 win rate" } }, CFG);
+}
+
+function drawScoreSlot(rows) {
+  const k = Math.max(...rows.map(r => r.scores.length));
+  const traces = [];
+  for (let i = 0; i < k; i++)
+    traces.push({ y: rows.map(r => r.scores[i]).filter(v => v != null), type: "box", name: "rank " + (i + 1) });
+  Plotly.newPlot("scoreslot", traces,
+    { ...LAYOUT, title: "relevanceScore by rank slot (score margin between positions)",
+      showlegend: false, yaxis: { title: "relevanceScore" } }, CFG);
+}
+
+function draw() {
+  const rows = rowsFor(qsel.value);
+  const docs = docsByAvgRank(rows);
+  document.getElementById("note").textContent =
+    rows.length + " combinations | " + docs.length + " documents";
+  drawDominance(rows, docs);
+  drawRankDist(rows, docs);
+  drawWinScatter(rows, docs);
+  drawScoreSlot(rows);
+}
+
+function init() {
+  if (!DATA.length) {
+    document.getElementById("status").textContent =
+      "No combination rows found \u2014 run: python rerank_bench.py --combo 5";
+    return;
+  }
+  document.getElementById("drop").style.display = "none";
+  document.getElementById("controls").style.display = "flex";
+  document.getElementById("grid").style.display = "grid";
+  document.getElementById("status").textContent = DATA.length + " combination records loaded";
+  const queries = [...new Set(DATA.map(r => r.query))];
+  qsel.innerHTML = ["ALL", ...queries].map(q => `<option value="${q}">${q === "ALL" ? "ALL queries" : q.slice(0, 40)}</option>`).join("");
+  qsel.onchange = draw;
+  draw();
+}
+
+function load(rows) { DATA = rows.filter(r => Array.isArray(r.ranking)); init(); }
+
+fetch("./results/results.json").then(r => { if (!r.ok) throw 0; return r.json(); })
+  .then(load)
+  .catch(() => { document.getElementById("status").textContent =
+    "results.json not found via HTTP \u2014 drag a combinations file in below."; });
+
+const drop = document.getElementById("drop");
+["dragover", "dragenter"].forEach(e => drop.addEventListener(e, ev => { ev.preventDefault(); drop.style.borderColor = "#3fb950"; }));
+drop.addEventListener("drop", ev => {
+  ev.preventDefault();
+  const f = ev.dataTransfer.files[0];
+  if (f) f.text().then(t => load(JSON.parse(t)));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+{"set_id": "c1-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c1-s02", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123", "ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c1-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c1-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c1-s05", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c1-s06", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c2-s01", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "partial"}
+{"set_id": "c2-s02", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c2-s03", "turn": 1, "gold_node_ids": ["dbd5222a-4eed-49c9-a87d-54b7edd051ac"], "answerability": "partial"}
+{"set_id": "c2-s04", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c2-s05", "turn": 1, "gold_node_ids": ["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"], "answerability": "partial"}
+{"set_id": "c2-s06", "turn": 1, "gold_node_ids": ["48046e91-af74-4c6d-8f0d-b93647a424d4"], "answerability": "full"}
+{"set_id": "c3-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c3-s02", "turn": 1, "gold_node_ids": ["61598f6d-d0a2-4521-a2a5-fef356e5871f"], "answerability": "full"}
+{"set_id": "c3-s03", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c3-s04", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c3-s05", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c3-s06", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c4-s01", "turn": 1, "gold_node_ids": ["ec0c13bb-da1a-4808-a2a1-42cd3e24c977", "534afec7-9bde-47ae-ac52-65d23794e13a"], "answerability": "full"}
+{"set_id": "c4-s02", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "dbd5222a-4eed-49c9-a87d-54b7edd051ac"], "answerability": "full"}
+{"set_id": "c4-s03", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c4-s04", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c4-s05", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c4-s06", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c5-s01", "turn": 1, "gold_node_ids": ["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"], "answerability": "partial"}
+{"set_id": "c5-s02", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c5-s03", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c5-s04", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e", "12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c5-s05", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c5-s06", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c6-s01", "turn": 1, "gold_node_ids": ["ec0c13bb-da1a-4808-a2a1-42cd3e24c977"], "answerability": "full"}
+{"set_id": "c6-s02", "turn": 1, "gold_node_ids": ["57d2643d-ec89-4f9d-bb00-58f4abef30fe"], "answerability": "full"}
+{"set_id": "c6-s03", "turn": 1, "gold_node_ids": ["61598f6d-d0a2-4521-a2a5-fef356e5871f"], "answerability": "full"}
+{"set_id": "c6-s04", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c6-s05", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c6-s06", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c7-s01", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c7-s02", "turn": 1, "gold_node_ids": ["ec0c13bb-da1a-4808-a2a1-42cd3e24c977"], "answerability": "full"}
+{"set_id": "c7-s03", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c7-s04", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c7-s05", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c7-s06", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c8-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c8-s02", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c8-s03", "turn": 1, "gold_node_ids": ["61598f6d-d0a2-4521-a2a5-fef356e5871f"], "answerability": "full"}
+{"set_id": "c8-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c8-s05", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c8-s06", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c9-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "6146c5df-bd75-4a26-8374-4737c4a7a8ed"], "answerability": "full"}
+{"set_id": "c9-s02", "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9"], "answerability": "full"}
+{"set_id": "c9-s03", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c9-s04", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c9-s05", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c9-s06", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c10-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c10-s02", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c10-s03", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c10-s04", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "full"}
+{"set_id": "c10-s05", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c10-s06", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id":"c11-s01","turn":1,"gold_node_ids":["eb558531-15e7-4030-bed0-72eaa07b6f9c"],"answerability":"full"}
+{"set_id":"c11-s02","turn":1,"gold_node_ids":["2e074e68-3a67-404e-b05c-98d7965f2d79"],"answerability":"partial"}
+{"set_id":"c11-s03","turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11"],"answerability":"partial"}
+{"set_id":"c11-s04","turn":1,"gold_node_ids":["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"],"answerability":"full"}
+{"set_id":"c11-s05","turn":1,"gold_node_ids":["df856485-44b7-4b7b-be6a-eee5c127d7ac"],"answerability":"full"}
+{"set_id":"c11-s06","turn":1,"gold_node_ids":["0765f678-af1f-47b9-adaf-c511037b9604"],"answerability":"full"}
+{"set_id": "c12-s01", "turn": 1, "gold_node_ids": ["1e6e74ea-4257-47d3-874d-628909348fc3", "5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"], "answerability": "full"}
+{"set_id": "c12-s02", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c12-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c12-s04", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "7cd776d3-dc3d-4fce-b69e-b5800f8e3c07"], "answerability": "full"}
+{"set_id": "c12-s05", "turn": 1, "gold_node_ids": ["df856485-44b7-4b7b-be6a-eee5c127d7ac"], "answerability": "full"}
+{"set_id": "c12-s06", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c13-s01", "turn": 1, "gold_node_ids": ["1e6e74ea-4257-47d3-874d-628909348fc3", "b9ce83b0-b104-421f-82bd-52202ac1382c"], "answerability": "full"}
+{"set_id": "c13-s02", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c13-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c13-s04", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "full"}
+{"set_id": "c13-s05", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c13-s06", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id":"c14-s01","batch":14,"turn":1,"gold_node_ids":["6146c5df-bd75-4a26-8374-4737c4a7a8ed"],"answerability":"full"}
+{"set_id":"c14-s02","batch":14,"turn":1,"gold_node_ids":["2e074e68-3a67-404e-b05c-98d7965f2d79"],"answerability":"partial"}
+{"set_id":"c14-s03","batch":14,"turn":1,"gold_node_ids":["7cd776d3-dc3d-4fce-b69e-b5800f8e3c07"],"answerability":"full"}
+{"set_id":"c14-s04","batch":14,"turn":1,"gold_node_ids":["d8f9f890-1075-49ac-ad5c-aa98aea89312"],"answerability":"partial"}
+{"set_id":"c14-s05","batch":14,"turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11"],"answerability":"full"}
+{"set_id":"c14-s06","batch":14,"turn":1,"gold_node_ids":["2f61b560-d323-4e34-8bf1-1e871017c5a8"],"answerability":"partial"}
+{"set_id":"c15-s01","batch":15,"turn":1,"gold_node_ids":["eb558531-15e7-4030-bed0-72eaa07b6f9c"],"answerability":"full"}
+{"set_id":"c15-s02","batch":15,"turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11"],"answerability":"full"}
+{"set_id":"c15-s03","batch":15,"turn":1,"gold_node_ids":["ee381c40-2a21-48a6-b6fa-24d0a2ced64e","12eb2d6b-cbed-4cf6-a989-0486700f2123"],"answerability":"full"}
+{"set_id":"c15-s04","batch":15,"turn":1,"gold_node_ids":["0765f678-af1f-47b9-adaf-c511037b9604"],"answerability":"full"}
+{"set_id":"c15-s05","batch":15,"turn":1,"gold_node_ids":["0903b14a-a56b-48c5-a174-ca26599501be"],"answerability":"full"}
+{"set_id":"c15-s06","batch":15,"turn":1,"gold_node_ids":["a16a43a1-ba36-44bf-a33f-c2470902c267"],"answerability":"full"}
+{"set_id":"c16-s01","batch":16,"turn":1,"gold_node_ids":["6146c5df-bd75-4a26-8374-4737c4a7a8ed"],"answerability":"full"}
+{"set_id":"c16-s02","batch":16,"turn":1,"gold_node_ids":["eb558531-15e7-4030-bed0-72eaa07b6f9c"],"answerability":"full"}
+{"set_id":"c16-s03","batch":16,"turn":1,"gold_node_ids":["dbd5222a-4eed-49c9-a87d-54b7edd051ac"],"answerability":"partial"}
+{"set_id":"c16-s04","batch":16,"turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11","1ad8360d-d279-4f6e-a17b-fc014df462f4"],"answerability":"full"}
+{"set_id":"c16-s05","batch":16,"turn":1,"gold_node_ids":["ca272654-e5f7-409b-97eb-83c7c074d755"],"answerability":"full"}
+{"set_id":"c16-s06","batch":16,"turn":1,"gold_node_ids":["0765f678-af1f-47b9-adaf-c511037b9604"],"answerability":"full"}
+{"set_id":"c17-s01","batch":17,"turn":1,"gold_node_ids":["2e074e68-3a67-404e-b05c-98d7965f2d79"],"answerability":"full"}
+{"set_id":"c17-s02","batch":17,"turn":1,"gold_node_ids":["ec0c13bb-da1a-4808-a2a1-42cd3e24c977"],"answerability":"partial"}
+{"set_id":"c17-s03","batch":17,"turn":1,"gold_node_ids":["eb558531-15e7-4030-bed0-72eaa07b6f9c"],"answerability":"full"}
+{"set_id":"c17-s04","batch":17,"turn":1,"gold_node_ids":["7cd776d3-dc3d-4fce-b69e-b5800f8e3c07"],"answerability":"full"}
+{"set_id":"c17-s05","batch":17,"turn":1,"gold_node_ids":["289ab19b-8d21-408a-8aae-8f019b2130a3"],"answerability":"full"}
+{"set_id":"c17-s06","batch":17,"turn":1,"gold_node_ids":["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"],"answerability":"partial"}
+{"set_id": "c18-s01", "batch": 18, "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c18-s02", "batch": 18, "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c18-s03", "batch": 18, "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c18-s04", "batch": 18, "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "b9ce83b0-b104-421f-82bd-52202ac1382c"], "answerability": "full"}
+{"set_id": "c18-s05", "batch": 18, "turn": 1, "gold_node_ids": ["2f61b560-d323-4e34-8bf1-1e871017c5a8"], "answerability": "partial"}
+{"set_id": "c18-s06", "batch": 18, "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id":"c19-s01","batch":19,"turn":1,"gold_node_ids":["79fa79b9-a11e-4527-af19-202f07567615"],"answerability":"partial"}
+{"set_id":"c19-s02","batch":19,"turn":1,"gold_node_ids":["72c9d977-6140-4f01-8d82-ba48886704d9"],"answerability":"partial"}
+{"set_id":"c19-s03","batch":19,"turn":1,"gold_node_ids":["2e074e68-3a67-404e-b05c-98d7965f2d79"],"answerability":"partial"}
+{"set_id":"c19-s04","batch":19,"turn":1,"gold_node_ids":["dbd5222a-4eed-49c9-a87d-54b7edd051ac"],"answerability":"full"}
+{"set_id":"c19-s05","batch":19,"turn":1,"gold_node_ids":["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"],"answerability":"partial"}
+{"set_id":"c19-s06","batch":19,"turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11"],"answerability":"full"}
+{"set_id": "c20-s01", "batch": 20, "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9"], "answerability": "partial"}
+{"set_id": "c20-s02", "batch": 20, "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "partial"}
+{"set_id": "c20-s03", "batch": 20, "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c20-s04", "batch": 20, "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c20-s05", "batch": 20, "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c20-s06", "batch": 20, "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c21-s01", "turn": 1, "gold_node_ids": ["046dc0ed-0bed-4b8f-8de7-817b5b20548e", "f0093e4c-160e-401a-bacb-f4427b9d0728"], "answerability": "partial", "note": "Change/select aisle seat after booking. Dhaka is in neither variant's geography list (Regional vs Global Access); bodies are content-identical -> include both indistinguishable variants. Partial because no Bangladesh-specific variant exists."}
+{"set_id": "c21-s02", "turn": 1, "gold_node_ids": [], "answerability": "none", "note": "Hotel advance-booking lead time (how many days before travel to book). No corpus article addresses booking timing/lead time; hotel articles cover allowed rate/room and cancel-modify only, not adjacent."}
+{"set_id": "c21-s03", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full", "note": "Lost receipt for airport taxi (low-value) -> lost-receipt options including MRD."}
+{"set_id": "c21-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full", "note": "Personal dinner on corporate card -> flag as Personal Expense and repay."}
+{"set_id": "c21-s05", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full", "note": "Combine work+personal flight, cost split handled correctly -> combine-trip article (work portion reimbursable, mgr approval)."}
+{"set_id": "c21-s06", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full", "note": "Out-of-policy pre-trip approval requirement / rental flagged out of policy -> out-of-policy article."}
+{"set_id": "c22-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c22-s02", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c22-s03", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c22-s04", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c22-s05", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e", "12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c22-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full"}
+{"set_id": "c23-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c23-s02", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c23-s03", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "partial"}
+{"set_id": "c23-s04", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c23-s05", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c23-s06", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c24-s01", "turn": 1, "gold_node_ids": ["61598f6d-d0a2-4521-a2a5-fef356e5871f"], "answerability": "full"}
+{"set_id": "c24-s02", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c24-s03", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c24-s04", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c24-s05", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full"}
+{"set_id": "c24-s06", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c25-s01", "turn": 1, "gold_node_ids": ["6146c5df-bd75-4a26-8374-4737c4a7a8ed"], "answerability": "full"}
+{"set_id": "c25-s02", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c25-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c25-s04", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c25-s05", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c25-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full"}
+{"set_id": "c26-s01", "turn": 1, "gold_node_ids": ["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472", "b9ce83b0-b104-421f-82bd-52202ac1382c"], "answerability": "partial"}
+{"set_id": "c26-s02", "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9", "5a67d52f-6b49-48d3-8697-293e322c03c5"], "answerability": "full"}
+{"set_id": "c26-s03", "turn": 1, "gold_node_ids": ["dbd5222a-4eed-49c9-a87d-54b7edd051ac"], "answerability": "full"}
+{"set_id": "c26-s04", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c26-s05", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79", "81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c26-s06", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c27-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c27-s02", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c27-s03", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c27-s04", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c27-s05", "turn": 1, "gold_node_ids": ["1066c902-eb00-4a76-a21f-2e3a23cef1cf"], "answerability": "full"}
+{"set_id": "c27-s06", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c28-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "partial"}
+{"set_id": "c28-s02", "turn": 1, "gold_node_ids": ["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"], "answerability": "full"}
+{"set_id": "c28-s03", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c28-s04", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c28-s05", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c28-s06", "turn": 1, "gold_node_ids": ["48046e91-af74-4c6d-8f0d-b93647a424d4"], "answerability": "full"}
+{"set_id": "c29-s01", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e", "12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c29-s02", "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9", "eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c29-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c29-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c29-s05", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c29-s06", "turn": 1, "gold_node_ids": ["61598f6d-d0a2-4521-a2a5-fef356e5871f"], "answerability": "full"}
+{"set_id": "c30-s01", "turn": 1, "gold_node_ids": ["ec0c13bb-da1a-4808-a2a1-42cd3e24c977"], "answerability": "full"}
+{"set_id": "c30-s02", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c30-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c30-s04", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "partial"}
+{"set_id": "c30-s05", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c30-s06", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c31-s01", "turn": 1, "gold_node_ids": ["534afec7-9bde-47ae-ac52-65d23794e13a"], "answerability": "full"}
+{"set_id": "c31-s02", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "72c9d977-6140-4f01-8d82-ba48886704d9"], "answerability": "full"}
+{"set_id": "c31-s03", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c31-s04", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c31-s05", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c31-s06", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c32-s01", "turn": 1, "gold_node_ids": ["1e6e74ea-4257-47d3-874d-628909348fc3", "b9ce83b0-b104-421f-82bd-52202ac1382c"], "answerability": "full"}
+{"set_id": "c32-s02", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c32-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c32-s04", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full"}
+{"set_id": "c32-s05", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c32-s06", "turn": 1, "gold_node_ids": [], "answerability": "none"}
+{"set_id": "c33-s01", "turn": 1, "gold_node_ids": ["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"], "answerability": "full"}
+{"set_id": "c33-s02", "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9"], "answerability": "partial"}
+{"set_id": "c33-s03", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c33-s04", "turn": 1, "gold_node_ids": ["61598f6d-d0a2-4521-a2a5-fef356e5871f"], "answerability": "full"}
+{"set_id": "c33-s05", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c33-s06", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c34-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "6146c5df-bd75-4a26-8374-4737c4a7a8ed"], "answerability": "full"}
+{"set_id": "c34-s02", "turn": 1, "gold_node_ids": ["1fc1d541-01ed-42b0-b70a-50ac9f095dfe"], "answerability": "partial"}
+{"set_id": "c34-s03", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c34-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c34-s05", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e", "12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c34-s06", "turn": 1, "gold_node_ids": ["48046e91-af74-4c6d-8f0d-b93647a424d4"], "answerability": "full"}
+{"set_id": "c35-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c35-s02", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c35-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c35-s04", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c35-s05", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c35-s06", "turn": 1, "gold_node_ids": ["57d2643d-ec89-4f9d-bb00-58f4abef30fe"], "answerability": "full"}
+{"set_id": "c36-s01", "turn": 1, "gold_node_ids": ["534afec7-9bde-47ae-ac52-65d23794e13a"], "answerability": "partial", "label_note": "Manager-approval article is only adjacent; explains approval rules but does not resolve why the tool shows 'pending'."}
+{"set_id": "c36-s02", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full", "label_note": "Add personal days to a work trip + return flight handling -> combine work and personal travel."}
+{"set_id": "c36-s03", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11", "1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full", "label_note": "Rejected report fix/resubmit -> rejected article; missing itemized receipt facet -> lost receipt article."}
+{"set_id": "c36-s04", "turn": 1, "gold_node_ids": [], "answerability": "none", "label_note": "Bare fragment 'so the rental car...' expresses no answerable intent; untether-able on turn 1 alone (do not borrow turn-2 detail)."}
+{"set_id": "c36-s05", "turn": 1, "gold_node_ids": ["289ab19b-8d21-408a-8aae-8f019b2130a3", "29548b53-77d9-4269-8e99-9f28ddb25979"], "answerability": "full", "label_note": "Hotel cancel deadline/refund -> Regional + Global Access cancel/modify hotel variants are indistinguishable for RO persona, include both + note."}
+{"set_id": "c36-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full", "label_note": "Visa need for UK business trip on Romanian passport -> visa/pre-travel immigration assessment article."}
+{"set_id": "c37-s01", "turn": 1, "gold_node_ids": ["bbbc8609-7cc8-4e90-9edc-cf1009020f63", "1fc1d541-01ed-42b0-b70a-50ac9f095dfe", "534afec7-9bde-47ae-ac52-65d23794e13a"], "answerability": "full"}
+{"set_id": "c37-s02", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c37-s03", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "partial"}
+{"set_id": "c37-s04", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c37-s05", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c37-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full"}
+{"set_id": "c38-s01", "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9", "eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c38-s02", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c38-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c38-s04", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c38-s05", "turn": 1, "gold_node_ids": ["48046e91-af74-4c6d-8f0d-b93647a424d4"], "answerability": "full"}
+{"set_id": "c38-s06", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c39-s01", "turn": 1, "gold_node_ids": ["6146c5df-bd75-4a26-8374-4737c4a7a8ed"], "answerability": "full"}
+{"set_id": "c39-s02", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c39-s03", "turn": 1, "gold_node_ids": ["2f61b560-d323-4e34-8bf1-1e871017c5a8"], "answerability": "partial"}
+{"set_id": "c39-s04", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c39-s05", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c39-s06", "turn": 1, "gold_node_ids": ["48046e91-af74-4c6d-8f0d-b93647a424d4"], "answerability": "full"}
+{"set_id": "c40-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c40-s02", "turn": 1, "gold_node_ids": ["72c9d977-6140-4f01-8d82-ba48886704d9"], "answerability": "partial"}
+{"set_id": "c40-s03", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4", "c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c40-s04", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c40-s05", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c40-s06", "turn": 1, "gold_node_ids": ["48046e91-af74-4c6d-8f0d-b93647a424d4"], "answerability": "full"}
+{"set_id": "c41-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c41-s02", "turn": 1, "gold_node_ids": ["2f61b560-d323-4e34-8bf1-1e871017c5a8"], "answerability": "partial"}
+{"set_id": "c41-s03", "turn": 1, "gold_node_ids": ["9b75108f-b8fe-4992-b008-4de72433d250"], "answerability": "partial"}
+{"set_id": "c41-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c41-s05", "turn": 1, "gold_node_ids": ["c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c41-s06", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c42-s01", "turn": 1, "gold_node_ids": ["6146c5df-bd75-4a26-8374-4737c4a7a8ed"], "answerability": "full"}
+{"set_id": "c42-s02", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c42-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c42-s04", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c42-s05", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e", "12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c42-s06", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c43-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c43-s02", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c43-s03", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}
+{"set_id": "c43-s04", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c43-s05", "turn": 1, "gold_node_ids": ["ec0c13bb-da1a-4808-a2a1-42cd3e24c977"], "answerability": "full"}
+{"set_id": "c43-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "partial"}
+{"set_id": "c44-s01", "turn": 1, "gold_node_ids": ["534afec7-9bde-47ae-ac52-65d23794e13a"], "answerability": "full"}
+{"set_id": "c44-s02", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c44-s03", "turn": 1, "gold_node_ids": ["81b4a939-5ff3-432a-be7a-9cc5f492dc11"], "answerability": "full"}
+{"set_id": "c44-s04", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c44-s05", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c44-s06", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c45-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c", "72c9d977-6140-4f01-8d82-ba48886704d9"], "answerability": "full"}
+{"set_id": "c45-s02", "turn": 1, "gold_node_ids": ["df856485-44b7-4b7b-be6a-eee5c127d7ac"], "answerability": "full"}
+{"set_id": "c45-s03", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4", "c7987f4b-4444-4bf5-91d9-0fd54cd901d4"], "answerability": "full"}
+{"set_id": "c45-s04", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c45-s05", "turn": 1, "gold_node_ids": ["534afec7-9bde-47ae-ac52-65d23794e13a"], "answerability": "full"}
+{"set_id": "c45-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "full"}
+{"set_id":"c46-s01","turn":1,"gold_node_ids":["eb558531-15e7-4030-bed0-72eaa07b6f9c"],"answerability":"partial"}
+{"set_id":"c46-s02","turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11"],"answerability":"full"}
+{"set_id":"c46-s03","turn":1,"gold_node_ids":["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"],"answerability":"partial"}
+{"set_id":"c46-s04","turn":1,"gold_node_ids":["d0a649a4-0375-45cc-afbb-1a62fe2e5716"],"answerability":"partial"}
+{"set_id":"c46-s05","turn":1,"gold_node_ids":["0765f678-af1f-47b9-adaf-c511037b9604"],"answerability":"full"}
+{"set_id":"c46-s06","turn":1,"gold_node_ids":["48046e91-af74-4c6d-8f0d-b93647a424d4"],"answerability":"full"}
+{"set_id": "c47-s01", "turn": 1, "gold_node_ids": ["5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"], "answerability": "full"}
+{"set_id": "c47-s02", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c47-s03", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c47-s04", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123", "ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c47-s05", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "partial"}
+{"set_id": "c47-s06", "turn": 1, "gold_node_ids": ["ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"], "answerability": "partial"}
+{"set_id": "c48-s01", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "partial"}
+{"set_id": "c48-s02", "turn": 1, "gold_node_ids": ["12eb2d6b-cbed-4cf6-a989-0486700f2123"], "answerability": "full"}
+{"set_id": "c48-s03", "turn": 1, "gold_node_ids": ["2e074e68-3a67-404e-b05c-98d7965f2d79"], "answerability": "partial"}
+{"set_id": "c48-s04", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "partial"}
+{"set_id": "c48-s05", "turn": 1, "gold_node_ids": ["1ad8360d-d279-4f6e-a17b-fc014df462f4"], "answerability": "full"}
+{"set_id": "c48-s06", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c49-s01", "turn": 1, "gold_node_ids": ["6146c5df-bd75-4a26-8374-4737c4a7a8ed"], "answerability": "full"}
+{"set_id": "c49-s02", "turn": 1, "gold_node_ids": ["7cd776d3-dc3d-4fce-b69e-b5800f8e3c07"], "answerability": "full"}
+{"set_id": "c49-s03", "turn": 1, "gold_node_ids": ["a16a43a1-ba36-44bf-a33f-c2470902c267"], "answerability": "full"}
+{"set_id": "c49-s04", "turn": 1, "gold_node_ids": ["eb558531-15e7-4030-bed0-72eaa07b6f9c"], "answerability": "full"}
+{"set_id": "c49-s05", "turn": 1, "gold_node_ids": ["ee381c40-2a21-48a6-b6fa-24d0a2ced64e"], "answerability": "full"}
+{"set_id": "c49-s06", "turn": 1, "gold_node_ids": ["0765f678-af1f-47b9-adaf-c511037b9604"], "answerability": "full"}

@@ -1,0 +1,1 @@
+Does the answer fully address what the fragments can answer? 5 = fully answers what is answerable (and correctly says so when the fragments do not cover part of it); 3 = partial; 1 = ignores most of what was answerable, or fabricates instead of saying it doesn't know.

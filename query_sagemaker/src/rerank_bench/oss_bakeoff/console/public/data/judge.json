@@ -1,0 +1,1486 @@
+{
+  "meta": {
+    "judge_model": "us.anthropic.claude-opus-4-8",
+    "n_pairs": 100,
+    "method": "pairwise preference, anonymized, BOTH orderings, tie-default"
+  },
+  "verdicts": [
+    {
+      "id": "d0001",
+      "query": "I got into a car accident in a rental during a work trip, what now",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-fast",
+      "winner": "b",
+      "confidence": 0.835,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the most directly responsive document \u2014 'How do I report a car accident while traveling for business?', which gives the immediate action steps \u2014 at position 1, matching the employee's 'what now' intent. Ranking 1 leads with the insurance doc, which is secondary. Both share the same two top docs and similar lower ordering, so the top-position difference decides it in favor of Ranking 2."
+    },
+    {
+      "id": "d0002",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-fast",
+      "winner": "b",
+      "confidence": 0.925,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with the directly responsive 'Am I Allowed to Upgrade My Fare Class?' documents at positions 1 and 2, which precisely answer both parts of the question (yes you can upgrade, but Amazon only reimburses Lowest Logical Fare economy). Ranking 1 buries the best answer at position 2 and wastes position 1 on the tangential, sprawling Expense Types Table. Ranking 2 also surfaces the relevant 'out of policy' (first class = violation) and mileage upgrade docs earlier."
+    },
+    {
+      "id": "d0003",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-fast",
+      "winner": "b",
+      "confidence": 0.915,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places 'How Do I Submit an Expense Report?' \u2014 the document that most directly answers 'how do I file an expense report' \u2014 at position 1, whereas Ranking 1 buries it at position 3 behind a support-navigation doc and a rejection-troubleshooting doc. Ranking 2's top-of-list ordering matches the employee's direct how-to need far better, and it also more sensibly demotes the less-relevant 'rejected' doc."
+    },
+    {
+      "id": "d0004",
+      "query": "which expenses can I actually get reimbursed for",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-fast",
+      "winner": "b",
+      "confidence": 0.615,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both orderings share nearly identical top documents (the two near-duplicate 'What Expenses Are Reimbursable?' docs, mobile phone, and the comprehensive Expense Types Table at #4). The main distinction is which reimbursable-variant tops the list: Ranking 1 leads with the Non-Amazonians version (explicitly for non-employees), while Ranking 2 leads with the Switzerland version (still an employee-facing doc). Since the asker is a real employee, the non-employee-targeted doc is a slight mismatch at #1, making Ranking 2's lead marginally better-targeted. The difference is small because the core body text is identical, hence low confidence."
+    },
+    {
+      "id": "d0005",
+      "query": "I got into a car accident in a rental during a work trip, what now",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-pro",
+      "winner": "b",
+      "confidence": 0.87,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the directly actionable 'How do I report a car accident while traveling for business?' document at position 1, which precisely answers the employee's 'what now' question with immediate steps (emergency services, Travel Risk Management, inform manager). Ranking 1 demotes this to position 2 behind the insurance FAQ, which is supporting context rather than the immediate answer. Since the top slot matters most and the rest of both rankings are largely similar low-relevance docs, Ranking 2 better serves the employee."
+    },
+    {
+      "id": "d0006",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-pro",
+      "winner": "b",
+      "confidence": 0.905,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the two most directly responsive documents ('Am I Allowed to Upgrade My Fare Class?' Global Access and Regional) at positions 1 and 2, which together answer both parts of the question: yes you can upgrade to business/premium, but Amazon reimburses only the Lowest Logical Fare in economy and you pay the difference. Ranking 1 buries these at positions 2 and 4 and wastes its top slot on a generic Expense Types Table while interleaving tangential docs (combine travel, miles). Since the employee reads top results first, Ranking 2 serves the need better."
+    },
+    {
+      "id": "d0007",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-3.5",
+      "model_b": "cohere-v4-pro",
+      "winner": "b",
+      "confidence": 0.89,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the directly-responsive 'How Do I Submit an Expense Report?' document at position 1, exactly answering 'how do I file an expense report,' whereas Ranking 1 buries it at position 3 behind a support doc and a rejection-troubleshooting doc. The tails of both lists are nearly identical, so the top-position advantage decides it in favor of Ranking 2."
+    },
+    {
+      "id": "d0008",
+      "query": "I got into a car accident in a rental during a work trip, what now",
+      "model_a": "cohere-3.5",
+      "model_b": "ettin-1b",
+      "winner": "b",
+      "confidence": 0.85,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with 'How do I report a car accident while traveling for business?', the document that directly answers 'what now' with actionable steps (emergency services, Travel Risk Management, notify manager), placing the insurance overview second. Ranking 1 inverts these, putting the less actionable insurance doc first. The tails are nearly identical, so the top-position ordering is decisive and favors Ranking 2."
+    },
+    {
+      "id": "d0009",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-3.5",
+      "model_b": "ettin-1b",
+      "winner": "tie",
+      "confidence": 0.625,
+      "order1": "tie",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Both rankings share essentially identical top documents (the two seat-booking docs and the payment-fees doc that explicitly lists baggage/seat selection fees), which directly answer the reimbursability question. Differences are confined to lower-relevance middle positions: Ranking 1 helpfully places the Expense Types Table (which references reimbursable/non-reimbursable airfare fees) at position 5, while Ranking 2 leads with the more complete Global Access seat doc and promotes Out-of-Policy. These minor advantages roughly offset each other, making the orderings serve the employee about equally well."
+    },
+    {
+      "id": "d0010",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-3.5",
+      "model_b": "ettin-1b",
+      "winner": "b",
+      "confidence": 0.93,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the two 'Am I Allowed to Upgrade My Fare Class?' documents at positions 1-2, which directly and completely answer both parts of the question (yes you can book a higher class, but Amazon only reimburses the Lowest Logical Fare in economy and you pay the difference). Ranking 1 wastes position 1 on the generic Expense Types Table that never addresses fare class, and buries one of the key fare-upgrade docs at position 4. The top positions matter most, and Ranking 2 surfaces the genuinely most-helpful documents earliest."
+    },
+    {
+      "id": "d0011",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-3.5",
+      "model_b": "ettin-1b",
+      "winner": "b",
+      "confidence": 0.905,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with 'How Do I Book Travel For Work at Amazon?' (the most direct answer to the booking question) and 'What Hotel Accommodations am I Allowed to Book?' (directly covering the hotel part), whereas Ranking 1 buries the primary booking-overview doc at position 6 behind five near-duplicate Travel Profile setup variants. Profile setup is a prerequisite but secondary; surfacing the direct booking and hotel docs first better serves the employee's actual 'how do I book a flight and hotel' question."
+    },
+    {
+      "id": "d0012",
+      "query": "I can't figure out which expense category to use",
+      "model_a": "cohere-3.5",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.75,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings surface the two most relevant docs (the 'How Do I Find the Right Expense Type?' FAQ and the Expense Types Table) in the top two slots, but Ranking 1 leads with the explanatory FAQ that directly matches the employee's confusion before the raw reference table \u2014 the better orientation for someone who 'can't figure out' the category. Ranking 1 also keeps genuinely expense-related secondary docs (Mobile Phone expense type, Support, Deadline) ahead of off-topic travel-booking docs, whereas Ranking 2 elevates Hotel and Fare Class docs into positions 4-5, which are less relevant to choosing an expense category."
+    },
+    {
+      "id": "d0013",
+      "query": "I got into a car accident in a rental during a work trip, what now",
+      "model_a": "cohere-3.5",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.82,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the most directly actionable document ('How do I report a car accident while traveling for business?') at position 1, which best resolves the employee's urgent 'what now' need, and it demotes the large, irrelevant Expense Types Table to the bottom. Ranking 1 inverts the top two and damagingly elevates the irrelevant expense table to position 3."
+    },
+    {
+      "id": "d0014",
+      "query": "I need to move my flight to a different day, how do I change it",
+      "model_a": "cohere-3.5",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "The query is about modifying a flight. Ranking 1 places the 'Global Access' travel-change doc \u2014 which contains explicit step-by-step 'To modify a flight' instructions \u2014 at position 1, while Ranking 2 leads with the vaguer 'Regional' variant that lacks concrete modify steps. The most actionable answer should be seen first, favoring Ranking 1. Ranking 2 also misplaces an irrelevant expense-support doc (position 7) above more travel-relevant content, further weakening it."
+    },
+    {
+      "id": "d0015",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-3.5",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.95,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the two most directly responsive documents (Am I Allowed to Upgrade My Fare Class - Global Access and Regional, which explicitly state you can fly business but Amazon only reimburses Lowest Logical Fare in economy) at positions 1 and 2, grouped together, followed by other relevant upgrade/booking docs. Ranking 1 wastes the top slot on a tangential Expense Types Table and separates the two key upgrade docs with a less-relevant doc. Ranking 2 surfaces the genuine answer earliest."
+    },
+    {
+      "id": "d0016",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-3.5",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.8,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places 'How Do I Book Travel For Work at Amazon?' at position 1, which is the most directly responsive document to 'how do I book a flight and hotel.' Ranking 1 buries that doc at position 6 behind five near-duplicate regional profile-setup variants. While profile setup is a prerequisite, the booking doc itself references profile creation and directly answers the question, so leading with it serves the employee better at the position they see first."
+    },
+    {
+      "id": "d0017",
+      "query": "I got into a car accident in a rental during a work trip, what now",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-0.6b",
+      "winner": "b",
+      "confidence": 0.8,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings have the same two top documents but in swapped order. Ranking 2 leads with 'How do I report a car accident while traveling for business?' which gives the immediate actionable steps the employee urgently needs ('what now'), then insurance coverage. Ranking 1 inverts this, leading with insurance details which are secondary to knowing what to do right now. The procedural reporting doc is the most directly responsive to the question, so surfacing it first serves the distressed employee better."
+    },
+    {
+      "id": "d0018",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.735,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings lead with the two 'Booking a Seat' docs which directly answer how baggage/seat costs are handled and expensed. The decisive difference is the 'Why can I not see the Amazon form of payment' doc, which explicitly names both 'Seat selection fees' and 'Baggage fees' as ancillary charges \u2014 the exact terms in the question. Ranking 1 places it at position 3 where the employee will read it, while Ranking 2 buries it at position 7 behind generic 'What Expenses Are Reimbursable' boilerplate. R2's slight edge (Global Access superset before Regional) is minor since both top docs appear early in both rankings."
+    },
+    {
+      "id": "d0019",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-0.6b",
+      "winner": "b",
+      "confidence": 0.93,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the two 'Am I Allowed to Upgrade My Fare Class?' documents \u2014 which directly answer both parts of the question (yes you can, but Amazon reimburses only Lowest Logical Fare in economy and you pay the difference) \u2014 at positions 1 and 2. Ranking 1 buries the most relevant doc at position 2 and its variant at position 4, leading instead with the generic Expense Types Table. The top positions decide it, and Ranking 2 surfaces the precise, complete answer earliest."
+    },
+    {
+      "id": "d0020",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.65,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two exact-match hotel cancel/modify docs at positions 1-2, so the decision is marginal. Ranking 1 leads with the Global Access variant, which contains the concrete step-by-step click-path for modifying/canceling a hotel booking, making it slightly more directly actionable for the 'how do I' question than the less procedural Regional variant that Ranking 2 leads with. Ranking 1 also surfaces the more detailed Global Access 'change travel plans' doc earlier. The edge is small since both resolve the need at the top."
+    },
+    {
+      "id": "d0021",
+      "query": "I got into a car accident in a rental during a work trip, what now",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.8,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the directly actionable 'How do I report a car accident while traveling for business?' document at position 1, which precisely answers the employee's urgent 'what now' question (emergency services, Travel Risk Management reporting, inform manager). Ranking 1 buries this at position 2 behind the insurance-eligibility FAQ. For an emergency action query, the procedural 'what to do' doc deserves the top slot, making Ranking 2's top ordering clearly superior; the rest of both lists is nearly identical."
+    },
+    {
+      "id": "d0022",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings lead with the two near-identical 'Booking a Seat' docs that directly address baggage/seat being part of the Lowest Logical Fare and reimbursable incidentals (section 4.7). The decisive difference is the 'Why can I not see the Amazon form of payment' doc, which explicitly enumerates 'Seat selection fees' and 'Baggage fees' as ancillary charges \u2014 highly relevant to the reimbursability question. Ranking 1 places this at position 3 (top, visible), while Ranking 2 buries it at position 12 and instead promotes generic near-duplicate 'What Expenses Are Reimbursable?' regional variants. Ranking 2's only edge (swapping the order of the two essentially equivalent Booking-a-Seat docs) is trivial by comparison."
+    },
+    {
+      "id": "d0023",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.86,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the two most directly on-point documents (the 'Am I Allowed to Upgrade My Fare Class?' Global Access and Regional variants) at positions 1 and 2 \u2014 these directly answer both parts of the question (you can fly business but Amazon only reimburses Lowest Logical Fare in economy). It also keeps the highly relevant 'What Flights Am I Allowed to Book?' at position 4. Ranking 1 leads with the tangential Expense Types Table and splits the two upgrade docs across positions 2 and 4 with a partial-relevance doc intervening, giving a weaker top-of-list experience."
+    },
+    {
+      "id": "d0024",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.89,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with 'How Do I Book Travel For Work at Amazon?', the single most directly responsive document to a 'how do I book' question, whereas Ranking 1 buries it at position 6 behind five redundant Travel Profile variants. Ranking 2 also surfaces the substantive flight and hotel booking content (hotel accommodations at 6, flights at 7) much earlier, matching the question's explicit flight+hotel intent, while Ranking 1 pushes the flights doc down to position 13."
+    },
+    {
+      "id": "d0025",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.585,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings lead with the two correct hotel cancel/modify docs at positions 1-2. Ranking 1 places the Global Access version (with explicit step-by-step instructions) first, making the lead document more directly actionable than Ranking 2's Regional version (conceptual only). Since the top position carries the most weight and both rankings answer the question via their top docs, Ranking 1's more actionable lead slightly outweighs Ranking 2's modest mid-tier improvement (surfacing hotel-accommodations over generic profile-setup variants)."
+    },
+    {
+      "id": "d0026",
+      "query": "how do I set up my travel profile for the first time",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.55,
+      "order1": "b",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Both rankings place the five Travel Profile setup variants in the top 5 and are nearly identical elsewhere. The deciding factor is the lead document: Ranking 2 opens with the standard 'Regional' setup doc, which is the more sensible default for a generic, region-unspecified first-time query, whereas Ranking 1 leads with the specialized 'Global Access' variant. The difference is marginal since content is near-identical, hence low confidence."
+    },
+    {
+      "id": "d0027",
+      "query": "what do I do if my flight gets cancelled by the airline",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.72,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings put the two near-equivalent 'I need to change my travel plans' docs at positions 1-2. The decisive difference is the Travel Counselor contact document, which is highly relevant for an airline-initiated cancellation (often requires live support, prioritization within 72 hours). Ranking 2 places it at position 3, while Ranking 1 buries it at position 9 behind less-relevant hotel/seat/fare docs. Ranking 2 surfaces the most actionable disruption-handling content earliest."
+    },
+    {
+      "id": "d0028",
+      "query": "where do I find a trip I booked a few weeks ago",
+      "model_a": "cohere-3.5",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.55,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two directly-answering 'Where Can I Locate My Previously Booked Trips?' docs at positions 1-2, so the core need is served equally at the top. Ranking 1 edges ahead in the secondary positions by surfacing the more general 'I need to change my travel plans' docs (which contain trip-navigation steps like 'Navigate to Trips') at positions 3-4, whereas Ranking 2 inserts the narrower hotel-specific cancel/modify doc at position 3. The difference is modest since the actual answer is already at the top in both."
+    },
+    {
+      "id": "d0029",
+      "query": "which expenses can I actually get reimbursed for",
+      "model_a": "cohere-v4-fast",
+      "model_b": "cohere-v4-pro",
+      "winner": "tie",
+      "confidence": 0.675,
+      "order1": "a",
+      "order2": "tie",
+      "consistent": false,
+      "rationale": "Both rankings are nearly identical with the same documents in the top 4 (the two 'What Expenses Are Reimbursable?' variants, Mobile Phone, Expense Types Table) whose core reimbursement-definition text is the same. Ranking 1 slightly better serves a typical Amazon employee by leading with the Switzerland employee variant rather than the Non-Amazonians variant (which targets contractors/guests/candidates, a different population). Mid-tier ordering differences are minor and offsetting, so the edge is small."
+    },
+    {
+      "id": "d0030",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-v4-fast",
+      "model_b": "ettin-1b",
+      "winner": "tie",
+      "confidence": 0.59,
+      "order1": "b",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Both rankings lead with the two near-identical 'Process for Booking a Seat' docs (the most on-point, covering seat + baggage + reimbursement via section 4.7 incidentals). The decisive difference is that Ranking 2 places the 'Why can I not see the Amazon form of payment' doc \u2014 which explicitly names 'Seat selection fees' and 'Baggage fees' as ancillary/non-central-billed charges \u2014 at position 3 instead of Ranking 1's position 4, and follows with the cleanest generic 'What Expenses Are Reimbursable - Global-ish' doc earlier. Ranking 1's only real edge is placing the noisy Expense Types Table higher, which is minor. The improvements are modest, so low-moderate confidence."
+    },
+    {
+      "id": "d0031",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-v4-fast",
+      "model_b": "ettin-1b",
+      "winner": "tie",
+      "confidence": 0.575,
+      "order1": "a",
+      "order2": "tie",
+      "consistent": false,
+      "rationale": "Both rankings correctly place the two 'Am I Allowed to Upgrade My Fare Class?' docs (the bullseye answer: yes you can fly business class but Amazon reimburses only Lowest Logical Fare economy) at positions 1-2, essentially tied. Ranking 1 edges out in the mid-tier: it surfaces 'Why is my booking out of policy' (which explicitly notes first class is a hard policy violation \u2014 highly pertinent) at position 5 and 'What Flights Am I Allowed to Book' at 7, getting both strong supporting docs into the top 7. Ranking 2 places 'What Flights' at 5 but buries 'out of policy' at 9 behind tangential docs (combine travel, miles, irrelevant Trail code). Ranking 1's only notable flaw is the noisy Expense Table at position 3, but on balance it delivers more genuinely helpful answers earlier."
+    },
+    {
+      "id": "d0032",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-v4-fast",
+      "model_b": "ettin-1b",
+      "winner": "b",
+      "confidence": 0.89,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with the single most directly responsive doc ('How Do I Book Travel For Work at Amazon?') and the hotel-booking doc in positions 1-2, directly answering both halves of the question. Ranking 1 buries the core booking doc at position 5 beneath four redundant region-specific Travel Profile variants, forcing the employee past less-relevant content to reach the best answer."
+    },
+    {
+      "id": "d0033",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-fast",
+      "model_b": "ettin-1b",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places the directly responsive 'How Do I Submit an Expense Report?' (the actual step-by-step how-to guide) at position 1, which precisely answers 'how do I file an expense report.' Ranking 2 demotes that document to position 2 in favor of a support/troubleshooting document. Since the top position is what the employee reads first and weights most, and Ranking 1 also has the more procedurally-relevant 'deadline for submitting' doc at position 3 vs. a rejection-troubleshooting doc in Ranking 2, Ranking 1 surfaces the genuinely most helpful content earliest. The lower halves are essentially equivalent."
+    },
+    {
+      "id": "d0034",
+      "query": "which expenses can I actually get reimbursed for",
+      "model_a": "cohere-v4-fast",
+      "model_b": "ettin-1b",
+      "winner": "tie",
+      "confidence": 0.59,
+      "order1": "tie",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "The top 5 documents are identical in content between both rankings (positions 1-2 are merely swapped but contain word-for-word identical core definitions of reimbursable expenses). Differences appear only in the mid-to-lower tier reordering of process/logistics docs versus travel-booking docs, which the employee is less likely to read and where the relevance trade-offs roughly offset. No clear advantage either way."
+    },
+    {
+      "id": "d0035",
+      "query": "I can't figure out which expense category to use",
+      "model_a": "cohere-v4-fast",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.65,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two most relevant docs ('How Do I Find the Right Expense Type?' and 'Expense Types Table') at the top, but Ranking 1 leads with the guidance document that directly and concisely answers the meta-question and points to the authoritative Expense Type Guide, which is a slightly better #1 for someone who 'can't figure out which category to use.' More decisively, Ranking 1's mid-tier ordering elevates expense-relevant documents (Mobile Phone expense type at position 4, lost receipt, expense support) over unrelated travel-booking documents, whereas Ranking 2 promotes hotel accommodations and fare-class upgrades (pure travel booking, irrelevant to category selection) into positions 4-5. Ranking 1 is better aligned with the expense-categorization need throughout."
+    },
+    {
+      "id": "d0036",
+      "query": "I need to move my flight to a different day, how do I change it",
+      "model_a": "cohere-v4-fast",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings surface the two 'change travel plans' docs at the top, but Ranking 1 places the Global Access version \u2014 which contains explicit step-by-step flight modification instructions ('Select your segment and select Modify... Search for new flights and complete checkout') \u2014 at position 1, exactly answering how to move a flight to a different day. Ranking 2 leads with the vaguer Regional version that lacks concrete modify steps. Since top position matters most and the question needs actionable steps, Ranking 1 serves the employee better. Ranking 1 also keeps the irrelevant expense docs clustered at the bottom, whereas Ranking 2 awkwardly elevates an expense-support doc to position 7."
+    },
+    {
+      "id": "d0037",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-v4-fast",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.85,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with 'How Do I Book Travel For Work at Amazon?', the most directly responsive document to a general 'how do I book a flight and hotel' question, then follows with prerequisite Travel Profile setup docs. Ranking 1 buries that key doc at position 5 behind four regional profile-setup variants. Both share similar mid/lower ordering, so the top-position difference decides it in favor of Ranking 2."
+    },
+    {
+      "id": "d0038",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-fast",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.78,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places 'How Do I Submit an Expense Report?' \u2014 the direct step-by-step how-to that exactly answers 'how do I file an expense report' \u2014 at position 1, while Ranking 2 demotes it to position 2 behind a support-navigation doc. Since top position carries the most weight and the question is a direct procedural request, Ranking 1's ordering serves the employee better. Remaining positions are nearly identical with only minor secondary reorderings."
+    },
+    {
+      "id": "d0039",
+      "query": "which expenses can I actually get reimbursed for",
+      "model_a": "cohere-v4-fast",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.68,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings share the same regionally-specific 'What Expenses Are Reimbursable?' docs at top, but Ranking 2 elevates the comprehensive Expense Types Table (which actually enumerates specific reimbursable expense categories with descriptions) to position 2, whereas Ranking 1 buries it at position 4 behind a narrow single-expense (mobile phone) doc. For a general 'which expenses can I get reimbursed' question, the enumerated expense table is the most concretely useful document, so surfacing it earlier serves the employee better."
+    },
+    {
+      "id": "d0040",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.7,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two 'Booking a Seat' docs at the top (the most directly relevant). The decisive difference is positions 3-7: Ranking 1 surfaces the 'Why can I not see the Amazon form of payment' doc (which explicitly names baggage fees and seat selection fees as ancillary charges) at #4 and the upgrade doc (premium seating not reimbursable) at #3, whereas Ranking 2 elevates a generic, low-information 'What Expenses Are Reimbursable - Global-ish' doc to #3 and buries the highly specific payment/ancillary doc at #7. Ranking 1 places the genuinely more on-point supporting documents earlier."
+    },
+    {
+      "id": "d0041",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.61,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two 'Cancel or Modify a Hotel Booking' docs at the top, but Ranking 1 leads with the Global Access version which contains explicit step-by-step instructions (Log in, Navigate to Trips, select Modify/Cancel, confirm) \u2014 exactly what an employee asking 'how do I cancel or change' needs. Ranking 2 leads with the Regional version which gives only conceptual guidance without click-by-click steps. Since the top position is what the employee reads first and the query is generic with no regional context, Ranking 1's ordering surfaces the most actionable answer earliest. The edge is modest because both place the key docs in the top two."
+    },
+    {
+      "id": "d0042",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.88,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places 'How Do I Submit an Expense Report?' \u2014 the document that directly answers the how-to question with step-by-step submission guides \u2014 at position 1, while Ranking 2 demotes it to position 3 behind a support-routing doc and a deadline doc that are only tangentially relevant. Since top positions matter most and both rankings are otherwise very similar, Ranking 1 better serves the employee."
+    },
+    {
+      "id": "d0043",
+      "query": "which expenses can I actually get reimbursed for",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-0.6b",
+      "winner": "b",
+      "confidence": 0.585,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings share nearly identical top positions \u2014 the two 'What Expenses Are Reimbursable?' variants (Switzerland/Non-Amazonians) are swapped but contain identical core definitions, and the Mobile Phone and Expense Types Table docs are placed identically. The decisive differences are in the mid-list: Ranking 1 elevates the off-topic 'Lost a Receipt' doc to position 5, while Ranking 2 correctly demotes it to 14, and Ranking 2 places the corporate-card personal/non-reimbursable expense doc higher where it more directly addresses the reimbursable-vs-not distinction. Ranking 1's only edge (Switzerland general definition over Non-Amazonians at the top) is marginal since both are imperfect partial fits. Overall Ranking 2 surfaces a cleaner relevance ordering."
+    },
+    {
+      "id": "d0044",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.78,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings share nearly identical top-3 (the two seat-booking docs that directly address seat/baggage reimbursement, plus the upgrade doc). The decisive difference is the 'Why can I not see the Amazon form of payment' doc, which explicitly names both 'Seat selection fees' and 'Baggage fees' \u2014 the exact terms in the query. Ranking 1 surfaces it at position 4 (top tier), while Ranking 2 buries it at position 12, beneath a stack of generic near-duplicate 'What Expenses Are Reimbursable?' boilerplate that doesn't specifically address baggage or seats. Ranking 1 places the genuinely most query-specific content earlier."
+    },
+    {
+      "id": "d0045",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.565,
+      "order1": "b",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Top 2 positions are identical (the two fare-class upgrade docs that directly answer both parts of the question). Ranking 2 edges ahead by elevating 'What Flights Am I Allowed to Book?' to position 4 (strong supporting context on the economy/Lowest Logical Fare reimbursement baseline) and by burying the four low-relevance Travel Profile variants deeper. Ranking 1's only notable advantage is placing the 'out of policy' doc higher, but that doc is more tangential to the reimbursement question. Overall a modest edge to Ranking 2."
+    },
+    {
+      "id": "d0046",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.85,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the most directly responsive document ('How Do I Book Travel For Work at Amazon?') at position 1, while Ranking 1 buries it at position 5 behind four near-duplicate regional Travel Profile variants. Ranking 2 also surfaces the flight and hotel booking specifics (positions 6-7) ahead of cancel/modify docs, better matching the booking intent of the query."
+    },
+    {
+      "id": "d0047",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.615,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two directly-relevant hotel cancel/modify docs at the top, just swapped. Ranking 1 leads with the Global Access variant containing explicit step-by-step navigation instructions (log in, Trips > Upcoming, Modify/Cancel), which is more immediately actionable for the employee than the Regional variant's conceptual overview that Ranking 2 leads with. Mid-tier differences (accommodations vs. auto-confirmation doc placement) roughly cancel out. The edge is small but favors Ranking 1."
+    },
+    {
+      "id": "d0048",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "The question 'how do I file an expense report' is most directly answered by the 'How Do I Submit an Expense Report? - Global' document, which provides the step-by-step submission guides. Ranking 1 places this at position 1, while Ranking 2 demotes it to position 2 in favor of a support-navigation document ('How Do I Get Support'). Since the employee reads the top result first and wants actual filing instructions rather than support options, Ranking 1's ordering surfaces the genuinely most-helpful document earliest. The rest of both rankings are largely similar in their handling of partially-relevant and irrelevant travel docs."
+    },
+    {
+      "id": "d0049",
+      "query": "how do I set up my travel profile for the first time",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.565,
+      "order1": "b",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Both rankings place all five 'Set Up Travel Profile' variants in the top five, so top-of-list quality is essentially equivalent (Ranking 1's lead with the slightly more complete Global Access doc roughly offsets Ranking 2's lead with Regional). The deciding factor is tail hygiene: Ranking 2 pins the wholly irrelevant expense/corporate-card docs at the bottom (19-20), whereas Ranking 1 floats the 'Corporate Card Personal Expense' doc up to position 13 above several more travel-relevant docs. Slight edge to Ranking 2, but it's close to a tie."
+    },
+    {
+      "id": "d0050",
+      "query": "what do I do if my flight gets cancelled by the airline",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.66,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two 'change travel plans' docs in the top two, which are the core answers. The differentiator is the Travel Counselor contact info doc: for an airline-initiated cancellation, self-service often can't handle the disruption and the employee needs to contact a counselor to rebook. Ranking 2 surfaces this at position 3, whereas Ranking 1 buries it at position 9 behind less-relevant hotel-cancellation docs. Ranking 2 better matches the actual resolution path for this scenario."
+    },
+    {
+      "id": "d0051",
+      "query": "where do I find a trip I booked a few weeks ago",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.575,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings place the two directly-answering 'Where Can I Locate My Previously Booked Trips?' docs at the top, so the employee's need is resolved equally well at first glance. Ranking 2 has slightly better mid-list ordering: it elevates docs that mention navigating to Trips and the tech-support doc that addresses 'missing bookings,' while demoting the tangential 'Trail code' doc below them. The top-2 swap (Global vs Regional variant) is minor. The edge is small but favors Ranking 2."
+    },
+    {
+      "id": "d0052",
+      "query": "which expenses can I actually get reimbursed for",
+      "model_a": "cohere-v4-fast",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.61,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings share nearly identical content with the same near-duplicate reimbursability docs at the top. Ranking 1 leads with the Switzerland variant (which still contains standard global guidance and applies to actual employees) over the Non-Amazonians variant (explicitly scoped to contractors/guests, a poorer match for an employee saying 'I'), and also places the highly relevant Expense Types Table one slot higher (#4 vs #5). These are small but genuine advantages for the default employee persona."
+    },
+    {
+      "id": "d0053",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-v4-pro",
+      "model_b": "ettin-1b",
+      "winner": "tie",
+      "confidence": 0.55,
+      "order1": "b",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Both rankings lead with the same two highly-relevant Booking-a-Seat documents and contain identical pools. Ranking 2 promotes the single most precisely-matching document \u2014 'Why can I not see the Amazon form of payment' which literally names 'Seat selection fees' and 'Baggage fees' \u2014 to position 3 instead of 4, surfacing the best answer slightly earlier in the most-read region, and leads with the richer Global Access seat doc. Ranking 1 better places the Expense Types Table (with its Airfare Fees/reimbursable-fees reference) at position 5 vs 12, partly offsetting this. The difference is marginal and near a tie, but Ranking 2's top-position advantage on the most on-point document gives it a slight edge."
+    },
+    {
+      "id": "d0054",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-v4-pro",
+      "model_b": "ettin-1b",
+      "winner": "b",
+      "confidence": 0.585,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings place the two decisive 'upgrade fare class' docs (which directly answer both 'can I fly business class' and 'how much is reimbursed') at positions 1-2, just swapping the regional/global variants, so the top is essentially a tie. Ranking 2 wins on the supporting tier: it surfaces 'What Flights Am I Allowed to Book?' (the economy/Lowest Logical Fare baseline) at position 5 vs 9, 'Why is my booking out of policy?' (which explicitly addresses first/premium class being a policy violation) at 9 vs 12, and the premium-cabin payment doc at 10 vs 20. Ranking 1 only advantages with the miles-upgrade doc earlier, which is more secondary. Net, Ranking 2 places the genuinely most-helpful documents earlier."
+    },
+    {
+      "id": "d0055",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-v4-pro",
+      "model_b": "ettin-1b",
+      "winner": "b",
+      "confidence": 0.88,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places the single most directly responsive document ('How Do I Book Travel For Work at Amazon?') at position 1 and the relevant hotel accommodations doc at position 2, surfacing the genuinely most-helpful content first. Ranking 1 buries the core booking-overview doc at position 4 behind three Travel Profile variants, including arbitrary regional ones (India, China) that aren't justified for a general, region-agnostic query."
+    },
+    {
+      "id": "d0056",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-pro",
+      "model_b": "ettin-1b",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings contain the same documents, but the question 'how do I file an expense report' is most directly answered by 'How Do I Submit an Expense Report?', which provides step-by-step submission guides. Ranking 1 places this at position 1, while Ranking 2 leads with the more peripheral 'How Do I Get Support for My Expense Report?' doc. Since top placement carries the most weight and Ranking 1 surfaces the genuine how-to guide first, it better serves the employee. The lower-ranked secondary and travel docs differ only trivially between the two orderings."
+    },
+    {
+      "id": "d0057",
+      "query": "I can't figure out which expense category to use",
+      "model_a": "cohere-v4-pro",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.67,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two most relevant docs (the 'How Do I Find the Right Expense Type?' guidance and the 'Expense Types Table') in the top two, just swapped. Ranking 1 leads with the concise explanatory guidance that directly mirrors the question ('how do I find the right expense type') and points to the full guide, which is the better lead for a confused employee, with the raw reference table immediately following. Additionally, Ranking 1's secondary ordering keeps docs that actually discuss selecting expense types (Mobile Phone, Personal Expense, Support) higher, whereas Ranking 2 elevates the irrelevant 'Hotel Accommodations' booking doc to position 4. Close call given the shared top two, but Ranking 1 is modestly better."
+    },
+    {
+      "id": "d0058",
+      "query": "I need to move my flight to a different day, how do I change it",
+      "model_a": "cohere-v4-pro",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings surface the two 'I need to change my travel plans' docs plus the hotel modify doc at the top three. The decisive difference is the top position: Ranking 1 leads with the Global Access version that contains explicit step-by-step flight-modify instructions ('Select your segment and select Modify... Search for new flights and complete checkout'), which directly answers 'how do I change it.' Ranking 2 leads with the thinner Regional version that lacks detailed steps and mostly points to a Travel Counselor. Since the top position is weighted most heavily and the employee needs actionable how-to instructions, Ranking 1 serves better."
+    },
+    {
+      "id": "d0059",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-v4-pro",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.78,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 places 'How Do I Book Travel For Work at Amazon?' \u2014 the document that most directly and completely answers how to book a flight and hotel \u2014 at position 1, whereas Ranking 1 buries it at position 4 behind three regional Travel Profile setup docs (a prerequisite topic, not the core answer). Since the top position is what the employee sees first and the booking-overview doc is the cleanest answer, Ranking 2 serves the employee better despite the rest of the orderings being largely similar."
+    },
+    {
+      "id": "d0060",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-pro",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.79,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings share nearly identical document sets and ordering throughout, but they differ critically at the top: Ranking 1 leads with 'How Do I Submit an Expense Report?' (the actual step-by-step how-to that directly answers 'how do I file an expense report'), while Ranking 2 leads with 'How Do I Get Support for My Expense Report?' (a help/navigation doc). The direct procedural answer belongs first, making Ranking 1's top placement superior; remaining differences are minor reorderings of comparable value."
+    },
+    {
+      "id": "d0061",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.7,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings share the same top-2 seat-booking documents, but Ranking 1 surfaces the most directly answer-bearing docs earlier: the upgrade fare-class doc (seat/premium fees) at #3 and especially the 'Why can I not see Amazon form of payment' doc \u2014 which explicitly names both 'Seat selection fees' and 'Baggage fees' \u2014 at #4. Ranking 2 buries that highly specific doc to #7 and instead promotes a generic 'What Expenses Are Reimbursable - Global-ish' pointer doc to #3, which doesn't specifically address baggage or seat fees. Ranking 1's earlier clustering of specific, on-topic content better serves the employee."
+    },
+    {
+      "id": "d0062",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.67,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings correctly surface the two hotel cancellation/modification docs at the top. Ranking 1 leads with the Global Access variant that contains explicit step-by-step instructions (log in, navigate, select Modify/Cancel), which is the most directly actionable answer to 'how do I cancel or change a hotel reservation,' whereas Ranking 2 leads with the more conceptual Regional variant. Since position #1 carries the most weight and the question has no regional context, leading with the procedural doc is slightly better. Lower positions differ only among marginally relevant secondary docs and are roughly a wash."
+    },
+    {
+      "id": "d0063",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.82,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places the most directly responsive document ('How Do I Submit an Expense Report?' with step-by-step submission guides) at position 1, exactly answering the literal 'how do I file an expense report' question. Ranking 2 demotes this canonical how-to to position 3 behind a support-routing doc and a deadline doc, which are less directly responsive. The top-position advantage decisively favors Ranking 1."
+    },
+    {
+      "id": "d0064",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.78,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings share near-identical top 3 (the two seat-booking docs and the fare-upgrade doc that cover seat/baggage reimbursability). The decisive difference is the 'Why can I not see the Amazon form of payment' doc, which explicitly names both 'Seat selection fees' and 'Baggage fees' \u2014 the exact query terms \u2014 and is the most query-specific doc in the pool. Ranking 1 places it at position 4 where the employee will read it, while Ranking 2 buries it at position 12 behind the Expense Types Table and six generic boilerplate reimbursement variants. Ranking 2's only edge (Global Access before Regional booking doc) is minor by comparison."
+    },
+    {
+      "id": "d0065",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.7,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings place the two directly-answering 'Upgrade My Fare Class' docs at positions 1-2 (just swapped), so the top tier is equivalent. The difference is in positions 3-5: Ranking 2 surfaces the highly-relevant 'What Flights Am I Allowed to Book' (cabin-class policy) at pos 4 and the airfare Expense Types entry at pos 3, while Ranking 1 buries the flight-policy doc at pos 9 and elevates tangential miles-upgrade and earn-miles docs to pos 3-4. Since the query's reimbursement aspect is better served by the cabin-class and airfare docs than by personal-miles docs, Ranking 2 orders the genuinely more helpful documents earlier."
+    },
+    {
+      "id": "d0066",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.8,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both orderings contain the same pool and are similar in lower positions, but the single most directly responsive document \u2014 'How Do I Book Travel For Work at Amazon?' \u2014 sits at position 1 in Ranking 2 versus position 4 in Ranking 1 (buried behind region-specific profile docs). Since top positions matter most and this doc most directly answers 'how do I book a flight and hotel,' Ranking 2 serves the employee better, despite Ranking 1 having slightly cleaner ordering among the profile-setup near-duplicates."
+    },
+    {
+      "id": "d0067",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.68,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings put the directly-relevant hotel cancel/modify docs at the top two positions, but Ranking 1 leads with the Global Access variant that contains concrete step-by-step instructions (more actionable) rather than the conceptual Regional variant. Ranking 1 also keeps hotel-related docs (new confirmation, accommodations) clustered higher, whereas Ranking 2 inserts less-relevant Travel Profile setup docs ahead of the hotel confirmation doc."
+    },
+    {
+      "id": "d0068",
+      "query": "how do I file an expense report",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.8,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places the most directly responsive document \u2014 'How Do I Submit an Expense Report?' with actual step-by-step guidance \u2014 at position 1, while Ranking 2 demotes it to position 2 in favor of a support/troubleshooting document. For a direct procedural 'how do I file' question, the submission guide is the best top hit, and top position carries the most weight. The rest of the orderings are nearly identical."
+    },
+    {
+      "id": "d0069",
+      "query": "how do I set up my travel profile for the first time",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.55,
+      "order1": "tie",
+      "order2": "tie",
+      "consistent": true,
+      "rationale": "Both rankings place all five 'Set Up Travel Profile' variants in the top 5 and are functionally identical through position 10. The only top-position difference is swapping Global Access vs Regional at positions 1-2 \u2014 near-duplicate generic docs that both fully answer the question (Ranking 1's Global Access is marginally more complete; Ranking 2's tail clustering is marginally better). These minor advantages cancel out, and either ordering fully serves the employee from position 1."
+    },
+    {
+      "id": "d0070",
+      "query": "what do I do if my flight gets cancelled by the airline",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.635,
+      "order1": "tie",
+      "order2": "b",
+      "consistent": false,
+      "rationale": "Both rankings place the genuinely most relevant documents \u2014 the two 'I need to change my travel plans' variants and the Travel Counselor contact doc \u2014 in the same top-3 positions. The only top-level difference is which change-plans variant leads (Ranking 1 leads with the detailed Global Access step-by-step version, Ranking 2 with the Regional version that mentions contacting a Travel Counselor when self-service fails). Both are highly relevant. The middle-position differences are between roughly equally irrelevant documents (seat booking, miles upgrade, lost receipt). The employee's experience would be essentially the same under either ordering."
+    },
+    {
+      "id": "d0071",
+      "query": "where do I find a trip I booked a few weeks ago",
+      "model_a": "cohere-v4-pro",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.575,
+      "order1": "a",
+      "order2": "tie",
+      "consistent": false,
+      "rationale": "Both rankings place the two directly-answering 'Where Can I Locate My Previously Booked Trips?' docs at positions 1-2 (just swapping regional/global, which is a wash given unknown region). The edge goes to Ranking 1 because it surfaces the navigation-bearing 'change travel plans' doc (which describes finding Upcoming Trips) at position 3, whereas Ranking 2 promotes the narrower hotel-modify doc to position 3. The difference is marginal and both serve the employee well."
+    },
+    {
+      "id": "d0072",
+      "query": "I can't figure out which expense category to use",
+      "model_a": "ettin-1b",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.7,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings surface the two most relevant docs (the Expense Type 'how to find' guide and the Expense Types Table) in the top two, so the core need is met either way. But Ranking 1 leads with the conversational how-to guide that directly answers the question and points to the lookup, then the detailed table \u2014 a cleaner reading order. Ranking 1 also keeps expense-adjacent support docs higher while pushing irrelevant travel-booking docs (hotels, fare-class upgrades) down, whereas Ranking 2 elevates those booking docs above more relevant expense support content."
+    },
+    {
+      "id": "d0073",
+      "query": "I need to move my flight to a different day, how do I change it",
+      "model_a": "ettin-1b",
+      "model_b": "nemotron-1b-v2",
+      "winner": "a",
+      "confidence": 0.69,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings put the two 'change my travel plans' docs at the top, but the Global Access version contains explicit step-by-step flight modification instructions ('Select Modify... Search for new flights and complete checkout') while the Regional version is thinner and mostly defers to a Travel Counselor. Ranking 1 places the more actionable Global Access doc first, which is exactly what the employee asking 'how do I change it' needs to see first; Ranking 2 buries it at position 2 behind the weaker Regional doc."
+    },
+    {
+      "id": "d0074",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "ettin-1b",
+      "model_b": "nemotron-1b-v2",
+      "winner": "tie",
+      "confidence": 0.585,
+      "order1": "tie",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "The top 4 positions\u2014the documents the employee actually reads first\u2014are functionally identical between both rankings, with only the two near-duplicate 'Process for Booking a Seat' variants swapped. The mid-list differences largely offset: Ranking 2 helpfully elevates the relevant 'What Flights Am I Allowed to Book' doc (pos 11 vs 14), while Ranking 1 elevates the partially-relevant 'Why is my booking out of policy' doc and sensibly keeps Global-ish ahead of the narrow Non-Amazonians variant. These minor effects roughly cancel, so the orderings serve the employee about equally well."
+    },
+    {
+      "id": "d0075",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "ettin-1b",
+      "model_b": "nemotron-1b-v2",
+      "winner": "b",
+      "confidence": 0.74,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings tie at the top (swapped near-duplicate upgrade docs answering the core question). Ranking 2 better orders the secondary docs: it surfaces 'What Flights Am I Allowed to Book?', 'Can I upgrade using miles?', and 'Why is my booking out of policy?' (which explicitly states first class is a hard violation) earlier, while Ranking 1 buries the out-of-policy doc at position 9 and elevates tangential docs (combine travel, earn miles)."
+    },
+    {
+      "id": "d0076",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.65,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings correctly surface the two 'Am I Allowed to Upgrade My Fare Class?' docs at the top (only swapped), which directly answer both parts of the question. The decisive difference is position 3: Ranking 1 places the relevant 'Combine Work and Personal Travel' reimbursement doc there, while Ranking 2 elevates the sprawling, tangential 'Expense Types Table' \u2014 making Ranking 1's high positions more useful."
+    },
+    {
+      "id": "d0077",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.835,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places the single most directly responsive document ('How Do I Book Travel For Work at Amazon?') at position 1 and the hotel accommodations doc at position 2, directly matching the 'flight and hotel' query. Ranking 2 demotes that core booking doc to position 3 behind two Travel Profile setup variants and pushes the hotel doc to position 6, front-loading near-duplicate regional profile docs the employee didn't ask about. Since top positions matter most, Ranking 1 surfaces the genuinely most-helpful content earliest."
+    },
+    {
+      "id": "d0078",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.67,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two exact-match hotel cancel/modify documents at the top, but Ranking 1 leads with the Global Access variant that contains the concrete step-by-step cancel/modify instructions (most actionable for this how-to question), whereas Ranking 2 leads with the Regional variant that only describes the conceptual approach. Ranking 1 also orders the secondary 'change travel plans' pair with the more detailed Global Access version first. The advantage is modest since the top-two set is identical, just reordered."
+    },
+    {
+      "id": "d0079",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.68,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two hotel cancel/modify docs at positions 1-2, but Ranking 1 leads with the Global Access version containing explicit step-by-step click-path instructions (more actionable for 'how do I cancel or change'), whereas Ranking 2 leads with the more conceptual Regional version. Ranking 1 also keeps hotel-related content (the 'new hotel confirmation' doc) higher (pos 5) than Ranking 2 (pos 8), which instead surfaces less-relevant Travel Profile setup docs earlier. Differences are modest but consistently favor Ranking 1."
+    },
+    {
+      "id": "d0080",
+      "query": "how do I set up my travel profile for the first time",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.55,
+      "order1": "a",
+      "order2": "tie",
+      "consistent": false,
+      "rationale": "Both rankings place all five Travel Profile setup variants in the top five and the booking doc at position six, so they are nearly equivalent for this query. Ranking 1 leads with the 'Global Access' variant, which uniquely includes a 'How to book after profile setup' section, making it marginally more complete for a first-time user than the 'Regional' variant that leads Ranking 2. The tail differences are immaterial. This is close to a tie, with only a slight edge to Ranking 1."
+    },
+    {
+      "id": "d0081",
+      "query": "what do I do if my flight gets cancelled by the airline",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.785,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings lead with the two near-equivalent 'I need to change my travel plans' docs (just swapped), which are the most directly relevant. The decisive difference is that Ranking 2 surfaces 'Where do I locate Travel Counselor contact information?' at position 3, while Ranking 1 buries it at position 8 behind hotel-related docs. For an airline-initiated cancellation, self-service often can't resolve it and the employee urgently needs to reach a Travel Counselor, making that contact doc genuinely high-value and better placed in Ranking 2."
+    },
+    {
+      "id": "d0082",
+      "query": "where do I find a trip I booked a few weeks ago",
+      "model_a": "ettin-1b",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.55,
+      "order1": "tie",
+      "order2": "b",
+      "consistent": false,
+      "rationale": "Both rankings place the two directly-answering 'Where Can I Locate My Previously Booked Trips?' docs at positions 1-2, just swapped in order; these resolve the employee's locate-a-trip need equally well. Ranking 1 having the video-containing Global Access doc first is a marginal plus, while Ranking 2 elevating the 'technical support / missing bookings' doc to position 6 is a marginal plus for this locate-focused query \u2014 these minor advantages roughly cancel, and the employee's need is satisfied at the top in both."
+    },
+    {
+      "id": "d0083",
+      "query": "I can't figure out which expense category to use",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-0.6b",
+      "winner": "b",
+      "confidence": 0.65,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both put the two clearly-best docs at positions 1-2, but Ranking 2 leads with the direct Q&A guidance doc ('How Do I Find the Right Expense Type?') which orients a confused user before handing them the raw Expense Types Table \u2014 a better first read. Ranking 2 also clusters expense-tool/category-relevant docs (Support, Personal Expense, Mobile Phone) higher and pushes irrelevant travel-booking docs (Hotel, Fare Upgrade) lower, whereas Ranking 1 interleaves travel docs into positions 4-5. Close call given identical top-2 content, but Ranking 2 is the more useful ordering."
+    },
+    {
+      "id": "d0084",
+      "query": "I need to move my flight to a different day, how do I change it",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-0.6b",
+      "winner": "b",
+      "confidence": 0.8,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings have the same top candidate pool, but Ranking 2 places the 'I need to change my travel plans (Global Access)' document \u2014 which contains explicit step-by-step instructions for modifying a flight ('Select your segment and select Modify... search for new flights and complete checkout') \u2014 at position 1, whereas Ranking 1 leads with the Regional variant that is generic and lacks detailed modify steps. Since the employee specifically wants to know how to change/modify their flight, the actionable Global Access doc is the most helpful and Ranking 2 surfaces it first, where the employee looks first."
+    },
+    {
+      "id": "d0085",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.74,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two 'Booking a Seat' docs at the top, which are the core answer. The decisive difference is that Ranking 1 places the 'Why can I not see the Amazon form of payment' doc at position 3 \u2014 this doc explicitly names 'Seat selection fees' and 'Baggage fees' as ancillary charges, directly answering the employee's question. Ranking 2 buries this doc at position 7 behind a generic 'What Expenses Reimbursable' doc and a sprawling Expense Types Table. While Ranking 2's elevation of the Expense Types Table (which references reimbursable airfare fees in section 4.7) has some merit, the named seat/baggage doc is more directly useful, making Ranking 1's top-4 stronger for this specific question."
+    },
+    {
+      "id": "d0086",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-0.6b",
+      "winner": "a",
+      "confidence": 0.77,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Ranking 1 places the single most directly responsive document ('How Do I Book Travel For Work at Amazon?') at position 1, exactly matching the employee's how-to-book question. Ranking 2 demotes that canonical answer to position 3, behind two Travel Profile setup docs including a region-specific Japan variant. The top slot is what the employee reads first, and Ranking 1 surfaces the best answer there."
+    },
+    {
+      "id": "d0087",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-0.6b",
+      "winner": "tie",
+      "confidence": 0.585,
+      "order1": "b",
+      "order2": "a",
+      "consistent": false,
+      "rationale": "Both rankings correctly place the two directly on-target hotel cancel/modify docs at positions 1-2 (just swapped, equally valid without region info). The decisive difference is positions 3-4: Ranking 2 groups both 'I need to change my travel plans' docs (Regional + Global Access) immediately after, which are the next-most-relevant to a cancel/change intent, while Ranking 1 promotes the 'unrequested hotel confirmation' doc (about automatic rebooking, a different question) to position 3 and buries one travel-change variant at position 7. Ranking 2's tighter clustering of the four most action-relevant cancel/change documents at the top serves the employee better."
+    },
+    {
+      "id": "d0088",
+      "query": "I can't figure out which expense category to use",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.66,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings correctly surface the two most relevant documents ('How Do I Find the Right Expense Type?' and the Expense Types Table) at the top. Ranking 2 leads with the concise, directly-on-point 'How Do I Find the Right Expense Type?' which best matches the employee's help-seeking phrasing and orients them before the dense table, and it also surfaces the support doc earlier. Ranking 1 leads with the raw table, which is the substantive reference but less helpful as the very first thing a confused employee sees. The difference is modest since both top the same docs."
+    },
+    {
+      "id": "d0089",
+      "query": "I need to move my flight to a different day, how do I change it",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.73,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings top with the two 'change my travel plans' variants, but the question is specifically how to modify a flight to a different day. The Global Access variant gives explicit step-by-step modify-flight instructions, while the Regional variant is vaguer and points to a Travel Counselor. Ranking 2 places the more complete, actionable Global Access doc first \u2014 the position the employee reads most. Ranking 2 also surfaces modification-related docs (change seat after booking, fare-class modify flow) slightly earlier and demotes manager-approval/policy docs, better matching the modify intent."
+    },
+    {
+      "id": "d0090",
+      "query": "are baggage fees and seat selection reimbursable when I travel",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.665,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings lead with the two strongest docs (seat-booking process, which directly addresses seat/baggage reimbursement and the EMEA/APAC ancillary expense rule) and the upgrade doc. The key differentiator is that Ranking 1 places the 'Why can I not see the Amazon form of payment' doc \u2014 which explicitly names both 'seat selection fees' and 'baggage fees,' the exact items asked about \u2014 at position 3, giving an early, directly on-topic surface. Ranking 2 instead promotes the dense Emburse Expense Types table (relevant via its 'airfare fees reimbursable' note) to position 4 but buries the explicit fee-naming doc at position 12. Both are reasonable, but Ranking 1's early placement of the doc that names the employee's exact terms gives it a slight edge."
+    },
+    {
+      "id": "d0091",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.71,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings place the two bullseye 'upgrade my fare class' docs at positions 1-2 (only swapped), so the core answer is equally accessible. Ranking 1 has a clearly better supporting order: it surfaces the directly relevant 'mileage upgrades', 'what flights allowed', and 'why out of policy (first class is a violation)' docs near the top, whereas Ranking 2 prematurely elevates the tangential bulky Expense Types Table to #3 and buries the highly relevant out-of-policy/first-class doc down at #14."
+    },
+    {
+      "id": "d0092",
+      "query": "how do I cancel or change a hotel reservation",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.65,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rank the two core hotel cancel/modify docs at positions 1-2 (just swapped, equivalent value). Ranking 2 is better at positions 3-4 because it surfaces both 'I need to change my travel plans' docs\u2014directly relevant to cancelling/rebooking\u2014whereas Ranking 1 inserts the tangential 'Why am I receiving a new hotel confirmation' auto-rebooking doc at position 3 and pushes the genuinely useful change-plans content lower."
+    },
+    {
+      "id": "d0093",
+      "query": "how do I set up my travel profile for the first time",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "a",
+      "confidence": 0.565,
+      "order1": "a",
+      "order2": "a",
+      "consistent": true,
+      "rationale": "Both rankings are nearly identical in the top 7 positions, which are what matter for this query. All five Travel Profile setup variants fill the top 5 in both. The deciding factor is the position-1 document: Ranking 1 leads with the Global Access variant, which includes the helpful 'How to book after profile setup' section, while Ranking 2 leads with the Regional variant that omits that section. Since the employee reads position 1 first, the slightly more complete top document gives Ranking 1 a marginal edge. The difference is small, however, and the two orderings serve the employee almost equally well."
+    },
+    {
+      "id": "d0094",
+      "query": "what do I do if my flight gets cancelled by the airline",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.85,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 clusters the three most useful docs (both 'change my travel plans' variants and the Travel Counselor contact info, which is critical for an airline-cancellation disruption) in its top 3. Ranking 1 wastes top positions on a tangential hotel-charge doc (#2) and an irrelevant miles-upgrade doc (#4), pushing the Travel Counselor contact info down to #5."
+    },
+    {
+      "id": "d0095",
+      "query": "where do I find a trip I booked a few weeks ago",
+      "model_a": "nemotron-1b-v2",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.58,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two 'Where Can I Locate My Previously Booked Trips?' docs at positions 1-2, which directly answer the question, so the most-seen positions are essentially tied. Ranking 2 is slightly better in the tail: it promotes the modify/change-trip docs (which reinforce 'Navigate to Trips and select your trip') and the technical-support doc (which covers 'missing bookings') above the unrelated Trail code doc, whereas Ranking 1 elevates the Trail code doc to #3 based on superficial 'Where Can I Locate' title matching despite it being about a separate US tax-tracking system. Ranking 1's only edge is placing the video-containing Global doc first, which is minor and region-dependent."
+    },
+    {
+      "id": "d0096",
+      "query": "can I fly business class and how much will the company pay back",
+      "model_a": "qwen3-0.6b",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.65,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two fare-class upgrade FAQs (which directly answer both parts of the question) at positions 1-2, with only an immaterial Global/Regional swap. The deciding factor is positions 4-6: Ranking 2 surfaces the highly relevant 'What Flights Am I Allowed to Book?' (which states economy/Lowest Logical Fare is required) at position 4 and moves the fare-upgrade-by-miles doc up, while Ranking 1 buries 'What Flights' at position 6 below less-relevant docs like earn-miles and combine-travel. Ranking 2 better orders the second tier of relevant documents."
+    },
+    {
+      "id": "d0097",
+      "query": "how do I book a flight and hotel for a business trip",
+      "model_a": "qwen3-0.6b",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.78,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Ranking 2 leads with the single most directly relevant document ('How Do I Book Travel For Work at Amazon?'), which is the dedicated booking how-to answering both flight and hotel booking, whereas Ranking 1 buries it at position 3 behind two Travel Profile variants. Ranking 2 also elevates the flight-booking policy doc to position 7 (vs. position 11 in Ranking 1), better matching the employee's explicit need to book both a flight and hotel. Both rankings handle the profile prerequisites well, but Ranking 2's top positions are cleaner and more on-target."
+    },
+    {
+      "id": "d0098",
+      "query": "how do I set up my travel profile for the first time",
+      "model_a": "qwen3-0.6b",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.625,
+      "order1": "tie",
+      "order2": "tie",
+      "consistent": true,
+      "rationale": "Both rankings place all five 'Set Up Travel Profile' variants at positions 1-5, fully answering the employee's question regardless of which variant leads (the differences between Global Access/Regional as the lead are immaterial for an unspecified-region employee). Both share the relevant 'Book Travel For Work' doc at position 6. The tail (7-20) consists of only tangentially relevant docs; Ranking 2 surfaces profile-mentioning docs (miles, tech support) marginally earlier, but this is a negligible edge since the answer is fully delivered in the top 5. Effectively equivalent service."
+    },
+    {
+      "id": "d0099",
+      "query": "what do I do if my flight gets cancelled by the airline",
+      "model_a": "qwen3-0.6b",
+      "model_b": "qwen3-4b",
+      "winner": "b",
+      "confidence": 0.78,
+      "order1": "b",
+      "order2": "b",
+      "consistent": true,
+      "rationale": "Both rankings correctly place the two 'I need to change my travel plans' docs at the top. The decisive difference is Ranking 2 surfaces the 'Travel Counselor contact information' doc at position 3 \u2014 highly valuable for an airline-initiated cancellation that often requires human assistance \u2014 while Ranking 1 buries it at position 7 behind irrelevant hotel-cancellation docs. Ranking 2 also demotes the off-topic hotel docs lower, giving a cleaner relevance gradient."
+    },
+    {
+      "id": "d0100",
+      "query": "where do I find a trip I booked a few weeks ago",
+      "model_a": "qwen3-0.6b",
+      "model_b": "qwen3-4b",
+      "winner": "tie",
+      "confidence": 0.575,
+      "order1": "a",
+      "order2": "b",
+      "consistent": false,
+      "rationale": "Both rankings place the two directly-answering 'previously booked trips' documents at positions 1-2, fully serving the employee's need at the top. Ranking 1 leads with the Global Access variant, which is more broadly applicable and includes a 'Navigating My Trips' video, making it a marginally stronger top result. Ranking 2 handles the mid-tier slightly better by demoting the tangential Trail Code doc, but since the question is fully answered by the top two docs in both orderings, the top-position edge for Ranking 1 gives it a slight overall advantage. Very close to a tie."
+    }
+  ],
+  "winrate_matrix": {
+    "cohere-3.5": {
+      "cohere-v4-fast": {
+        "wins": 0,
+        "losses": 4,
+        "ties": 0,
+        "winrate": 0.0
+      },
+      "cohere-v4-pro": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.0
+      },
+      "ettin-1b": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 1,
+        "winrate": 0.125
+      },
+      "nemotron-1b-v2": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.4
+      },
+      "qwen3-0.6b": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 0,
+        "winrate": 0.5
+      },
+      "qwen3-4b": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 1,
+        "winrate": 0.4375
+      }
+    },
+    "cohere-v4-fast": {
+      "cohere-3.5": {
+        "wins": 4,
+        "losses": 0,
+        "ties": 0,
+        "winrate": 1.0
+      },
+      "cohere-v4-pro": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 1,
+        "winrate": 0.5
+      },
+      "ettin-1b": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 3,
+        "winrate": 0.5
+      },
+      "nemotron-1b-v2": {
+        "wins": 3,
+        "losses": 2,
+        "ties": 0,
+        "winrate": 0.6
+      },
+      "qwen3-0.6b": {
+        "wins": 3,
+        "losses": 1,
+        "ties": 0,
+        "winrate": 0.75
+      },
+      "qwen3-4b": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 2,
+        "winrate": 0.5556
+      }
+    },
+    "cohere-v4-pro": {
+      "cohere-3.5": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 0,
+        "winrate": 1.0
+      },
+      "cohere-v4-fast": {
+        "wins": 0,
+        "losses": 0,
+        "ties": 1,
+        "winrate": 0.5
+      },
+      "ettin-1b": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 1,
+        "winrate": 0.375
+      },
+      "nemotron-1b-v2": {
+        "wins": 3,
+        "losses": 1,
+        "ties": 0,
+        "winrate": 0.75
+      },
+      "qwen3-0.6b": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 0,
+        "winrate": 1.0
+      },
+      "qwen3-4b": {
+        "wins": 3,
+        "losses": 2,
+        "ties": 3,
+        "winrate": 0.5625
+      }
+    },
+    "ettin-1b": {
+      "cohere-3.5": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 1,
+        "winrate": 0.875
+      },
+      "cohere-v4-fast": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 3,
+        "winrate": 0.5
+      },
+      "cohere-v4-pro": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 1,
+        "winrate": 0.625
+      },
+      "nemotron-1b-v2": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 1,
+        "winrate": 0.625
+      },
+      "qwen3-0.6b": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 0,
+        "winrate": 1.0
+      },
+      "qwen3-4b": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 2,
+        "winrate": 0.5
+      }
+    },
+    "nemotron-1b-v2": {
+      "cohere-3.5": {
+        "wins": 3,
+        "losses": 2,
+        "ties": 0,
+        "winrate": 0.6
+      },
+      "cohere-v4-fast": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.4
+      },
+      "cohere-v4-pro": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.25
+      },
+      "ettin-1b": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 1,
+        "winrate": 0.375
+      },
+      "qwen3-0.6b": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 1,
+        "winrate": 0.5
+      },
+      "qwen3-4b": {
+        "wins": 3,
+        "losses": 5,
+        "ties": 0,
+        "winrate": 0.375
+      }
+    },
+    "qwen3-0.6b": {
+      "cohere-3.5": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 0,
+        "winrate": 0.5
+      },
+      "cohere-v4-fast": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.25
+      },
+      "cohere-v4-pro": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.0
+      },
+      "ettin-1b": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.0
+      },
+      "nemotron-1b-v2": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 1,
+        "winrate": 0.5
+      },
+      "qwen3-4b": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 2,
+        "winrate": 0.2
+      }
+    },
+    "qwen3-4b": {
+      "cohere-3.5": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 1,
+        "winrate": 0.5625
+      },
+      "cohere-v4-fast": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 2,
+        "winrate": 0.4444
+      },
+      "cohere-v4-pro": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 3,
+        "winrate": 0.4375
+      },
+      "ettin-1b": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 2,
+        "winrate": 0.5
+      },
+      "nemotron-1b-v2": {
+        "wins": 5,
+        "losses": 3,
+        "ties": 0,
+        "winrate": 0.625
+      },
+      "qwen3-0.6b": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 2,
+        "winrate": 0.8
+      }
+    }
+  },
+  "model_score": {
+    "cohere-3.5": 0.2857,
+    "cohere-v4-fast": 0.6429,
+    "cohere-v4-pro": 0.6739,
+    "ettin-1b": 0.6667,
+    "nemotron-1b-v2": 0.4194,
+    "qwen3-0.6b": 0.2708,
+    "qwen3-4b": 0.5476
+  }
+}

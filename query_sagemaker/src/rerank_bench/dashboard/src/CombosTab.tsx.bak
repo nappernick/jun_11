@@ -1,0 +1,348 @@
+/**
+ * Combinations Tab — for runs produced by:
+ *   python rerank_bench.py --combo 5 --combo-base 12 --combo-cap 1000
+ *
+ * Shows:
+ *   1. Pairwise dominance heatmap — P(doc A ranks above doc B)
+ *   2. Rank-position spread per document (box)
+ *   3. Win-rate vs avg-rank scatter — the "document personality" view
+ *   4. Relevance score by rank slot — margin between positions
+ *   5. Latency histogram with outlier band — context window stress detector
+ *   6. Model limits panel — compressed scores + latency outliers
+ */
+import { useMemo, useState } from "react";
+import type { Data as PlotlyData } from "plotly.js";
+import PlotlyChart from "./PlotlyChart";
+import type { BenchRow, Dataset } from "./types";
+import { isScoreCompressed, latencyOutlierThreshold, mean, p50, percentile } from "./dataUtils";
+import { ax } from "./plotUtils";
+
+const short = (id: string) => (id.length > 14 ? id.slice(0, 13) + "…" : id);
+
+interface Props {
+  dataset: Dataset;
+}
+
+export default function CombosTab({ dataset }: Props) {
+  const { rows, meta } = dataset;
+  const queries = useMemo(() => ["ALL", ...new Set(rows.map((r) => r.query))], [rows]);
+  const [query, setQuery] = useState("ALL");
+
+  const filtered: BenchRow[] = useMemo(
+    () => (query === "ALL" ? rows : rows.filter((r) => r.query === query)),
+    [rows, query]
+  );
+
+  /** Docs sorted by average rank (best = lowest avg rank) */
+  const docsByAvgRank = useMemo(() => {
+    const sum: Record<string, number> = {};
+    const n: Record<string, number> = {};
+    filtered.forEach((r) => {
+      (r.ranking ?? []).forEach((d, i) => {
+        sum[d] = (sum[d] ?? 0) + i + 1;
+        n[d] = (n[d] ?? 0) + 1;
+      });
+    });
+    return Object.keys(n).sort((a, b) => sum[a] / n[a] - sum[b] / n[b]);
+  }, [filtered]);
+
+  // 1. Pairwise dominance heatmap
+  const dominanceData = useMemo((): PlotlyData[] => {
+    const co: Record<string, number> = {};
+    const beat: Record<string, number> = {};
+    filtered.forEach((r) => {
+      const rank: Record<string, number> = {};
+      (r.ranking ?? []).forEach((d, i) => { rank[d] = i; });
+      const present = r.ranking ?? [];
+      for (const a of present) {
+        for (const b of present) {
+          if (a === b) continue;
+          const key = `${a}|${b}`;
+          co[key] = (co[key] ?? 0) + 1;
+          if (rank[a] < rank[b]) beat[key] = (beat[key] ?? 0) + 1;
+        }
+      }
+    });
+    const docs = docsByAvgRank;
+    const z = docs.map((a) =>
+      docs.map((b) => {
+        if (a === b) return null;
+        const c = co[`${a}|${b}`];
+        return c ? +((beat[`${a}|${b}`] ?? 0) / c).toFixed(2) : null;
+      })
+    );
+    return [{
+      z,
+      x: docs.map(short),
+      y: docs.map(short),
+      type: "heatmap" as const,
+      zmin: 0, zmax: 1,
+      colorscale: "RdYlGn" as const,
+      hoverongaps: false,
+      texttemplate: "%{z}",
+      textfont: { size: 9 },
+    }];
+  }, [filtered, docsByAvgRank]);
+
+  // 2. Rank-position spread per doc
+  const rankDistData = useMemo((): PlotlyData[] => {
+    const ranks: Record<string, number[]> = {};
+    docsByAvgRank.forEach((d) => { ranks[d] = []; });
+    filtered.forEach((r) => {
+      (r.ranking ?? []).forEach((d, i) => { ranks[d]?.push(i + 1); });
+    });
+    return docsByAvgRank.map((d) => ({
+      y: ranks[d],
+      type: "box" as const,
+      name: short(d),
+      boxpoints: "all" as const,
+      jitter: 0.4,
+      marker: { size: 3 },
+    }));
+  }, [filtered, docsByAvgRank]);
+
+  // 3. Win-rate vs avg-rank scatter
+  const winScatterData = useMemo((): PlotlyData[] => {
+    const app: Record<string, number> = {};
+    const win: Record<string, number> = {};
+    const scoreSum: Record<string, number> = {};
+    filtered.forEach((r) => {
+      (r.ranking ?? []).forEach((d, i) => {
+        app[d] = (app[d] ?? 0) + 1;
+        scoreSum[d] = (scoreSum[d] ?? 0) + (i + 1);
+        if (i === 0) win[d] = (win[d] ?? 0) + 1;
+      });
+    });
+    const docs = docsByAvgRank;
+    return [{
+      x: docs.map((d) => scoreSum[d] / app[d]),
+      y: docs.map((d) => (win[d] ?? 0) / app[d]),
+      text: docs.map(short),
+      customdata: docs.map((d) => [app[d], (win[d] ?? 0)]),
+      hovertemplate: "<b>%{text}</b><br>avg rank: %{x:.2f}<br>win rate: %{y:.1%}<br>appearances: %{customdata[0]}<extra></extra>",
+      mode: "markers" as const,
+      type: "scatter" as const,
+      marker: {
+        size: docs.map((d) => 8 + Math.min(app[d], 20)),
+        color: docs.map((d) => (win[d] ?? 0) / app[d]),
+        colorscale: "Viridis" as const,
+        showscale: true,
+        colorbar: { thickness: 12 },
+      },
+    }];
+  }, [filtered, docsByAvgRank]);
+
+  // 4. Score by rank slot
+  const scoreSlotData = useMemo((): PlotlyData[] => {
+    const k = Math.max(...filtered.map((r) => r.scores.length));
+    return Array.from({ length: k }, (_, i) => ({
+      y: filtered.map((r) => r.scores[i]).filter((v) => v != null),
+      type: "box" as const,
+      name: `rank ${i + 1}`,
+      boxpoints: "all" as const,
+      jitter: 0.4,
+      marker: { size: 3 },
+    }));
+  }, [filtered]);
+
+  // 5. Latency histogram with outlier threshold
+  const outlierThreshold = useMemo(() => latencyOutlierThreshold(filtered), [filtered]);
+  const latencyHistData = useMemo((): PlotlyData[] => {
+    const normal = filtered.filter((r) => r.latency_ms <= outlierThreshold).map((r) => r.latency_ms);
+    const outliers = filtered.filter((r) => r.latency_ms > outlierThreshold).map((r) => r.latency_ms);
+    return [
+      { x: normal, type: "histogram" as const, name: "normal", marker: { color: "#58a6ff" }, opacity: 0.8 },
+      { x: outliers, type: "histogram" as const, name: "outlier (context stress?)", marker: { color: "#f78166" }, opacity: 0.9 },
+    ];
+  }, [filtered, outlierThreshold]);
+
+  // 6. Model limits: compressed-score combos + latency outliers
+  const limits = useMemo(() => {
+    const compressed = filtered.filter((r) => isScoreCompressed(r.scores));
+    const slowRows = filtered.filter((r) => r.latency_ms > outlierThreshold);
+    return { compressed, slowRows };
+  }, [filtered, outlierThreshold]);
+
+  // Summary stats
+  const latencyStats = useMemo(() => {
+    const lats = filtered.map((r) => r.latency_ms);
+    return {
+      p50: p50(lats),
+      p90: percentile(lats, 90),
+      max: lats.length ? Math.max(...lats) : 0,
+    };
+  }, [filtered]);
+
+  const topScoreMean = useMemo(() => mean(filtered.map((r) => r.top_score)), [filtered]);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      {/* Controls */}
+      <div className="controls-bar">
+        <label>
+          Query{" "}
+          <select value={query} onChange={(e) => setQuery(e.target.value)}>
+            {queries.map((q) => (
+              <option key={q} value={q}>{q === "ALL" ? "ALL queries" : q.slice(0, 48)}</option>
+            ))}
+          </select>
+        </label>
+        <span className="stat-pill">{filtered.length} combos</span>
+        <span className="stat-pill">{docsByAvgRank.length} docs</span>
+        <span className="stat-pill">p50 {latencyStats.p50.toFixed(0)}ms</span>
+        <span className="stat-pill">p90 {latencyStats.p90.toFixed(0)}ms</span>
+        <span className="stat-pill">mean top score {topScoreMean.toFixed(3)}</span>
+      </div>
+
+      {/* Model limits panel */}
+      {(limits.compressed.length > 0 || limits.slowRows.length > 0) && (
+        <div className="card alert-card">
+          <div className="card-title" style={{ color: "#f78166" }}>⚠ Model limit signals</div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+            {limits.compressed.length > 0 && (
+              <div>
+                <div className="card-sub">Score compression — spread &lt; 0.05 between rank-1 and rank-k. Model may be confused or context is noisy.</div>
+                <div style={{ fontSize: 12, marginTop: 6, color: "#cdd3dc" }}>
+                  {limits.compressed.length} combo{limits.compressed.length !== 1 ? "s" : ""} affected
+                </div>
+                <div className="scroll-box">
+                  {limits.compressed.slice(0, 20).map((r, i) => (
+                    <div key={i} className="limit-row">
+                      <span className="badge red">compressed</span>
+                      <span className="mono small">{r.query.slice(0, 30)}</span>
+                      <span className="mono small">spread={(Math.max(...r.scores) - Math.min(...r.scores)).toFixed(3)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {limits.slowRows.length > 0 && (
+              <div>
+                <div className="card-sub">Latency outliers — &gt; {outlierThreshold.toFixed(0)}ms (median + 3× spread). Possible context window pressure.</div>
+                <div style={{ fontSize: 12, marginTop: 6, color: "#cdd3dc" }}>
+                  {limits.slowRows.length} combo{limits.slowRows.length !== 1 ? "s" : ""} affected
+                </div>
+                <div className="scroll-box">
+                  {limits.slowRows.slice(0, 20).map((r, i) => (
+                    <div key={i} className="limit-row">
+                      <span className="badge red">slow</span>
+                      <span className="mono small">{r.query.slice(0, 30)}</span>
+                      <span className="mono small">{r.latency_ms.toFixed(0)}ms</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Dropped chunks */}
+      {meta && meta.dropped_chunks.length > 0 && (
+        <div className="card alert-card">
+          <div className="card-title" style={{ color: "#d29922" }}>⚠ Chunks dropped before reranking</div>
+          <div className="card-sub">
+            These chunks exceeded the {meta.max_doc_chars.toLocaleString()} char Bedrock Rerank limit and were excluded from all combos.
+            They represent content the model will never see.
+          </div>
+          <table className="data-table" style={{ marginTop: 8 }}>
+            <thead><tr><th>Query</th><th>Source ID</th><th>Char count</th><th>Reason</th></tr></thead>
+            <tbody>
+              {meta.dropped_chunks.map((d, i) => (
+                <tr key={i}>
+                  <td>{d.query.slice(0, 40)}</td>
+                  <td className="mono small">{d.source_id}</td>
+                  <td>{d.char_count.toLocaleString()}</td>
+                  <td><span className="badge yellow">{d.reason}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+        {/* Pairwise dominance */}
+        <div className="card">
+          <div className="card-title">Pairwise dominance — P(row ranks above col)</div>
+          <div className="card-sub">Green = row almost always beats col. Red = col wins. Docs sorted by avg rank (best at top-left).</div>
+          <PlotlyChart
+            data={dominanceData}
+            layout={{
+              margin: { t: 20, r: 16, b: 100, l: 100 },
+              xaxis: { tickangle: -45, color: "#9aa4b2" },
+              yaxis: { color: "#9aa4b2" },
+            }}
+          />
+        </div>
+
+        {/* Rank distribution */}
+        <div className="card">
+          <div className="card-title">Rank-position spread per document</div>
+          <div className="card-sub">Tight boxes = consistent ranking. Wide boxes = model ranks this doc differently depending on context.</div>
+          <PlotlyChart
+            data={rankDistData}
+            layout={{
+              showlegend: false,
+              xaxis: { tickangle: -45, color: "#9aa4b2" },
+              yaxis: ax("rank (1 = best)", { autorange: "reversed" }),
+            }}
+          />
+        </div>
+
+        {/* Win-rate scatter */}
+        <div className="card">
+          <div className="card-title">Document personality — win rate vs avg rank</div>
+          <div className="card-sub">Upper-left = strong documents. Bubble size = appearances. Color = win rate.</div>
+          <PlotlyChart
+            data={winScatterData}
+            layout={{
+              xaxis: ax("avg rank (lower = better)"),
+              yaxis: ax("top-1 win rate", { tickformat: ".0%" }),
+            }}
+          />
+        </div>
+
+        {/* Score by rank slot */}
+        <div className="card">
+          <div className="card-title">Relevance score by rank slot</div>
+          <div className="card-sub">Large drop = confident model. Flat distribution = score compression / confused model.</div>
+          <PlotlyChart
+            data={scoreSlotData}
+            layout={{
+              showlegend: false,
+              yaxis: ax("relevanceScore"),
+            }}
+          />
+        </div>
+
+        {/* Latency histogram */}
+        <div className="card" style={{ gridColumn: "1 / -1" }}>
+          <div className="card-title">Latency distribution — outlier threshold {outlierThreshold.toFixed(0)}ms</div>
+          <div className="card-sub">Red bars are statistical outliers (median + 3× spread). Spikes may indicate context window pressure or Bedrock cold starts.</div>
+          <PlotlyChart
+            data={latencyHistData}
+            layout={{
+              barmode: "overlay",
+              xaxis: ax("latency (ms)"),
+              yaxis: ax("count"),
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Run meta */}
+      {meta && (
+        <div className="card">
+          <div className="card-title">Run metadata</div>
+          <div className="meta-grid">
+            <span className="meta-key">Generated</span><span>{meta.generated_at || "—"}</span>
+            <span className="meta-key">Mode</span><span>combo k={meta.combo_k} from base={meta.combo_base}</span>
+            <span className="meta-key">Cap</span><span>{meta.combo_cap?.toLocaleString() ?? "—"}</span>
+            <span className="meta-key">Records</span><span>{meta.record_count.toLocaleString()}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

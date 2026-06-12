@@ -1,0 +1,46 @@
+{
+  "description": "Prompt Bench fixed sample: 24 SINGLE-turn queries for sonnet-4.6-thinking-off. Drawn from data/synthetic/queries.jsonl (the single-turn source; the optimizer only runs the multi-turn conversations.jsonl items, so these are inherently held out from it). Deterministic; stratified by answerability with >=2 unanswerable so the decline / confident-wrong behavior is exercised.",
+  "model": "sonnet-4.6-thinking-off",
+  "source": "queries.jsonl (single-turn)",
+  "seed": 70241,
+  "n": 24,
+  "selection": "stratified by answerability; floor 1 per cohort, 2 for unanswerable; remainder largest-remainder proportional; deterministic sha256(seed, item_id) rank within stratum",
+  "stratum_counts": {
+    "full": 14,
+    "partial": 6,
+    "none": 4
+  },
+  "item_ids": [
+    "b0-q05", "b0-q07", "b10-q07", "b12-q03", "b14-q13", "b17-q07",
+    "b18-q14", "b20-q08", "b24-q09", "b25-q08", "b29-q05", "b40-q11",
+    "b45-q04", "b8-q04",
+    "b19-q11", "b24-q15", "b30-q04", "b34-q02", "b48-q07", "b8-q08",
+    "b10-q04", "b19-q19", "b34-q19", "b47-q18"
+  ],
+  "items": [
+    {"item_id": "b0-q05", "turns": 1, "answerability": "full"},
+    {"item_id": "b0-q07", "turns": 1, "answerability": "full"},
+    {"item_id": "b10-q07", "turns": 1, "answerability": "full"},
+    {"item_id": "b12-q03", "turns": 1, "answerability": "full"},
+    {"item_id": "b14-q13", "turns": 1, "answerability": "full"},
+    {"item_id": "b17-q07", "turns": 1, "answerability": "full"},
+    {"item_id": "b18-q14", "turns": 1, "answerability": "full"},
+    {"item_id": "b20-q08", "turns": 1, "answerability": "full"},
+    {"item_id": "b24-q09", "turns": 1, "answerability": "full"},
+    {"item_id": "b25-q08", "turns": 1, "answerability": "full"},
+    {"item_id": "b29-q05", "turns": 1, "answerability": "full"},
+    {"item_id": "b40-q11", "turns": 1, "answerability": "full"},
+    {"item_id": "b45-q04", "turns": 1, "answerability": "full"},
+    {"item_id": "b8-q04", "turns": 1, "answerability": "full"},
+    {"item_id": "b19-q11", "turns": 1, "answerability": "partial"},
+    {"item_id": "b24-q15", "turns": 1, "answerability": "partial"},
+    {"item_id": "b30-q04", "turns": 1, "answerability": "partial"},
+    {"item_id": "b34-q02", "turns": 1, "answerability": "partial"},
+    {"item_id": "b48-q07", "turns": 1, "answerability": "partial"},
+    {"item_id": "b8-q08", "turns": 1, "answerability": "partial"},
+    {"item_id": "b10-q04", "turns": 1, "answerability": "none"},
+    {"item_id": "b19-q19", "turns": 1, "answerability": "none"},
+    {"item_id": "b34-q19", "turns": 1, "answerability": "none"},
+    {"item_id": "b47-q18", "turns": 1, "answerability": "none"}
+  ]
+}

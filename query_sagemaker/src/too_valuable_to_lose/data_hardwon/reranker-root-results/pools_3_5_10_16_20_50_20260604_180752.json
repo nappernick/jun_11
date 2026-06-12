@@ -1,0 +1,1542 @@
+{
+  "meta": {
+    "run_mode": "pool_sweep",
+    "queries": [
+      "how do I book a flight and hotel for a business trip",
+      "can I upgrade to business class and what does Amazon reimburse",
+      "how do I set up my travel profile and book a seat assignment",
+      "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "how do I request a travel accommodation for a medical condition",
+      "how do I cancel or change a flight booking I already made",
+      "what expense category do I use for airfare hotel and meals in Concur"
+    ],
+    "pools": [
+      3,
+      5,
+      10,
+      16,
+      20,
+      50
+    ],
+    "combo_k": null,
+    "combo_base": null,
+    "combo_cap": null,
+    "max_doc_chars": 32000,
+    "dropped_chunks": [
+      {
+        "query": "how do I book a flight and hotel for a business trip",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "can I upgrade to business class and what does Amazon reimburse",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "how do I set up my travel profile and book a seat assignment",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "how do I request a travel accommodation for a medical condition",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "how do I cancel or change a flight booking I already made",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "what expense category do I use for airfare hotel and meals in Concur",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      }
+    ],
+    "models": [
+      "cohere-3.5",
+      "cohere-4-pro"
+    ],
+    "models_errored": {},
+    "record_count": 70,
+    "generated_at": "2026-06-04T18:07:52.041455"
+  },
+  "rows": [
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 462.6,
+      "top_score": 0.6477,
+      "top_id": "e3e46a05-92f7-43b1-81bf-74710b447725",
+      "scores": [
+        0.6477,
+        0.3614,
+        0.2713
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 446.9,
+      "top_score": 0.9052,
+      "top_id": "e3e46a05-92f7-43b1-81bf-74710b447725",
+      "scores": [
+        0.9052,
+        0.7716,
+        0.7702
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 206.2,
+      "top_score": 0.7268,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7268,
+        0.6477,
+        0.3615,
+        0.2714,
+        0.204
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 241.2,
+      "top_score": 0.9177,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9177,
+        0.9051,
+        0.7716,
+        0.7688,
+        0.7087
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 214.6,
+      "top_score": 0.727,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.727,
+        0.6477,
+        0.5747,
+        0.5632,
+        0.3614,
+        0.2713,
+        0.2421,
+        0.204,
+        0.1859,
+        0.1307
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 406.2,
+      "top_score": 0.9173,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9173,
+        0.9086,
+        0.9083,
+        0.9051,
+        0.7716,
+        0.7674,
+        0.7384,
+        0.7071,
+        0.6805,
+        0.4703
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 249.7,
+      "top_score": 0.727,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.727,
+        0.6477,
+        0.5747,
+        0.5632,
+        0.5131,
+        0.4168,
+        0.4013,
+        0.3614,
+        0.3289,
+        0.2713,
+        0.2421,
+        0.204,
+        0.1859,
+        0.1697,
+        0.1631,
+        0.1307
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 575.3,
+      "top_score": 0.9172,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9172,
+        0.9089,
+        0.9088,
+        0.9069,
+        0.9052,
+        0.8452,
+        0.8331,
+        0.7784,
+        0.7716,
+        0.7674,
+        0.7369,
+        0.7071,
+        0.7038,
+        0.6805,
+        0.6805,
+        0.4703
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 267.3,
+      "top_score": 0.7268,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7268,
+        0.6477,
+        0.5744,
+        0.5632,
+        0.5131,
+        0.4165,
+        0.4012,
+        0.3683,
+        0.3613,
+        0.354,
+        0.3294,
+        0.2713,
+        0.242,
+        0.204,
+        0.1859,
+        0.1697,
+        0.1631,
+        0.1481,
+        0.1307,
+        0.0897
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 652.2,
+      "top_score": 0.9172,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9172,
+        0.9088,
+        0.9088,
+        0.9069,
+        0.9052,
+        0.8452,
+        0.8331,
+        0.7784,
+        0.7716,
+        0.7674,
+        0.7414,
+        0.7369,
+        0.7277,
+        0.7071,
+        0.7038,
+        0.6805,
+        0.6805,
+        0.5752,
+        0.4703,
+        0.4355
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 193.3,
+      "top_score": 0.7765,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.7765,
+        0.771,
+        0.2109
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 158.5,
+      "top_score": 0.9566,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.9566,
+        0.9559,
+        0.8304
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 209.0,
+      "top_score": 0.7767,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.7767,
+        0.771,
+        0.2617,
+        0.2108,
+        0.0926
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 217.8,
+      "top_score": 0.9566,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.9566,
+        0.9562,
+        0.8326,
+        0.8048,
+        0.4202
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 230.6,
+      "top_score": 0.7765,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.7765,
+        0.7708,
+        0.2888,
+        0.2856,
+        0.2617,
+        0.2339,
+        0.2132,
+        0.2107,
+        0.0926,
+        0.0639
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 333.2,
+      "top_score": 0.9566,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.9566,
+        0.9562,
+        0.8326,
+        0.8048,
+        0.6367,
+        0.5522,
+        0.5289,
+        0.525,
+        0.4202,
+        0.4013
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 241.3,
+      "top_score": 0.7767,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.7767,
+        0.7708,
+        0.3091,
+        0.2888,
+        0.2858,
+        0.2615,
+        0.2455,
+        0.2335,
+        0.2132,
+        0.211,
+        0.0926,
+        0.0686,
+        0.0639,
+        0.0408,
+        0.0354,
+        0.0349
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 476.5,
+      "top_score": 0.9567,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.9567,
+        0.9559,
+        0.8315,
+        0.8042,
+        0.6385,
+        0.5599,
+        0.5444,
+        0.525,
+        0.525,
+        0.4665,
+        0.4202,
+        0.4013,
+        0.368,
+        0.3608,
+        0.336,
+        0.2923
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 279.2,
+      "top_score": 0.7765,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.7765,
+        0.771,
+        0.3091,
+        0.2887,
+        0.2857,
+        0.2617,
+        0.2457,
+        0.2336,
+        0.2335,
+        0.2331,
+        0.2132,
+        0.2109,
+        0.0926,
+        0.0686,
+        0.068,
+        0.0639,
+        0.0408,
+        0.0381,
+        0.0354,
+        0.0349
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 550.4,
+      "top_score": 0.9564,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.9564,
+        0.9561,
+        0.8309,
+        0.8048,
+        0.6367,
+        0.5599,
+        0.5483,
+        0.5444,
+        0.5367,
+        0.525,
+        0.525,
+        0.4665,
+        0.424,
+        0.4202,
+        0.3976,
+        0.3644,
+        0.3608,
+        0.3395,
+        0.3325,
+        0.2923
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 192.9,
+      "top_score": 0.724,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.724,
+        0.6822,
+        0.6318
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 230.2,
+      "top_score": 0.9388,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9388,
+        0.926,
+        0.9221
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 206.5,
+      "top_score": 0.7242,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7242,
+        0.6819,
+        0.6318,
+        0.6039,
+        0.5195
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 323.9,
+      "top_score": 0.9388,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9388,
+        0.926,
+        0.9229,
+        0.9221,
+        0.8604
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 266.5,
+      "top_score": 0.724,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.724,
+        0.6822,
+        0.6351,
+        0.6315,
+        0.6036,
+        0.5194,
+        0.4769,
+        0.3731,
+        0.34,
+        0.066
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 425.1,
+      "top_score": 0.9388,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9388,
+        0.926,
+        0.9238,
+        0.9229,
+        0.9221,
+        0.8604,
+        0.8347,
+        0.7877,
+        0.689,
+        0.4859
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 248.9,
+      "top_score": 0.7242,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7242,
+        0.6819,
+        0.6356,
+        0.6318,
+        0.6039,
+        0.5195,
+        0.4768,
+        0.3731,
+        0.3401,
+        0.1879,
+        0.1639,
+        0.1377,
+        0.1231,
+        0.0659,
+        0.0471,
+        0.0143
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 562.5,
+      "top_score": 0.9383,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9383,
+        0.9252,
+        0.9236,
+        0.9225,
+        0.9214,
+        0.8604,
+        0.8336,
+        0.7877,
+        0.689,
+        0.6221,
+        0.6184,
+        0.5828,
+        0.5676,
+        0.482,
+        0.4279,
+        0.2988
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 320.3,
+      "top_score": 0.7237,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7237,
+        0.6822,
+        0.6351,
+        0.6315,
+        0.6039,
+        0.5195,
+        0.4768,
+        0.3732,
+        0.3399,
+        0.1878,
+        0.164,
+        0.1378,
+        0.1234,
+        0.0714,
+        0.0659,
+        0.0513,
+        0.0471,
+        0.0211,
+        0.0157,
+        0.0143
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 676.4,
+      "top_score": 0.9383,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.9383,
+        0.9252,
+        0.9236,
+        0.9225,
+        0.9214,
+        0.8604,
+        0.8336,
+        0.7877,
+        0.689,
+        0.6221,
+        0.6184,
+        0.5828,
+        0.5676,
+        0.525,
+        0.482,
+        0.4509,
+        0.4279,
+        0.329,
+        0.3188,
+        0.2988
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 196.0,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.342,
+        0.1107
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 155.0,
+      "top_score": 0.8855,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8855,
+        0.6092,
+        0.5405
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 194.2,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.342,
+        0.1107,
+        0.0955,
+        0.0449
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 200.0,
+      "top_score": 0.8853,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8853,
+        0.6054,
+        0.5483,
+        0.5405,
+        0.3753
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 221.9,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.3422,
+        0.1301,
+        0.1108,
+        0.0956,
+        0.0449,
+        0.033,
+        0.0253,
+        0.0204,
+        0.0193
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 347.0,
+      "top_score": 0.8855,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8855,
+        0.6073,
+        0.5483,
+        0.5405,
+        0.424,
+        0.3753,
+        0.312,
+        0.3087,
+        0.2348,
+        0.2054
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 236.5,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.3422,
+        0.1301,
+        0.1108,
+        0.0956,
+        0.0449,
+        0.033,
+        0.0254,
+        0.0253,
+        0.0239,
+        0.0225,
+        0.0204,
+        0.0193,
+        0.0173,
+        0.0167,
+        0.0163
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 516.8,
+      "top_score": 0.8849,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8849,
+        0.6054,
+        0.5483,
+        0.5405,
+        0.424,
+        0.3753,
+        0.312,
+        0.3087,
+        0.3054,
+        0.2923,
+        0.2671,
+        0.2641,
+        0.261,
+        0.2376,
+        0.2131,
+        0.2079
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 261.3,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.3418,
+        0.1297,
+        0.1108,
+        0.0957,
+        0.045,
+        0.0356,
+        0.0333,
+        0.033,
+        0.0254,
+        0.0253,
+        0.0239,
+        0.0234,
+        0.0225,
+        0.0203,
+        0.0201,
+        0.0193,
+        0.0173,
+        0.0167,
+        0.0163
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 599.0,
+      "top_score": 0.8849,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8849,
+        0.6054,
+        0.5483,
+        0.5367,
+        0.424,
+        0.3753,
+        0.312,
+        0.312,
+        0.312,
+        0.3087,
+        0.3054,
+        0.2923,
+        0.2671,
+        0.2641,
+        0.261,
+        0.2462,
+        0.2376,
+        0.2184,
+        0.2131,
+        0.2079
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 227.9,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1069,
+        0.1052
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 203.8,
+      "top_score": 0.9683,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9683,
+        0.5599,
+        0.4665
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 220.3,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1069,
+        0.1053,
+        0.0929,
+        0.0879
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 249.6,
+      "top_score": 0.9686,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9686,
+        0.5599,
+        0.4977,
+        0.4859,
+        0.4703
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 221.5,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1069,
+        0.1052,
+        0.0929,
+        0.0879,
+        0.068,
+        0.0541,
+        0.0528,
+        0.0416,
+        0.0391
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 337.7,
+      "top_score": 0.9686,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9686,
+        0.5599,
+        0.4977,
+        0.4898,
+        0.4742,
+        0.4703,
+        0.4471,
+        0.4279,
+        0.3864,
+        0.3188
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 222.8,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1068,
+        0.1051,
+        0.0929,
+        0.0879,
+        0.0705,
+        0.0697,
+        0.068,
+        0.0666,
+        0.0592,
+        0.0541,
+        0.0528,
+        0.0475,
+        0.0416,
+        0.0391,
+        0.033
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 487.6,
+      "top_score": 0.9683,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9683,
+        0.5599,
+        0.5055,
+        0.4977,
+        0.4938,
+        0.4898,
+        0.4781,
+        0.4703,
+        0.4587,
+        0.4509,
+        0.4471,
+        0.4279,
+        0.3901,
+        0.3864,
+        0.379,
+        0.3222
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 239.0,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1069,
+        0.1052,
+        0.0936,
+        0.0929,
+        0.0879,
+        0.0759,
+        0.0705,
+        0.0696,
+        0.068,
+        0.0666,
+        0.0593,
+        0.0541,
+        0.0528,
+        0.0521,
+        0.0475,
+        0.0416,
+        0.0391,
+        0.0391,
+        0.033
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 561.5,
+      "top_score": 0.9683,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9683,
+        0.5599,
+        0.5055,
+        0.4977,
+        0.4938,
+        0.4898,
+        0.4859,
+        0.4742,
+        0.4665,
+        0.4587,
+        0.4548,
+        0.4509,
+        0.4471,
+        0.4279,
+        0.4126,
+        0.3901,
+        0.3901,
+        0.3864,
+        0.379,
+        0.3188
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 206.4,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.715
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 163.7,
+      "top_score": 0.9256,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.9256,
+        0.901,
+        0.8623
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 199.1,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.7152,
+        0.5847,
+        0.2512
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 222.7,
+      "top_score": 0.9261,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.9261,
+        0.9013,
+        0.8618,
+        0.8202,
+        0.6258
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 210.4,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.715,
+        0.5849,
+        0.2512,
+        0.1988,
+        0.1845,
+        0.138,
+        0.1095,
+        0.0502
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 287.0,
+      "top_score": 0.9261,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.9261,
+        0.9016,
+        0.8627,
+        0.8208,
+        0.6294,
+        0.6258,
+        0.6258,
+        0.5714,
+        0.4509,
+        0.3753
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 232.9,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.715,
+        0.5849,
+        0.2512,
+        0.2136,
+        0.1985,
+        0.1847,
+        0.1526,
+        0.1381,
+        0.1251,
+        0.1207,
+        0.1095,
+        0.0908,
+        0.0699,
+        0.0502
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 493.8,
+      "top_score": 0.9259,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.9259,
+        0.9015,
+        0.8623,
+        0.8202,
+        0.6294,
+        0.6276,
+        0.6239,
+        0.5714,
+        0.5483,
+        0.5444,
+        0.5133,
+        0.5133,
+        0.5016,
+        0.4898,
+        0.4509,
+        0.3753
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 245.1,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.715,
+        0.5849,
+        0.2512,
+        0.2138,
+        0.1988,
+        0.1845,
+        0.1526,
+        0.138,
+        0.125,
+        0.1246,
+        0.1208,
+        0.1176,
+        0.1095,
+        0.0909,
+        0.0762,
+        0.0699,
+        0.0577,
+        0.0502
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 595.8,
+      "top_score": 0.9261,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.9261,
+        0.9013,
+        0.8618,
+        0.8202,
+        0.6294,
+        0.6258,
+        0.6258,
+        0.5676,
+        0.5483,
+        0.5483,
+        0.5444,
+        0.5133,
+        0.5133,
+        0.5016,
+        0.4898,
+        0.4509,
+        0.4471,
+        0.3753,
+        0.3572,
+        0.3465
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 3,
+      "model": "cohere-3.5",
+      "latency_ms": 199.0,
+      "top_score": 0.4955,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.4955,
+        0.2215,
+        0.0176
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 3,
+      "model": "cohere-4-pro",
+      "latency_ms": 152.1,
+      "top_score": 0.7323,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.7323,
+        0.6528,
+        0.2434
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 194.9,
+      "top_score": 0.4952,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.4952,
+        0.4129,
+        0.2217,
+        0.0249,
+        0.0176
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 5,
+      "model": "cohere-4-pro",
+      "latency_ms": 198.5,
+      "top_score": 0.7338,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.7338,
+        0.7261,
+        0.6563,
+        0.3644,
+        0.2462
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 240.9,
+      "top_score": 0.4952,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.4952,
+        0.4129,
+        0.2999,
+        0.2406,
+        0.2214,
+        0.0365,
+        0.0307,
+        0.0264,
+        0.0249,
+        0.0176
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 10,
+      "model": "cohere-4-pro",
+      "latency_ms": 375.3,
+      "top_score": 0.7338,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.7338,
+        0.7261,
+        0.6545,
+        0.5016,
+        0.4703,
+        0.4509,
+        0.3608,
+        0.3572,
+        0.3501,
+        0.2462
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 16,
+      "model": "cohere-3.5",
+      "latency_ms": 249.8,
+      "top_score": 0.4955,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.4955,
+        0.4128,
+        0.2998,
+        0.2408,
+        0.2215,
+        0.0365,
+        0.033,
+        0.0317,
+        0.0307,
+        0.0303,
+        0.0264,
+        0.0249,
+        0.024,
+        0.0237,
+        0.0225,
+        0.0176
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 16,
+      "model": "cohere-4-pro",
+      "latency_ms": 554.1,
+      "top_score": 0.7353,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.7353,
+        0.7292,
+        0.6563,
+        0.5016,
+        0.4703,
+        0.4509,
+        0.4317,
+        0.4279,
+        0.4279,
+        0.4051,
+        0.3864,
+        0.3753,
+        0.3644,
+        0.3536,
+        0.3501,
+        0.2462
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 20,
+      "model": "cohere-3.5",
+      "latency_ms": 268.2,
+      "top_score": 0.4955,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.4955,
+        0.4128,
+        0.2998,
+        0.2408,
+        0.2215,
+        0.0365,
+        0.033,
+        0.0317,
+        0.0307,
+        0.0303,
+        0.0264,
+        0.0249,
+        0.024,
+        0.0237,
+        0.0236,
+        0.0226,
+        0.0225,
+        0.0223,
+        0.0176,
+        0.0138
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 20,
+      "model": "cohere-4-pro",
+      "latency_ms": 685.4,
+      "top_score": 0.7338,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.7338,
+        0.7277,
+        0.6563,
+        0.5016,
+        0.4703,
+        0.4548,
+        0.4394,
+        0.4355,
+        0.4317,
+        0.4317,
+        0.4279,
+        0.4051,
+        0.3864,
+        0.3753,
+        0.3644,
+        0.3644,
+        0.3572,
+        0.3536,
+        0.2955,
+        0.2462
+      ]
+    }
+  ]
+}

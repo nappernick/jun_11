@@ -1,0 +1,14 @@
+{
+  "batch": 18,
+  "persona": "egypt-cairo-uneven-deadpan",
+  "origin": "Egypt (Cairo)",
+  "native_language": "Arabic",
+  "proficiency": "uneven",
+  "disposition": "deadpan-literal",
+  "query_count": 20,
+  "answerability_dist": {
+    "full": 11,
+    "partial": 6,
+    "none": 3
+  }
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" shutdownHook="disable">
+    <Properties>
+        <Property name="log-path">${sys:root}/var/output/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%enc{%m}{JSON}%n"/>
+        </Console>
+
+        <Socket name="ApplicationTcp" host="localhost" port="5170" ignoreExceptions="false">
+            <!-- Override standard log format with JSON since CloudWatch Log Insights handle this format natively. -->
+            <PatternLayout alwaysWriteExceptions="false">
+                <!-- This all has to go on one line, because log4j interprets the line breaks as part of the pattern.
+                     CloudWatch will assist with pretty printing the log. Note, we omit any values that aren't present
+                     to reduce logging volume. -->
+                <Pattern>{ "timestamp": "%d{ISO8601}", "logger": "%c", "level": "%p", "threadID": "%T", "threadName": "%t"%notEmpty{, "requestId": "%X{RequestId}"}%notEmpty{, "message": "%enc{%m{nolookups}}{JSON}"}%notEmpty{, "exception": "%enc{%ex{full}}{JSON}"} }%n</Pattern>
+            </PatternLayout>
+        </Socket>
+
+        <Failover name="APPLICATION" primary="ApplicationTcp">
+            <Failovers>
+                <AppenderRef ref="STDOUT"/>
+            </Failovers>
+        </Failover>
+
+        <Socket name="RequestTcp" host="localhost" port="5171" ignoreExceptions="false">
+            <PatternLayout alwaysWriteExceptions="false">
+                <Pattern>{ "timestamp": "%d{ISO8601}", "threadID": "%T", "request": %m{nolookups}%notEmpty{, "exception": "%enc{%ex{full}}{JSON}"} }%n</Pattern>
+            </PatternLayout>
+        </Socket>
+
+        <Failover name="REQUEST" primary="RequestTcp">
+            <Failovers>
+                <AppenderRef ref="STDOUT"/>
+            </Failovers>
+        </Failover>
+
+        <Socket name="MetricsTcp" host="localhost" port="5172" ignoreExceptions="false">
+            <PatternLayout alwaysWriteExceptions="false"/>
+        </Socket>
+
+        <Failover name="METRICS" primary="MetricsTcp">
+            <Failovers>
+                <AppenderRef ref="STDOUT"/>
+            </Failovers>
+        </Failover>
+    </Appenders>
+
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="APPLICATION"/>
+        </Root>
+
+        <!-- Since additivity is false, request logging will not go to the root logger. This prevents
+             request logging from being interspersed with application logging.
+         -->
+        <Logger name="com.amazon.coral.service.RequestLoggingInterceptor" level="TRACE" additivity="false">
+            <AppenderRef ref="REQUEST" level="TRACE"/>
+        </Logger>
+
+        <Logger name="emf.metrics" level="INFO" additivity="false">
+            <AppenderRef ref="METRICS" level="INFO"/>
+        </Logger>
+
+        <Logger name="WIRE" level="OFF"/>
+        <Logger name="com.amazon.coral" level="WARN"/>
+        <Logger name="com.amazon.coral.reflect" level="ERROR"/>
+        <Logger name="org.apache" level="WARN"/>
+    </Loggers>
+</Configuration>

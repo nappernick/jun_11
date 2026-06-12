@@ -1,0 +1,19 @@
+# The cache values for the JVM when implemented via java.net.security are stored in %JRE_HOME%/security/java.security.
+# The security implementation takes precedence over setting the sun.net.* arguments from the command line,
+# and is much cleaner than setting them yourself inline.
+
+# The Java-level namelookup cache policy for successful lookups:
+#
+# any negative value: caching forever
+# any positive value: the number of seconds to cache an address for
+# zero: do not cache
+
+networkaddress.cache.ttl=60
+
+# The Java-level namelookup cache policy for failed lookups:
+#
+# any negative value: cache forever
+# any positive value: the number of seconds to cache negative lookup results
+# zero: do not cache
+
+networkaddress.cache.negative.ttl=1

@@ -1,0 +1,779 @@
+{
+  "meta": {
+    "generated_at": "2026-06-05T10:14:55.157351+00:00",
+    "methodology": "RAGAS testset generation (entity/keyphrase extraction -> Jaccard relationship graph -> diverse scenario synthesis), re-implemented directly on Bedrock (no ragas/langchain).",
+    "gen_model": "us.anthropic.claude-opus-4-8",
+    "corpus": "/Users/nmatnich/Skywalker/query_sagemaker/src/rerank_bench/query_chunks.jsonl",
+    "n_corpus_docs": 55,
+    "n_connected_pairs": 1025,
+    "n_samples": 50,
+    "types": [
+      "single_hop_specific",
+      "single_hop_abstract",
+      "multi_hop_specific",
+      "multi_hop_abstract"
+    ],
+    "personas": [
+      "new_hire",
+      "frequent_traveler",
+      "manager",
+      "finance"
+    ],
+    "styles": [
+      "web_search_keywords",
+      "natural_chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "ragas-000",
+      "query": "rental car size allowed",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "dbd5222a-4eed-49c9-a87d-54b7edd051ac"
+      ],
+      "reference_contexts": [
+        "# **What size rental car am I allowed to book?**\n\nBook up to intermediate size vehicles (mini, economy, or compact) through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n\nRefer to section 6.1 Rental Car [Vehicle Size](https://policy.a2z.com/docs/176324/publication#6) in the Global Travel and Expense Policy.\n\n## **Electric and hybrid vehicles**\n\nAmazon encourages the use of electric or hybrid rental vehicles where available. If the only electric or hybrid vehicles available are standard or full-size, you may book these instead of an intermediate size vehicle.\n\n## **Exceptions for larger vehicles**\n\nStandard, full-size cars, intermediate SUVs, or vans are permitted in the following situations:\n\n- Three (3) or more travelers traveling together and sharing the rental vehicle\n- Large work equipment requiring additional cargo space\n- Pre-approved medical reasons\n- Safety exceptions (for example, AWD/4WD in winter in locations prone to blizzards)\n\n## **Safe driving requirements**\n\nConsider the risks associated with driving, especially outside your home country and after long flights.\n\n### **Driver requirements**\n\n- Hold a driving license suitable for the type of car rented and permitted by local law.\n- Be familiar with local driving conditions before renting.\n\n### **Risk management**\n\n- Car rental is not advised unless you are familiar with local conditions.\n- Follow [Travel Risk Management](https://w.amazon.com/bin/view/TravelRiskManagement/Home/) (TRM) ground transportation recommendations for elevated risk destinations in TRM advisories.\n"
+      ],
+      "reference_answer": "You can book up to intermediate size vehicles (mini, economy, or compact) through the Self-Service Travel Booking Tool."
+    },
+    {
+      "id": "ragas-001",
+      "query": "preferred supplier booking policy approval",
+      "type": "single_hop_specific",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "5a67d52f-6b49-48d3-8697-293e322c03c5"
+      ],
+      "reference_contexts": [
+        "# **What am I allowed to book?**\n\nTravelers are strongly encouraged to book preferred suppliers identified in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/). Preferred supplier rates typically include flexible terms and conditions and additional benefits.\n\nRefer to section 3.11 [Preferred Suppliers](https://policy.a2z.com/docs/176324/publication#c4c58a98-3505-2b70-3124-861fc6175249) in the Global Travel and Expense Policy.\n\n## **Why book preferred suppliers? **\n\n- Preferred suppliers are vetted for safety, security, and environmental considerations.\n- Preferred rates include flexible terms and conditions.\n- Loyalty program eligibility (not available in all countries or with all providers)\n- Additional traveler benefits are included with preferred supplier bookings.\n"
+      ],
+      "reference_answer": "Travelers are strongly encouraged to book preferred suppliers identified in the Self-Service Booking Tool. Preferred supplier rates typically include flexible terms and conditions and additional benefits. Refer to section 3.11 Preferred Suppliers in the Global Travel and Expense Policy."
+    },
+    {
+      "id": "ragas-002",
+      "query": "If one of my older trips has been archived or just isn't showing up in the Trips Library anymore, how do I get to those historical records?",
+      "type": "single_hop_abstract",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "8d821dd4-b829-4d69-8a50-50b5f2b9d211"
+      ],
+      "reference_contexts": [
+        "# **Where can I locate my previously booked trips?**\n\nSelect Trips Library from the main menu in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) to access current and past trips, including invoices.\n\n## **Archived or missing trips**\n\nIf a trip is no longer visible or has been archived, open a request through [Travel RIVER](https://river.amazon.com/?org=GTE) to access your historical booking records.\n\n## P**rovider-managed bookings**\n\nBookings made directly through travel providers (including rail) must be managed directly with the provider.\n"
+      ],
+      "reference_answer": "If a trip is no longer visible or has been archived, you need to open a request through Travel RIVER (river.amazon.com/?org=GTE) to access your historical booking records."
+    },
+    {
+      "id": "ragas-003",
+      "query": "When I'm changing a flight in the self-service tool, what's the actual sequence to cancel one versus just modifying a segment?",
+      "type": "single_hop_abstract",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "bbbc8609-7cc8-4e90-9edc-cf1009020f63"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **To cancel a flight**\n\n- Log in to the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n- Navigate to Trips > Upcoming and select your trip.\n- Select Cancel next to the flight.\n- Confirm the cancellation twice to complete.\n\n## **To modify a flight**\n\n- Select your segment and select Modify.\n- Choose the flight to change.\n- Update your details.\n- Search for new flights and complete checkout.\n\nWatch this quick video: [Modify Your Flight & Hotel](https://broadcast.amazon.com/videos/1594156).\n"
+      ],
+      "reference_answer": "To cancel a flight: log in to the Self-Service Travel Booking Tool, go to Trips > Upcoming and select your trip, select Cancel next to the flight, then confirm the cancellation twice to complete. To modify a flight: select your segment and choose Modify, pick the flight to change, update your details, then search for new flights and complete checkout."
+    },
+    {
+      "id": "ragas-004",
+      "query": "out of policy vs policy violation difference approval",
+      "type": "single_hop_specific",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "eb558531-15e7-4030-bed0-72eaa07b6f9c"
+      ],
+      "reference_contexts": [
+        "# **Why is my booking out of policy?**\n\nThe \"Out of Policy\" flag in the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) helps you identify options that comply with the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#1). It does not prevent you from completing your booking.\n\n## **What the Global Travel and Expense Policy considers**\n\n- Lowest Logical Fare in economy with a seat assignment\n\n- Lowest hotel rates\n\n- Preferred car rates for the approved car type\n\n## **Out of Policy vs. Policy Violation**\n\nOut of Policy: Your selection exceeds policy guidelines but may be justified for business reasons\n\nYes \u2014 provide a reason for your selection.\n\nPolicy Violation: Your selection violates a hard rule (for example, booking first class). No \u2014 the booking cannot be completed.\n\n## **When an out-of-policy booking is justified**\n\nYou may proceed with an out-of-policy booking when there is a valid business reason. Examples include:\n\n- A hotel that is out of policy but closer to your business meetings\n\n- An intermediate SUV during inclement weather for safety reasons\n\nProvide a brief reason when prompted. This serves as an audit tool to ensure flexibility while maintaining safety and frugality.\n"
+      ],
+      "reference_answer": "Out of Policy means your selection exceeds policy guidelines but may be justified for business reasons; you can complete the booking by providing a reason. Policy Violation means your selection breaks a hard rule (for example, booking first class), and the booking cannot be completed."
+    },
+    {
+      "id": "ragas-005",
+      "query": "If I'm travelling in EMEA or APAC and the fare with a standard seat or baggage ends up costing more than the Lowest Logical Fare limit, how should I handle that from an expense standpoint?",
+      "type": "single_hop_abstract",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "f0093e4c-160e-401a-bacb-f4427b9d0728"
+      ],
+      "reference_contexts": [
+        "# **What is the process for booking a seat?**\n\nBook the Lowest Logical Fare with a seat assignment and baggage included. The [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) highlights in-policy fares for easy selection.\n\nRefer to section 4.7 [Air Travel Reimbursable Incidentals](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) in the Global Travel and Expense Policy.\n\n## **EMEA and APAC travelers: ancillary purchases**\n\nFares that include a standard seat or baggage may sometimes exceed the Lowest Logical Fare limits in EMEA and APAC regions. If this occurs:\n\n- Purchase the seat or baggage separately as an ancillary item directly with the airline.\n- Expense the additional cost separately.\n- Save all receipts for any ancillary purchases.\n\n## **How to select a seat when included in your fare**\n\nSeat maps are available during the shopping path only. Use them to compare seat availability across flights before making your selection.\n\n### **During booking**\n\nA seat may be auto-assigned when you select a flight at checkout. You may be able to select a different seat \u2014 view the seat map at checkout and choose your preferred seat before completing your booking.\n\n### **After booking**\n\nChange your seat once ticketed by:\n\n- Navigating to Trips > My Trips in the Self-Service Travel Booking Tool\n- Using the airline mobile app directly (varies by airline)\n\nWatch this quick video: [How to Change Your Seat](https://broadcast.amazon.com/videos/1656533)\n"
+      ],
+      "reference_answer": "For EMEA and APAC travelers, if a fare including a standard seat or baggage exceeds the Lowest Logical Fare limits, you should purchase the seat or baggage separately as an ancillary item directly with the airline, expense the additional cost separately, and save all receipts for any ancillary purchases."
+    },
+    {
+      "id": "ragas-006",
+      "query": "approve team travel booking tool amazon",
+      "type": "single_hop_specific",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "ec0c13bb-da1a-4808-a2a1-42cd3e24c977"
+      ],
+      "reference_contexts": [
+        "# **How do I book travel for work at Amazon?**\n\nAccess the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) to book flights, hotels, car rentals, and rail travel.\n\n## First-time booking\n\nIf you are new to Amazon, review the [New Hire Travel Playbook](https://w.amazon.com/bin/view/TravelAndEvents/newhire_playbook/) for a complete onboarding guide. Before your first booking, create your Travel Profile using your Phone Tool email address.\n\nRefer to section 3.3 [How to Book Travel](https://policy.a2z.com/docs/176324/publication#66c58a98-3506-6b1f-2814-abf4f9de7f38) in the Global Travel and Expense Policy.\n"
+      ],
+      "reference_answer": "Travel for work at Amazon is booked through the Self-Service Booking Tool (booktravel.corp.amazon.com), which is used to book flights, hotels, car rentals, and rail travel."
+    },
+    {
+      "id": "ragas-007",
+      "query": "who authorizes travel medical accommodation requests",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "48046e91-af74-4c6d-8f0d-b93647a424d4"
+      ],
+      "reference_contexts": [
+        "# **How do I request medical accommodation for travel?**\n\nContact [Disability and Leave Services](https://w.amazon.com/bin/view/AET/Reyes-org/global-Travel/) (DLS) to request travel accommodations due to a physical or disability-related impairment or limitation.\n\nRefer to section 3.5 [Travelers with Additional Needs](https://policy.a2z.com/docs/176324/publication#dac58a98-3508-3b21-6d99-2fb50bd5db01) in the Global Travel and Expense Policy.\n\n## **Who authorizes travel accommodations?**\n\nOnly DLS can authorize travel accommodations. Amazon Travel & Events and your manager cannot authorize accommodation requests.\n\n## **How to request**\n\nVisit the [DLS site](https://w.amazon.com/bin/view/AET/Reyes-org/global-Travel/) for information on the process and requirements. For Candidate or New Hires, contact the [Applicant Candidate Accommodation Team (ACAT)](https://w.amazon.com/bin/view/AET/Reyes-org/DLS-Applicant-Candidate-Accommodation/).\n"
+      ],
+      "reference_answer": "Only Disability and Leave Services (DLS) can authorize travel accommodations. Amazon Travel & Events and your manager cannot authorize accommodation requests."
+    },
+    {
+      "id": "ragas-008",
+      "query": "If I want to upgrade my fare class on a regional trip, how does the reimbursement work and what costs do I have to cover myself?",
+      "type": "single_hop_abstract",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "b9ce83b0-b104-421f-82bd-52202ac1382c"
+      ],
+      "reference_contexts": [
+        "# **Am I allowed to upgrade my fare class?** (Regional)\n\nYes. Amazon reimburses only the Lowest Logical Fare in economy class. You must pay the difference between the policy-approved fare and the upgraded class out of pocket.\n\nRefer to section 4.1[Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#4-1) in the Global Travel and Expense Policy.\n\n## **How to upgrade**\n\n- Contact a Travel Counselor and request a personal upgrade for your trip.\n- Pay for the entire ticket cost upfront using your own payment method.\n- Obtain documentation showing the price difference between the Lowest Logical Fare and the upgraded class.\n- When you expense your trip, claim reimbursement only for the documented Lowest Logical Fare noted by the travel services provider.\n\nUpgrade fees and premium seating fees are not reimbursable.\n\n## **Manager notification**\n\nYour manager receives an email notification indicating you have added a personal upgrade. No manager action is required.\n"
+      ],
+      "reference_answer": "You're allowed to upgrade, but Amazon only reimburses the Lowest Logical Fare in economy class, so you must pay the difference between the policy-approved fare and the upgraded class out of pocket. To do this, contact a Travel Counselor to request a personal upgrade, pay the entire ticket cost upfront with your own payment method, and obtain documentation showing the price difference between the Lowest Logical Fare and the upgraded class. When expensing the trip, claim reimbursement only for the documented Lowest Logical Fare noted by the travel services provider. Upgrade fees and premium seating fees are not reimbursable."
+    },
+    {
+      "id": "ragas-009",
+      "query": "When I'm heading abroad, what actually determines which visa and immigration docs I need to sort out?",
+      "type": "single_hop_abstract",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "ea1d3ee7-fa27-4905-a6eb-d26dac5a676f"
+      ],
+      "reference_contexts": [
+        "# **Do I need a visa for travel?**\n\nYou must complete a pre-travel immigration assessment through the International Business Travel Guided Experience before traveling internationally. This assessment determines your specific visa and immigration requirements based on your destination, citizenship, and trip details.\n\nRefer to section 3.9 [Visas and Passports](https://policy.a2z.com/docs/176324/publication#3-9) in the Global Travel and Expense Policy.\n\n## **What the assessment covers**\n\n- Visa requirements for your destination country\n- Immigration documentation needed based on your citizenship\n- Trip-specific requirements based on duration and purpose of travel\n"
+      ],
+      "reference_answer": "Your specific visa and immigration requirements are determined by the pre-travel immigration assessment (completed through the International Business Travel Guided Experience), based on your destination, your citizenship, and your trip details. The assessment covers visa requirements for your destination country, immigration documentation needed based on your citizenship, and trip-specific requirements based on the duration and purpose of travel."
+    },
+    {
+      "id": "ragas-010",
+      "query": "emergency travel support hours when booking",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "79fa79b9-a11e-4527-af19-202f07567615"
+      ],
+      "reference_contexts": [
+        "# **Why do I have to book travel in the program?**\n\nBooking within [Amazon Travel & Events](https://w.amazon.com/bin/view/TravelAndEvents/) is required. The program provides safety, cost savings, booking simplicity, sustainability, and service quality benefits that are not available on consumer booking sites.\n\n## **Benefits of booking within Amazon Travel & Events**\n\n- Safety and security: Amazon Travel & Events provide 24/7 emergency support with instant access to your travel details for quick assistance. All bookings are automatically registered for security monitoring and medical assistance worldwide through International SOS.\n- Cost savings: Amazon Travel & Events negotiates exclusive discounts with preferred suppliers. You access corporate rates on 400+ airlines, millions of hotel rooms, and car rental agencies that are not available on consumer booking sites.\n- Booking simplicity: Access over 400 airlines and millions of hotel rooms through pre-vetted travel suppliers who meet rigorous safety and service standards.\n- Sustainability: In line with Amazon's commitment to The Climate Pledge, purposeful travel options such as lower-emission rail and eco-conscious hotels are available. Select sustainable travel options when available.\n- Service quality: Pre-screened travel providers meet high standards for reliability and customer care.\n\n## **Before you book**\n\nReview section 3.0 [General Booking Guidelines](https://policy.a2z.com/docs/176324/publication#4ec58a98-347a-e36a-54e0-278512f5781b) in the Global Travel and Expense Policy before booking.\n"
+      ],
+      "reference_answer": "Amazon Travel & Events provides 24/7 emergency support with instant access to your travel details for quick assistance. All bookings are automatically registered for security monitoring and medical assistance worldwide through International SOS."
+    },
+    {
+      "id": "ragas-011",
+      "query": "When I've got a same-day trip coming up, when do I actually need to call a Travel Counselor versus just booking it myself online?",
+      "type": "single_hop_abstract",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "e3e46a05-92f7-43b1-81bf-74710b447725"
+      ],
+      "reference_contexts": [
+        "# **How do I set up my Travel Profile?**\n\nYou must create a Travel Profile in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) before booking business travel. Your Travel Profile securely stores your personal information, passport details, payment method, and travel preferences.\n\nRefer to section 3.4 [Traveler Profiles](https://policy.a2z.com/docs/176324/publication#52c58a98-3509-0d43-4f83-20fcd24c2fec) in the Global Travel and Expense Policy.\n\n## **What your Travel Profile stores**\n\n- Personal information: mobile phone number and date of birth (varies by country)\n\n- Passport details (for international travel)\n\n- Corporate or personal credit card (required to secure hotel reservations)\n\n- Travel preferences and loyalty program numbers (optional)\n\n## **Quick start videos**\n\n[Travel Quick Start Videos (Japan)](https://broadcast.amazon.com/channels/1303/playlists/18326)\n\n## **How to book after profile setup**\n\n- Standard bookings: Log in to the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) and search for flights, hotels, car rentals, or rail options.\n- Last-minute bookings (within 6 hours of departure): Contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) during business hours. For same-day travel outside the 6-hour window, book online through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n"
+      ],
+      "reference_answer": "For last-minute bookings within 6 hours of departure, you must contact a Travel Counselor during business hours. For same-day travel that falls outside the 6-hour window, you can book online through the Self-Service Travel Booking Tool."
+    },
+    {
+      "id": "ragas-012",
+      "query": "When I'm traveling in EMEA or APAC and the fare bundling a seat or bag blows past the Lowest Logical Fare limit, what's the right way to handle it?",
+      "type": "single_hop_abstract",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "046dc0ed-0bed-4b8f-8de7-817b5b20548e"
+      ],
+      "reference_contexts": [
+        "# **What is the process for booking a seat?**\n\nBook the Lowest Logical Fare with a seat assignment and baggage included. The [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) highlights in-policy fares for easy selection.\n\nRefer to section 4.7 [Air Travel Reimbursable Incidentals](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) in the Global Travel and Expense Policy.\n\n## **EMEA and APAC travelers: ancillary purchases**\n\nFares that include a standard seat or baggage may sometimes exceed the Lowest Logical Fare limits in EMEA and APAC regions. If this occurs:\n\n- Purchase the seat or baggage separately as an ancillary item directly with the airline.\n- Expense the additional cost separately.\n- Save all receipts for any ancillary purchases.\n"
+      ],
+      "reference_answer": "In EMEA and APAC, if a fare that includes a standard seat or baggage exceeds the Lowest Logical Fare limits, purchase the seat or baggage separately as an ancillary item directly with the airline, expense the additional cost separately, and save all receipts for those ancillary purchases."
+    },
+    {
+      "id": "ragas-013",
+      "query": "report car accident rental business travel",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "ee381c40-2a21-48a6-b6fa-24d0a2ced64e"
+      ],
+      "reference_contexts": [
+        "# **How do I report a car accident while traveling for business?**\n\nContact emergency services first if there are injuries or immediate safety concerns. Then visit [Amazon Travel Risk Management](https://w.amazon.com/bin/view/TravelRiskManagement/Home/) for the damage reporting process. Once you have completed these steps, inform your manager.\n\nRefer to section 6.8 [Car Accidents](https://policy.a2z.com/docs/176324/publication#62c58a98-3514-2159-75a6-abd568753d90) in the Global Travel and Expense Policy.\n"
+      ],
+      "reference_answer": "Contact emergency services first if there are injuries or immediate safety concerns. Then visit Amazon Travel Risk Management for the damage reporting process, and afterward inform your manager. See section 6.8 (Car Accidents) in the Global Travel and Expense Policy."
+    },
+    {
+      "id": "ragas-014",
+      "query": "approval required to extend business trip for personal time",
+      "type": "single_hop_specific",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "a16a43a1-ba36-44bf-a33f-c2470902c267"
+      ],
+      "reference_contexts": [
+        "# **Can I combine work and personal travel?**\n\nYes. You can extend business trips to add personal time with line manager approval. Amazon reimburses only the costs associated with the business portion of your trip.\n\nRefer to section 3.6 [Extended Trip for Personal Time](https://policy.a2z.com/docs/176324/publication#38c58a98-3502-4cf8-8a85-21cba63fea34) in the Global Travel and Expense Policy.\n\n## **Requirements**\n\nObtain line manager approval before extending your trip.\n\nAmazon reimburses only business-related costs.\n\nPersonal expenses incurred during the extension are your responsibility.\n\n## **More information**\n\nFor details on reimbursement guidelines for combined trips, visit [Travel RIVER](https://river.amazon.com/?org=GTE) and the [Amazon Travel & Events Wiki](https://w.amazon.com/bin/view/TravelAndEvents/).\n"
+      ],
+      "reference_answer": "Yes, you can extend a business trip to add personal time, but you must obtain line manager approval before doing so. Amazon reimburses only the business-related costs; personal expenses during the extension are your responsibility."
+    },
+    {
+      "id": "ragas-015",
+      "query": "Why does my Travel Profile need a credit card on file, and does it have to be a corporate card?",
+      "type": "single_hop_abstract",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "9b75108f-b8fe-4992-b008-4de72433d250"
+      ],
+      "reference_contexts": [
+        "# **How do I set up my Travel Profile?**\n\nYou must create a Travel Profile in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) before booking business travel. Your Travel Profile securely stores your personal information, passport details, payment method, and travel preferences.\n\nRefer to section 3.4 [Traveler Profiles](https://policy.a2z.com/docs/176324/publication#52c58a98-3509-0d43-4f83-20fcd24c2fec) in the Global Travel and Expense Policy.\n\n## **What your Travel Profile stores**\n\n- Personal information: mobile phone number and date of birth (varies by country)\n- Passport details (for international travel)\n- Corporate or personal credit card (required to secure hotel reservations)\n- Travel preferences and loyalty program numbers (optional)\n\n**Important: **Some information will be pre-populated for you\u2014verify that your name exactly matches your government-issued ID.\n\n## **Quick start guides**\n\n[Travel Profile Quick Start Guide (Global Access) for Travelers](https://w.amazon.com/bin/view/TravelAndEvents/NewTravelSystem/)\n\n[Travel Profile Quick Start Guide (Global Access) for Travel Arrangers](https://w.amazon.com/bin/view/TravelAndEvents/Travel_Arranger_NewTravelsystem/)\n\n## **How to book after profile setup**\n\n- Standard bookings: Log in to the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) and search for flights, hotels, car rentals, or rail options.\n- Last-minute bookings (within 6 hours of departure): Contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) during business hours. For same-day travel outside the 6-hour window, book online through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n"
+      ],
+      "reference_answer": "A corporate or personal credit card is required in your Travel Profile to secure hotel reservations. It does not have to be a corporate card\u2014either a corporate or personal credit card is accepted."
+    },
+    {
+      "id": "ragas-016",
+      "query": "how to change flight booking",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "1fc1d541-01ed-42b0-b70a-50ac9f095dfe"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **How to cancel or modify your flight **\n\n- Navigate to your Upcoming Trips in the Travel section of your home page.\n- If online self-service changes are not available for your booking, contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n- If further support is needed, visit the [Amazon Travel & Events Wiki](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for more information.\n"
+      ],
+      "reference_answer": "Use the Self-Service Travel Booking Tool (booktravel.corp.amazon.com) to cancel or rebook your trip; self-service supports cancellations and modifications for most bookings. To modify your flight, navigate to your Upcoming Trips in the Travel section of your home page. If online self-service changes are not available for your booking, contact a Travel Counselor for assistance, and visit the Amazon Travel & Events Wiki for more information."
+    },
+    {
+      "id": "ragas-017",
+      "query": "Hey, I'm trying to track down invoices from some trips I booked a while back for an expense report \u2014 where can I find my past bookings?",
+      "type": "single_hop_abstract",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "36f2d803-57d2-4ed3-b21e-caba8f6a2e34"
+      ],
+      "reference_contexts": [
+        "# **Where can I locate my previously booked trips?**\n\nSelect Trips from the main menu in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) to access current and past trips, including invoices.\n\nWatch this quick video: [Navigating My Trips](https://broadcast.amazon.com/videos/1804201).\n\n## **Archived or missing trips**\n\nIf a trip is no longer visible or has been archived, open a request through [Travel RIVER](https://river.amazon.com/?org=GTE) to access your historical booking records.\n\n## P**rovider-managed bookings**\n\nBookings made directly through travel providers (including rail) must be managed directly with the provider.\n"
+      ],
+      "reference_answer": "Select Trips from the main menu in the Self-Service Booking Tool to access your current and past trips, including invoices. If a trip is no longer visible or has been archived, open a request through Travel RIVER to access your historical booking records. Note that bookings made directly through travel providers (including rail) must be managed directly with the provider."
+    },
+    {
+      "id": "ragas-018",
+      "query": "premium economy upgrade eligibility long haul flights",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "5bd55d03-9de3-4eb0-9dfd-74e8aad0d472"
+      ],
+      "reference_contexts": [
+        "# **Can I get permission to upgrade for long-haul flights?**\n\nYes. Amazon has a defined process for granting cabin upgrade exceptions through the Premium Economy Accommodation (PEA) program. Travelers who meet specific criteria are approved to self-book premium economy for flights of 14 hours or more (excluding layovers).\n\n## **Eligibility requirements**\n\nTo qualify for PEA, you must meet both criteria:\n\n- Book all travel through Amazon Travel & Events.\n- Complete four (4) or more one-way trips exceeding 14 hours (excluding layover time) in the last 12 months.\n\n## **How PEA selection works**\n\nNo action is required from you. Once you fulfill the minimum requirements, your name is automatically added to the PEA list.\n\n- Your [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) is automatically updated to allow booking premium economy flights.\n- Qualifications are monitored daily.\n- Once minimum criteria are fulfilled, you maintain status for one year from the qualifying date.\n- No manual review or employee action is required.\n\n## **Checking your PEA status**\n\nOpen a request through [Travel RIVER](https://river.amazon.com/?org=GTE&q0=8110c0c9-104e-4744-85d6-041cbc64db91) to verify your PEA status. Amazon Travel Support can verify status but cannot provide exceptions.\n\n## **What PEA does not cover**\n\nPEA exceptions do not apply to all flights. The exception applies only to flights of 14 hours or more (excluding layovers).\n"
+      ],
+      "reference_answer": "To qualify for the Premium Economy Accommodation (PEA) program, you must meet both criteria: book all travel through Amazon Travel & Events, and complete four (4) or more one-way trips exceeding 14 hours (excluding layover time) in the last 12 months. PEA applies only to flights of 14 hours or more (excluding layovers)."
+    },
+    {
+      "id": "ragas-019",
+      "query": "self service travel booking tool tech support",
+      "type": "single_hop_specific",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "95bbc7e7-5b89-4a8a-86ef-8900a48c0b33"
+      ],
+      "reference_contexts": [
+        "# **How do I get technical support for the Self-Service Travel Booking Tool?**\n\nAccess [Travel RIVER](https://river.amazon.com/?org=GTE) to get support, report an issue, or suggest a feature enhancement for the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n\n## **What you can do through **[Travel RIVER](https://river.amazon.com/?org=GTE)\n\n- **Get support:** Resolve login problems, system errors, payment display issues, or anything preventing you from completing a booking\n- **Report an issue:** Flag bugs, missing bookings, Travel Profile sync failures, or Itinerary discrepancies\n- **Suggest a feature enhancement:** Submit ideas to improve the Self-Service Travel Booking Tool experience\n"
+      ],
+      "reference_answer": "Access Travel RIVER (https://river.amazon.com/?org=GTE) to get technical support for the Self-Service Travel Booking Tool. Through Travel RIVER you can get support (resolve login problems, system errors, payment display issues, or anything preventing you from completing a booking), report an issue (bugs, missing bookings, Travel Profile sync failures, or itinerary discrepancies), or suggest a feature enhancement."
+    },
+    {
+      "id": "ragas-020",
+      "query": "If I want to use my personal miles to upgrade a flight I booked for work, how does that process work and are there any cost or eligibility limits I should watch out for?",
+      "type": "single_hop_abstract",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "61598f6d-d0a2-4521-a2a5-fef356e5871f"
+      ],
+      "reference_contexts": [
+        "# **Can I upgrade my fare using miles?**\n\nYes. After booking travel through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/), you may contact the airline directly to request an upgrade using your personal loyalty miles. Mileage upgrades cannot be processed through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) \u2014 you must request them directly with your airline.\n\nRefer to section 3.12 [Loyalty Programs](https://policy.a2z.com/docs/176324/publication#c6c58a98-350b-aaa2-8c87-d9cb7f980da2) in the Global Travel and Expense Policy.\n\n## **Important limitations**\n\n- Airline policies vary: Not all airlines allow upgrades with miles for tickets purchased through third-party booking platforms.\n- Fare class restrictions: Basic economy and deeply discounted fares are typically ineligible for mileage upgrades.\n- Verification required: Review your specific fare rules and restrictions before requesting an upgrade.\n"
+      ],
+      "reference_answer": "Yes, you can upgrade using your personal loyalty miles, but you must contact the airline directly after booking through the Self-Service Travel Booking Tool \u2014 mileage upgrades cannot be processed through the tool itself. Be aware of limitations: not all airlines allow mileage upgrades for tickets purchased through third-party booking platforms, basic economy and deeply discounted fares are typically ineligible, and you should review your specific fare rules and restrictions before requesting an upgrade. See section 3.12 Loyalty Programs in the Global Travel and Expense Policy for details."
+    },
+    {
+      "id": "ragas-021",
+      "query": "Why does my travel profile need a credit card stored in it, and does it have to be a corporate one?",
+      "type": "single_hop_abstract",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "1066c902-eb00-4a76-a21f-2e3a23cef1cf"
+      ],
+      "reference_contexts": [
+        "# **How do I set up my Travel Profile?**\n\nYou must create a Travel Profile in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) before booking business travel. Your Travel Profile securely stores your personal information, passport details, payment method, and travel preferences.\n\nRefer to section 3.4 [Traveler Profiles](https://policy.a2z.com/docs/176324/publication#52c58a98-3509-0d43-4f83-20fcd24c2fec) in the Global Travel and Expense Policy.\n\n## **What your Travel Profile stores**\n\n- Personal information: mobile phone number and date of birth (varies by country)\n- Passport details (for international travel)\n- Corporate or personal credit card (required to secure hotel reservations)\n- Travel preferences and loyalty program numbers (optional)\n\n**Important: **Some travel profile information will be pre-populated for you\u2014verify that your name exactly matches your government-issued ID.\n\n## **Quick start guides**\n\n[Travel Profile Quick Start Guide for Travelers (China)](https://amazon.sharepoint.com/sites/AmazonTravelEventsPublicResources/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FAmazonTravelEventsPublicResources%2FShared%20Documents%2FTravel%20Public%2FChina%20Public%2FAmazon%5FTripSouce%20China%5FBCD%20Quick%20Start%20Guide%2D2025%2DFINAL%20%281%29%2Epdf&parent=%2Fsites%2FAmazonTravelEventsPublicResources%2FShared%20Documents%2FTravel%20Public%2FChina%20Public&p=true&ga=1)\n\n[Travel Profile Quick Start Guide for Travel Arrangers (China)](https://amazon.sharepoint.com/sites/AmazonTravelEventsPublicResources/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FAmazonTravelEventsPublicResources%2FShared%20Documents%2FTravel%20Public%2FChina%20Public%2FAmazon%5FTripSouce%20China%5FBCD%20Arranger%20QSG%2D2025%2DF%20%281%29%2Epdf&parent=%2Fsites%2FAmazonTravelEventsPublicResources%2FShared%20Documents%2FTravel%20Public%2FChina%20Public&p=true&ga=1)\n\n## **How to book after profile setup**\n\n- Standard bookings: Log in to the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) and search for flights, hotels, car rentals, or rail options.\n- Last-minute bookings (within 6 hours of departure): Contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) during business hours. For same-day travel outside the 6-hour window, book online through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n"
+      ],
+      "reference_answer": "A corporate or personal credit card is required in your Travel Profile because it's needed to secure hotel reservations. It can be either a corporate or personal credit card."
+    },
+    {
+      "id": "ragas-022",
+      "query": "I travel constantly and want to make sure I'm not missing loyalty credits \u2014 are there any countries where I actually can't earn personal miles on business trips?",
+      "type": "single_hop_abstract",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "df856485-44b7-4b7b-be6a-eee5c127d7ac"
+      ],
+      "reference_contexts": [
+        "# **Can I earn personal miles or loyalty points when traveling for business?**\n\nYes. You can earn personal loyalty miles and points when traveling for business through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/). This applies to airlines, hotels, and rental cars.\n\nRefer to section 3.12 [Loyalty Programs](https://policy.a2z.com/docs/176324/publication#3-12) in the Global Travel and Expense Policy.\n\n## **Eligibility restrictions**\n\nEmployees based in Sweden, Norway, Denmark, and Israel are not eligible to participate in supplier point programs due to payroll tax compliance requirements.\n\n## **How to earn miles**\n\n- Locate more information on the Amazon Travel & Events [Preferred Travel Providers and Promotions Wiki](https://w.amazon.com/bin/view/TravelAndEvents/BusinessTravelPromotions/).\n- Sign up for loyalty programs.\n- Add your loyalty program numbers to your Travel Profile.\n- Miles and rewards are automatically credited to your personal account after each trip.\n\n## **Important requirements**\n\n- Ensure your loyalty numbers are accurate in your Travel Profile to avoid missing credits.\n- Your Travel Profile name and your loyalty program name must match exactly.\n- Contact the travel provider directly if miles are not credited after your trip.\n"
+      ],
+      "reference_answer": "Yes. Employees based in Sweden, Norway, Denmark, and Israel are not eligible to participate in supplier point programs due to payroll tax compliance requirements."
+    },
+    {
+      "id": "ragas-023",
+      "query": "fare class upgrade manager approval notification policy",
+      "type": "single_hop_specific",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "1e6e74ea-4257-47d3-874d-628909348fc3"
+      ],
+      "reference_contexts": [
+        "# Am I Allowed to Upgrade My Fare Class? (Global Access)\n\nYes. Amazon reimburses only the Lowest Logical Fare in economy class. You must pay the difference between the policy-approved fare and the upgraded class out of pocket.\n\nRefer to section 4.1 [Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#4-1) in the Global Travel and Expense Policy.\n\n## **How to upgrade **\n\n- Search and select your preferred upgraded cabin class in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) (desktop only). The fare indicator displays the policy-approved amount and personal upgrade cost.\n- On the Out of Policy pop-up, select Skip suggestions and proceed to the checkout page, then select Next.\n- On the Checkout page, review the breakdown of the two amounts.\n- Confirm your personal card is set as the form of payment.\n- Acknowledge the booking contains a personal upgrade.\n- Select Book flight to finalize your reservation.\n\nYou pay the full amount upfront and submit the policy-approved portion for reimbursement. The invoice/Itinerary you receive includes a Personal Upgrade Summary for your Expense Report.\n\nWatch this quick video: [How to Book a Personal Upgrade](https://broadcast.amazon.com/videos/1687601).\n\n## **Manager notification**\n\nYour manager receives an email notification indicating you have added a personal upgrade. No manager action is required.\n"
+      ],
+      "reference_answer": "When an employee adds a personal upgrade, the manager receives an email notification indicating that a personal upgrade has been added. No manager action is required. Amazon reimburses only the Lowest Logical Fare in economy class, and the employee pays the difference for the upgraded class out of pocket."
+    },
+    {
+      "id": "ragas-024",
+      "query": "rental car insurance decline at counter policy",
+      "type": "single_hop_specific",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "12eb2d6b-cbed-4cf6-a989-0486700f2123"
+      ],
+      "reference_contexts": [
+        "# **Do I need rental car insurance for work travel?**\n\nAmazon provides Collision Damage Waiver (CDW) and Liability Damage Waiver (LDW) insurance for business rentals when you book through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) and use preferred suppliers.\n\nRefer to section 6.2 [Car Rental Insurance](https://policy.a2z.com/docs/176324/publication#88c58a98-3515-6808-3fb9-b6456aec9e1b) in the Global Travel and Expense Policy.\n\n## **What is covered**\n\nCollision Damage Waiver (CDW)\n\nLiability Damage Waiver (LDW)\n\nDeductibles may apply based on rental location\n\n## **What to do at the rental counter**\n\nDecline additional insurance at the rental counter unless legally required and not already included in your rate.\n"
+      ],
+      "reference_answer": "Decline additional insurance at the rental counter unless it is legally required and not already included in your rate. Amazon provides Collision Damage Waiver (CDW) and Liability Damage Waiver (LDW) for business rentals booked through the Self-Service Travel Booking Tool using preferred suppliers."
+    },
+    {
+      "id": "ragas-025",
+      "query": "I travel everywhere, but if I'm based in China, which policies do I actually need to check before buying something, and does my manager signing off override any of them?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "5dc3eba9-1df1-4ba1-9569-87c5f249d1b6",
+        "2f61b560-d323-4e34-8bf1-1e871017c5a8"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **China-Specific Policy**\n\nEmployees based in China must also consult the [China Travel and Expense Policy](https://policy.a2z.com/docs/655286/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n"
+      ],
+      "reference_answer": "If you're based in China, you must consult both the Global Travel and Expense Policy and the China Travel and Expense Policy before making a purchase to confirm the expense is reimbursable. In all cases, manager or PXT approval does not constitute an acceptable exception to policy, so a manager's sign-off cannot override either policy."
+    },
+    {
+      "id": "ragas-026",
+      "query": "approve team travel germany vs global expense eligibility manager exception rules",
+      "type": "multi_hop_abstract",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "2f61b560-d323-4e34-8bf1-1e871017c5a8",
+        "3bebdb8f-248e-404f-b4db-f3eeea3564ce"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Germany-Specific Policy**\n\nEmployees based in Germany must also consult the [Germany Travel and Expense Policy](https://policy.a2z.com/docs/634583/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n"
+      ],
+      "reference_answer": "For all employees, business expenses are defined as those approved and necessary to the job, reflecting good judgment and the Frugality Leadership Principle, and eligibility must be confirmed against the Global Travel and Expense Policy before purchase. Critically, manager or PXT approval does NOT constitute an acceptable exception to policy, so as a manager you cannot override the policy to approve an ineligible expense. For team members based in Germany, an additional requirement applies: they must consult the Germany Travel and Expense Policy in addition to the Global Travel and Expense Policy, whereas employees elsewhere only need to follow the Global policy."
+    },
+    {
+      "id": "ragas-027",
+      "query": "expense reimbursement timeline how long until paid plus what to do if rejected resubmit",
+      "type": "multi_hop_abstract",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "81b4a939-5ff3-432a-be7a-9cc5f492dc11",
+        "57d2643d-ec89-4f9d-bb00-58f4abef30fe"
+      ],
+      "reference_contexts": [
+        "# My expense report was rejected. What do I do now?\n\nMost expense reports are processed and paid within 4 business days. If your submitted expense report has been pending with no movement for more than 3 business days, it's likely been flagged for additional review.\n\n## **If your expense report is rejected:**\n\nRejected expense reports will be returned to you in the [Expense Tool](https://expenses.corp.amazon.com/) with guidance on how to fix and resubmit the expense report. You may be asked to submit legible receipts, provide additional justification for the expense, select a different expense type, or take other steps to fix the report.\n\nReview the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication) and if you believe your expense was rejected in error, share this feedback with a detailed justification in the comment field of the expense and resubmit the expense report.\n\n## **If your expense report requires additional approvals: **\n\nReviewers such as your manager or skip-level manager will be added to your expense report. No action is needed from you at this stage unless you choose to follow up with the reviewer to provide additional context.\n\nFor assistance with resubmitting rejected expenses, contact the Amazon Global Expense Team through the [Expense & Corporate Cards RIVER](https://river.amazon.com/?org=EER).\n",
+        "# How long does it take to get reimbursed?\n\nMost expense reports are processed and paid within 4 business days.\n\n## Why your expense report may take longer to process:\n\nIf your submitted expense report has been pending with no movement for more than 3 business days, it's likely been flagged for additional review.\n\n## **If your expense report is rejected:**\n\nRejected expense reports will be returned to you in the [Expense Tool](https://expenses.corp.amazon.com/) with guidance on how to fix and resubmit the expense report. You may be asked to submit legible receipts, provide additional justification for the expense, select a different expense type, or take other steps to fix the report.\n\nReview the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication) and if you believe your expense was rejected in error, share this feedback with a detailed justification in the comment field of the expense and resubmit the expense report.\n\n## **If your expense report requires additional approvals: **\n\nReviewers such as your manager or skip-level manager will be added to your expense report. No action is needed from you at this stage unless you choose to follow up with the reviewer to provide additional context.\n\n## Need Help?\n\nTo avoid delays in reimbursement, review the [Expense Report Checklist](https://amazon.awsapps.com/workdocs-amazon/index.html#/document/4e8b704d9b86af13c5587f92386f137d471dd3c267888f6cd7c0bf3070540cae) to ensure your report is complete, compliant, and accurate before you submit. For assistance with an expense report, contact the Amazon Global Expense Team through the [Employee Expenses & Corporate Cards RIVER](https://river.amazon.com/?org=EER)\n"
+      ],
+      "reference_answer": "Most expense reports are processed and paid within 4 business days, and if a report has been pending with no movement for more than 3 business days it has likely been flagged for additional review. If your report is rejected, it will be returned to you in the Expense Tool with guidance on how to fix and resubmit it\u2014you may be asked to submit legible receipts, provide additional justification, select a different expense type, or take other corrective steps. Review the Global Travel and Expense Policy, and if you believe it was rejected in error, add a detailed justification in the comment field and resubmit. To avoid delays in the first place, review the Expense Report Checklist before submitting to ensure your report is complete, compliant, and accurate. If your report requires additional approvals, reviewers such as your manager or skip-level manager will be added and no action is needed unless you choose to follow up. For help resubmitting rejected expenses, contact the Amazon Global Expense Team through the Expense & Corporate Cards RIVER."
+    },
+    {
+      "id": "ragas-028",
+      "query": "If I'm a Switzerland-based employee trying to figure out whether a purchase is reimbursable, which policies do I actually need to check, and does getting my manager or PXT to sign off let me get around any of those policy rules?",
+      "type": "multi_hop_specific",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "2f61b560-d323-4e34-8bf1-1e871017c5a8",
+        "1da0befd-6bc7-4ce1-a1a9-7707dc3c7a5c"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Switzerland-Specific Policy**\n\nEmployees based in Switzerland must also consult the [Switzerland Travel and Expense Policy](https://policy.a2z.com/docs/703733/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n"
+      ],
+      "reference_answer": "As a Switzerland-based employee, you must consult both the Global Travel and Expense Policy AND the Switzerland Travel and Expense Policy before making a purchase to confirm the expense is eligible for reimbursement (whereas non-Switzerland employees only need to consult the Global Travel and Expense Policy). In either case, manager or PXT approval does not constitute an acceptable exception to policy, so a sign-off from your manager or PXT cannot be used to get around the requirements in those policies."
+    },
+    {
+      "id": "ragas-029",
+      "query": "Hey, since we're moving from Concur over to Emburse, if I accidentally swiped my corporate card for a personal charge, which expense tool's user guide should I follow to fix it and what's the exact step to mark the whole charge as personal so it gets deducted properly?",
+      "type": "multi_hop_specific",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "7cd776d3-dc3d-4fce-b69e-b5800f8e3c07",
+        "0765f678-af1f-47b9-adaf-c511037b9604"
+      ],
+      "reference_contexts": [
+        "An expense tool migration is currently underway from [Concur](https://expenses.corp.amazon.com/) to [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com).  Visit the Expense Tool Migration Hub to learn more about the migration timeline for your location.\n\nStep-by-step guidance on how to submit an expense report can be found in the **How to Submit Expenses user guides **for [Concur](https://w.amazon.com/bin/Concur_Global_Expense/User_Guide) or [Emburse](https://atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses)**.**\n",
+        "## **Repaying Personal Expenses (Emburse)**\n\nIf you accidentally used your corporate card for a personal expense, need to split an expense as partially personal, or otherwise need to repay Amazon, you will need to take the following steps to submit an expense report to reconcile the expense. See the\u00a0[How to Submit Expenses user guide](https://atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses) for how to navigate the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com).\n\n### **If you used your corporate card for personal use. **\n\nCommon Scenario: Hey, it happens, you accidentally swiped your corporate card instead of your personal card.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet\n\nIf the entire amount is personal and non-reimbursable, select the Expense Type \u201cPersonal Expense\u201d.\n\nFill out the required fields.\n\nContinue building your Expense Report and submit.\n\n### **If you need to split an expense as partially personal.**\n\nCommon Scenario: You purchased multiple items in the same transaction but some of the expenses are ineligible for reimbursement per policy.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet or create a new expense by uploading the receipt.\n\nApply the appropriate expense type as per the nature of the expense and fill out the required fields.\n\nUnder Allocation, click Add Allocation and select \u201cPERSONAL Non-Reimbursable Personal Expense\u201d\n\nAdjust the amounts to reflect what amount is personal.\n\nContinue building your Expense Report and submit.\n\n### **If you were reimbursed for an expense in error and now need to pay back Amazon. **\n\nCommon Scenario: You created a corporate card expense from scratch instead of waiting for it to appear in Concur. \u00a0The system treats it as an out-of-pocket reimbursement and sends money to your personal account (as listed in Amazon Touchstone).\u00a0Meanwhile, the actual corporate card charge remains \"unsubmitted\", which can lead to reminder emails - and even card suspension - if not corrected.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet.\n\nIf the entire amount is personal and non-reimbursable, select the Expense Type \u201cPersonal Expense\u201d\n\nFill out the required fields and add a comment explaining your previous incorrect submission, including the original expense report number.\n\nContinue building your Expense Report and submit.\n\n## **What Happens Next**\n\nWhen you submit expenses as personal, you authorize Amazon to deduct the amount from future reimbursements or the account you have set up in [Amazon Touchstone](https://touchstone.amazon.com/). Repeated personal use on a corporate card may result in card suspension, so use your corporate card carefully.\n\nFor additional guidance visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n"
+      ],
+      "reference_answer": "Even though an expense tool migration is currently underway from Concur to Emburse, the process for repaying an accidental personal charge on your corporate card is documented for Emburse, so you should follow the Emburse 'How to Submit Expenses' user guide (at atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses) to navigate the Emburse Expense Tool. To mark the whole charge as personal: find the corporate card charge in the Expense Tool under your eWallet, select the Expense Type 'Personal Expense', fill out the required fields, then continue building and submit your Expense Report. Once submitted as personal, you authorize Amazon to deduct that amount from future reimbursements or from the account set up in Amazon Touchstone."
+    },
+    {
+      "id": "ragas-030",
+      "query": "corporate card suspension causes deadline personal charges team",
+      "type": "multi_hop_abstract",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "c7987f4b-4444-4bf5-91d9-0fd54cd901d4",
+        "0765f678-af1f-47b9-adaf-c511037b9604"
+      ],
+      "reference_contexts": [
+        "# **What is the deadline for submitting expenses?**\n\nThe [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication) requires employees submit expense reports in the [Expense Tool](https://expenses.corp.amazon.com/) within 60 days of the transaction date. This applies to both out-of-pocket expenses (paid with cash or using your own credit card) and corporate card transactions (which will automatically populate in the [Expense Tool](https://expenses.corp.amazon.com/) within 5 business days). If you fail to submit corporate card transactions within 60 days, your corporate card may be suspended.\n\n## **Resubmitting if your expense report is rejected**\n\nMost employee expense reports are processed and paid within 4 business days. If your expense report requires additional approvals or review, it could take longer than usual to be fully processed. Should you need to resubmit your expense report if it was initially rejected, the clock does not restart against the 60-day deadline.\n\n## Need help?\n\nReview the [How to Submit Expenses User Guide](https://w.amazon.com/bin/Concur_Global_Expense/User_Guide) before you submit an expense report to prevent errors that might lead to delays in reimbursement.\n",
+        "## **Repaying Personal Expenses (Emburse)**\n\nIf you accidentally used your corporate card for a personal expense, need to split an expense as partially personal, or otherwise need to repay Amazon, you will need to take the following steps to submit an expense report to reconcile the expense. See the\u00a0[How to Submit Expenses user guide](https://atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses) for how to navigate the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com).\n\n### **If you used your corporate card for personal use. **\n\nCommon Scenario: Hey, it happens, you accidentally swiped your corporate card instead of your personal card.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet\n\nIf the entire amount is personal and non-reimbursable, select the Expense Type \u201cPersonal Expense\u201d.\n\nFill out the required fields.\n\nContinue building your Expense Report and submit.\n\n### **If you need to split an expense as partially personal.**\n\nCommon Scenario: You purchased multiple items in the same transaction but some of the expenses are ineligible for reimbursement per policy.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet or create a new expense by uploading the receipt.\n\nApply the appropriate expense type as per the nature of the expense and fill out the required fields.\n\nUnder Allocation, click Add Allocation and select \u201cPERSONAL Non-Reimbursable Personal Expense\u201d\n\nAdjust the amounts to reflect what amount is personal.\n\nContinue building your Expense Report and submit.\n\n### **If you were reimbursed for an expense in error and now need to pay back Amazon. **\n\nCommon Scenario: You created a corporate card expense from scratch instead of waiting for it to appear in Concur. \u00a0The system treats it as an out-of-pocket reimbursement and sends money to your personal account (as listed in Amazon Touchstone).\u00a0Meanwhile, the actual corporate card charge remains \"unsubmitted\", which can lead to reminder emails - and even card suspension - if not corrected.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet.\n\nIf the entire amount is personal and non-reimbursable, select the Expense Type \u201cPersonal Expense\u201d\n\nFill out the required fields and add a comment explaining your previous incorrect submission, including the original expense report number.\n\nContinue building your Expense Report and submit.\n\n## **What Happens Next**\n\nWhen you submit expenses as personal, you authorize Amazon to deduct the amount from future reimbursements or the account you have set up in [Amazon Touchstone](https://touchstone.amazon.com/). Repeated personal use on a corporate card may result in card suspension, so use your corporate card carefully.\n\nFor additional guidance visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n"
+      ],
+      "reference_answer": "A team member's corporate card can be suspended for two related reasons drawn from the expense rules. First, per the submission deadline policy, corporate card transactions must be submitted in the Expense Tool within 60 days of the transaction date; failing to submit corporate card transactions within that 60-day window may result in card suspension (note that resubmitting a rejected report does not restart the 60-day clock). Second, mishandling personal charges can also lead to suspension: if a corporate card charge is accidentally used for personal use or created from scratch as an out-of-pocket reimbursement, the actual corporate card charge can remain 'unsubmitted,' triggering reminder emails and potential card suspension if not corrected by reconciling it (e.g., marking it as a 'Personal Expense' or allocating the personal portion in the Expense Tool). Repeated personal use of the corporate card may also result in suspension. So to protect a team member from suspension, ensure all corporate card transactions are submitted within 60 days and that any personal/erroneous charges are promptly reconciled as personal expenses."
+    },
+    {
+      "id": "ragas-031",
+      "query": "If my corporate card transaction shows up in the expense tool a few days after I spend, how long do I really have to submit it before the card gets suspended, and which user guide should I follow if my location has already moved off Concur?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "c7987f4b-4444-4bf5-91d9-0fd54cd901d4",
+        "7cd776d3-dc3d-4fce-b69e-b5800f8e3c07"
+      ],
+      "reference_contexts": [
+        "# **What is the deadline for submitting expenses?**\n\nThe [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication) requires employees submit expense reports in the [Expense Tool](https://expenses.corp.amazon.com/) within 60 days of the transaction date. This applies to both out-of-pocket expenses (paid with cash or using your own credit card) and corporate card transactions (which will automatically populate in the [Expense Tool](https://expenses.corp.amazon.com/) within 5 business days). If you fail to submit corporate card transactions within 60 days, your corporate card may be suspended.\n\n## **Resubmitting if your expense report is rejected**\n\nMost employee expense reports are processed and paid within 4 business days. If your expense report requires additional approvals or review, it could take longer than usual to be fully processed. Should you need to resubmit your expense report if it was initially rejected, the clock does not restart against the 60-day deadline.\n\n## Need help?\n\nReview the [How to Submit Expenses User Guide](https://w.amazon.com/bin/Concur_Global_Expense/User_Guide) before you submit an expense report to prevent errors that might lead to delays in reimbursement.\n",
+        "An expense tool migration is currently underway from [Concur](https://expenses.corp.amazon.com/) to [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com).  Visit the Expense Tool Migration Hub to learn more about the migration timeline for your location.\n\nStep-by-step guidance on how to submit an expense report can be found in the **How to Submit Expenses user guides **for [Concur](https://w.amazon.com/bin/Concur_Global_Expense/User_Guide) or [Emburse](https://atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses)**.**\n"
+      ],
+      "reference_answer": "You must submit expense reports within 60 days of the transaction date (not the date it populates in the tool), and corporate card transactions automatically appear within 5 business days; failing to submit corporate card transactions within 60 days may result in your corporate card being suspended. Note that resubmitting a rejected report does not restart the 60-day clock. As for the user guide, an expense tool migration from Concur to Emburse is underway, so if your location has already moved off Concur you should follow the Emburse 'How to Submit Expenses' user guide rather than the Concur one (check the Expense Tool Migration Hub for your location's timeline)."
+    },
+    {
+      "id": "ragas-032",
+      "query": "change flight and hotel booking self service when does it not work need travel counselor",
+      "type": "multi_hop_abstract",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "1fc1d541-01ed-42b0-b70a-50ac9f095dfe",
+        "29548b53-77d9-4269-8e99-9f28ddb25979"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **How to cancel or modify your flight **\n\n- Navigate to your Upcoming Trips in the Travel section of your home page.\n- If online self-service changes are not available for your booking, contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n- If further support is needed, visit the [Amazon Travel & Events Wiki](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for more information.\n",
+        "# **How do I cancel or modify a hotel booking?** (Global Access)\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to modify or cancel your hotel booking. Most hotel changes can be handled directly through self-service.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **Requirements before modifying**\n\nConfirm your reservation meets all of the following requirements:\n\n- You have not checked into the hotel.\n- Your request falls within the cancellation policy guidelines.\n- The hotel has not been paid for in advance.\n\nIf your reservation does not meet these requirements, contact [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n\n## **How to modify your hotel booking **\n\n- Log in to the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/).\n- Navigate to Trips > Upcoming and select your trip.\n- Find your hotel reservation and select Modify (or Cancel).\n- Make your changes: Update check-in and check-out dates by editing the date fields and selecting Check Availability, or Select a different room type or rate.\n- Review the changes and any price differences on the Checkout page.\n- Select Book Hotel to confirm your modifications.\n\nWatch this quick video: [Modify Your Flight & Hotel Booking](https://broadcast.amazon.com/videos/1594156).\n"
+      ],
+      "reference_answer": "Both flight and hotel changes can be made through the Self-Service Travel Booking Tool (booktravel.corp.amazon.com), and both fall under section 3.10 (Itinerary Changes and Cancellations) of the Global Travel and Expense Policy. For flights, go to Upcoming Trips in the Travel section of your home page; if online self-service changes are not available for your booking, you must contact a Travel Counselor. For hotels, self-service only works if your reservation meets all requirements: you have not checked in, your request falls within the cancellation policy guidelines, and the hotel has not been paid for in advance. If your hotel reservation does not meet these requirements (or if flight self-service is unavailable), you need to contact a Travel Counselor for assistance."
+    },
+    {
+      "id": "ragas-033",
+      "query": "manager approve expense exception travel policy amazonians vs contractors green yellow badge",
+      "type": "multi_hop_abstract",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "2f61b560-d323-4e34-8bf1-1e871017c5a8",
+        "cbfc28e5-8785-4de9-8e9d-1ff14afc8ed7"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Non-Amazon Employee Policy**\n\nTravel and reimbursement expectations for non-Amazonians \u2014 including yellow badges (contract workers), green badges (temporary workers), candidates, or guests traveling on behalf of Amazon \u2014 are covered in the [Amazon Non-Employee Travel and Expense Policy.](https://policy.a2z.com/docs/610963/publication)\n\nFor further assistance, visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n"
+      ],
+      "reference_answer": "For all travelers, an expense is only reimbursable if it is approved and necessary to the job, reflects Frugality, and is confirmed eligible under the Global Travel and Expense Policy \u2014 and manager or PXT approval does NOT constitute an acceptable exception to that policy (per both documents). So as a manager you cannot override policy to approve an otherwise ineligible expense for anyone. The difference is which policy governs: regular Amazon employees fall under the Global Travel and Expense Policy, while non-Amazonians \u2014 including yellow badges (contract workers), green badges (temporary workers), candidates, and guests traveling on Amazon's behalf \u2014 are governed by the separate Amazon Non-Employee Travel and Expense Policy. For further help, the Employee Expense & Corporate Card RIVER is available."
+    },
+    {
+      "id": "ragas-034",
+      "query": "If I accidentally charged a personal purchase to my corporate card in Emburse and want to pay Amazon back, how do I confirm that the 'Personal Expense' type I'm supposed to select is actually available to me, and where would I look it up?",
+      "type": "multi_hop_specific",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+        "0765f678-af1f-47b9-adaf-c511037b9604"
+      ],
+      "reference_contexts": [
+        "# **How do I find the right expense type?**\n\nThe Expense Type Guide ([Concur](https://w.amazon.com/bin/view/Expense_Type/), [Emburse](https://atoz.amazon.work/pages/amazon-travel-events-expense/expense-type-guide)) contains detailed descriptions of every expense type available for reimbursement in the Expense Tool ([Concur](https://expenses.corp.amazon.com/), [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com)), including country-specific restrictions.\n\nIf you don\u2019t see the **expense type** you\u2019re looking for in the Expense Tool ([Concur](https://expenses.corp.amazon.com/), [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com)), then that expense isn\u2019t available to you based on your location.\n",
+        "## **Repaying Personal Expenses (Emburse)**\n\nIf you accidentally used your corporate card for a personal expense, need to split an expense as partially personal, or otherwise need to repay Amazon, you will need to take the following steps to submit an expense report to reconcile the expense. See the\u00a0[How to Submit Expenses user guide](https://atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses) for how to navigate the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com).\n\n### **If you used your corporate card for personal use. **\n\nCommon Scenario: Hey, it happens, you accidentally swiped your corporate card instead of your personal card.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet\n\nIf the entire amount is personal and non-reimbursable, select the Expense Type \u201cPersonal Expense\u201d.\n\nFill out the required fields.\n\nContinue building your Expense Report and submit.\n\n### **If you need to split an expense as partially personal.**\n\nCommon Scenario: You purchased multiple items in the same transaction but some of the expenses are ineligible for reimbursement per policy.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet or create a new expense by uploading the receipt.\n\nApply the appropriate expense type as per the nature of the expense and fill out the required fields.\n\nUnder Allocation, click Add Allocation and select \u201cPERSONAL Non-Reimbursable Personal Expense\u201d\n\nAdjust the amounts to reflect what amount is personal.\n\nContinue building your Expense Report and submit.\n\n### **If you were reimbursed for an expense in error and now need to pay back Amazon. **\n\nCommon Scenario: You created a corporate card expense from scratch instead of waiting for it to appear in Concur. \u00a0The system treats it as an out-of-pocket reimbursement and sends money to your personal account (as listed in Amazon Touchstone).\u00a0Meanwhile, the actual corporate card charge remains \"unsubmitted\", which can lead to reminder emails - and even card suspension - if not corrected.\n\nFind the corporate card charge in the [Expense Tool](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com) under your eWallet.\n\nIf the entire amount is personal and non-reimbursable, select the Expense Type \u201cPersonal Expense\u201d\n\nFill out the required fields and add a comment explaining your previous incorrect submission, including the original expense report number.\n\nContinue building your Expense Report and submit.\n\n## **What Happens Next**\n\nWhen you submit expenses as personal, you authorize Amazon to deduct the amount from future reimbursements or the account you have set up in [Amazon Touchstone](https://touchstone.amazon.com/). Repeated personal use on a corporate card may result in card suspension, so use your corporate card carefully.\n\nFor additional guidance visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n"
+      ],
+      "reference_answer": "To repay Amazon for a personal charge in Emburse, you locate the corporate card charge under your eWallet in the Expense Tool and select the Expense Type 'Personal Expense' (or, if only part is personal, add an allocation for 'PERSONAL Non-Reimbursable Personal Expense'), then complete the required fields and submit the report (per Document B). To confirm that the 'Personal Expense' type is actually available to you, you can check the Emburse Expense Type Guide (https://atoz.amazon.work/pages/amazon-travel-events-expense/expense-type-guide), which describes every reimbursable expense type and any country-specific restrictions. If the 'Personal Expense' type doesn't appear in the Expense Tool for you, then it isn't available based on your location (per Document A)."
+    },
+    {
+      "id": "ragas-035",
+      "query": "If I need to adjust both my flight and my hotel for an upcoming trip through the self-service tool, what specific conditions would force me to go through a Travel Counselor instead, and is there a particular order I should follow when changing the hotel to avoid losing my reservation?",
+      "type": "multi_hop_specific",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "1fc1d541-01ed-42b0-b70a-50ac9f095dfe",
+        "289ab19b-8d21-408a-8aae-8f019b2130a3"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **How to cancel or modify your flight **\n\n- Navigate to your Upcoming Trips in the Travel section of your home page.\n- If online self-service changes are not available for your booking, contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n- If further support is needed, visit the [Amazon Travel & Events Wiki](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for more information.\n",
+        "# **How do I cancel or modify a hotel booking?** (Regional)\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to modify or cancel your hotel booking. Most hotel changes can be handled directly through self-service.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **Requirements before modifying**\n\nConfirm your reservation meets all of the following requirements:\n\n- You have not checked into the hotel.\n- Your request falls within the cancellation policy guidelines.\n- The hotel has not been paid for in advance.\n\nIf your reservation does not meet these requirements, contact [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n\n## **How to modify your hotel booking **\n\nThere are two types of hotel changes:\n\n- Modify the dates of your current hotel reservation.\n- Book an entirely new hotel (requires cancellation of the original reservation).\n\nIn both cases, book the new hotel or new dates first, then cancel the old reservation. This ensures you do not lose the current reservation if the preferred hotel is sold out.\n"
+      ],
+      "reference_answer": "For the flight, you can use the Self-Service Travel Booking Tool for most changes, but if online self-service changes are not available for your booking, you must contact a Travel Counselor for assistance (Document A). For the hotel, you can also use self-service, but only if your reservation meets all requirements: you have not checked into the hotel, your request falls within the cancellation policy guidelines, and the hotel has not been paid for in advance. If your reservation does not meet these requirements, you must contact a Travel Counselor (Document B). When modifying the hotel\u2014whether changing the dates or booking an entirely new hotel (which requires cancelling the original)\u2014you should book the new hotel or new dates first, then cancel the old reservation, so you don't lose your current reservation if the preferred hotel is sold out (Document B). Both flight and hotel changes should also follow section 3.10 (Itinerary Changes and Cancellations) of the Global Travel and Expense Policy."
+    },
+    {
+      "id": "ragas-036",
+      "query": "If I'm based in India, which policies do I actually need to check before a purchase, and does my manager signing off on something get me around those rules?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "70dfa225-0854-47db-95e0-ded3259e1518",
+        "2f61b560-d323-4e34-8bf1-1e871017c5a8"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **India-Specific Policy**\n\nEmployees based in India must also consult the [India Travel and Expense Policy](https://policy.a2z.com/docs/655286/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n"
+      ],
+      "reference_answer": "As an India-based employee, you must consult both the Global Travel and Expense Policy and the India Travel and Expense Policy before making a purchase to confirm the expense is reimbursable (employees elsewhere only need the Global policy). In either case, manager or PXT approval does not constitute an acceptable exception to policy, so a sign-off won't let you bypass those rules."
+    },
+    {
+      "id": "ragas-037",
+      "query": "self service tool cancel team flight and hotel different steps requirements",
+      "type": "multi_hop_abstract",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+        "289ab19b-8d21-408a-8aae-8f019b2130a3"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **To cancel a flight**\n\n- Log in to the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n- Navigate to Trips > Upcoming and select your trip.\n- Select Cancel next to the flight.\n- Confirm the cancellation twice to complete.\n\n## **To modify a flight**\n\n- Select your segment and select Modify.\n- Choose the flight to change.\n- Update your details.\n- Search for new flights and complete checkout.\n\nWatch this quick video: [Modify Your Flight & Hotel](https://broadcast.amazon.com/videos/1594156).\n",
+        "# **How do I cancel or modify a hotel booking?** (Regional)\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to modify or cancel your hotel booking. Most hotel changes can be handled directly through self-service.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **Requirements before modifying**\n\nConfirm your reservation meets all of the following requirements:\n\n- You have not checked into the hotel.\n- Your request falls within the cancellation policy guidelines.\n- The hotel has not been paid for in advance.\n\nIf your reservation does not meet these requirements, contact [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n\n## **How to modify your hotel booking **\n\nThere are two types of hotel changes:\n\n- Modify the dates of your current hotel reservation.\n- Book an entirely new hotel (requires cancellation of the original reservation).\n\nIn both cases, book the new hotel or new dates first, then cancel the old reservation. This ensures you do not lose the current reservation if the preferred hotel is sold out.\n"
+      ],
+      "reference_answer": "Both flight and hotel changes are handled through the Self-Service Travel Booking Tool (booktravel.corp.amazon.com), governed by section 3.10 (Itinerary Changes and Cancellations) of the Global Travel and Expense Policy. For flights (Document A): go to Trips > Upcoming, select the trip, select Cancel next to the flight, and confirm twice; to modify, select the segment, choose Modify, update details, search for new flights, and complete checkout. For hotels (Document B): before modifying, confirm the reservation has not been checked into, falls within cancellation policy guidelines, and has not been prepaid\u2014otherwise contact a Travel Counselor. A key difference is the hotel ordering rule: whether changing dates or booking an entirely new hotel, you must book the new hotel/dates FIRST and then cancel the old reservation so you don't lose it if the preferred hotel sells out, whereas the flight process cancels directly without this book-first safeguard."
+    },
+    {
+      "id": "ragas-038",
+      "query": "earn personal miles business travel then upgrade with miles eligibility sweden booking tool",
+      "type": "multi_hop_abstract",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+        "df856485-44b7-4b7b-be6a-eee5c127d7ac"
+      ],
+      "reference_contexts": [
+        "# **Can I upgrade my fare using miles?**\n\nYes. After booking travel through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/), you may contact the airline directly to request an upgrade using your personal loyalty miles. Mileage upgrades cannot be processed through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) \u2014 you must request them directly with your airline.\n\nRefer to section 3.12 [Loyalty Programs](https://policy.a2z.com/docs/176324/publication#c6c58a98-350b-aaa2-8c87-d9cb7f980da2) in the Global Travel and Expense Policy.\n\n## **Important limitations**\n\n- Airline policies vary: Not all airlines allow upgrades with miles for tickets purchased through third-party booking platforms.\n- Fare class restrictions: Basic economy and deeply discounted fares are typically ineligible for mileage upgrades.\n- Verification required: Review your specific fare rules and restrictions before requesting an upgrade.\n",
+        "# **Can I earn personal miles or loyalty points when traveling for business?**\n\nYes. You can earn personal loyalty miles and points when traveling for business through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/). This applies to airlines, hotels, and rental cars.\n\nRefer to section 3.12 [Loyalty Programs](https://policy.a2z.com/docs/176324/publication#3-12) in the Global Travel and Expense Policy.\n\n## **Eligibility restrictions**\n\nEmployees based in Sweden, Norway, Denmark, and Israel are not eligible to participate in supplier point programs due to payroll tax compliance requirements.\n\n## **How to earn miles**\n\n- Locate more information on the Amazon Travel & Events [Preferred Travel Providers and Promotions Wiki](https://w.amazon.com/bin/view/TravelAndEvents/BusinessTravelPromotions/).\n- Sign up for loyalty programs.\n- Add your loyalty program numbers to your Travel Profile.\n- Miles and rewards are automatically credited to your personal account after each trip.\n\n## **Important requirements**\n\n- Ensure your loyalty numbers are accurate in your Travel Profile to avoid missing credits.\n- Your Travel Profile name and your loyalty program name must match exactly.\n- Contact the travel provider directly if miles are not credited after your trip.\n"
+      ],
+      "reference_answer": "Earning and using personal loyalty miles are governed by section 3.12 (Loyalty Programs) of the Global Travel and Expense Policy. When you book through the Self-Service Travel Booking Tool, you can earn personal loyalty miles/points on airlines, hotels, and rental cars, which are automatically credited to your personal account after each trip (you must add accurate loyalty numbers matching your Travel Profile name). However, employees based in Sweden, Norway, Denmark, and Israel are not eligible to participate in supplier point programs due to payroll tax compliance, so they cannot accrue miles to later use. For those who can earn miles, mileage upgrades cannot be processed through the Self-Service Travel Booking Tool \u2014 you must contact the airline directly to request an upgrade, and upgrades may be limited by airline policy and fare class (e.g., basic economy and deeply discounted fares are typically ineligible)."
+    },
+    {
+      "id": "ragas-039",
+      "query": "Since we're moving from Concur to Emburse, can you point me to both the guide that walks through actually submitting an expense report and the guide that lists which expense types are reimbursable, for whichever tool I'm on?",
+      "type": "multi_hop_specific",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "7cd776d3-dc3d-4fce-b69e-b5800f8e3c07",
+        "2ce1871c-51f2-4fc1-ad25-b6b23119e190"
+      ],
+      "reference_contexts": [
+        "An expense tool migration is currently underway from [Concur](https://expenses.corp.amazon.com/) to [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com).  Visit the Expense Tool Migration Hub to learn more about the migration timeline for your location.\n\nStep-by-step guidance on how to submit an expense report can be found in the **How to Submit Expenses user guides **for [Concur](https://w.amazon.com/bin/Concur_Global_Expense/User_Guide) or [Emburse](https://atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses)**.**\n",
+        "# **How do I find the right expense type?**\n\nThe Expense Type Guide ([Concur](https://w.amazon.com/bin/view/Expense_Type/), [Emburse](https://atoz.amazon.work/pages/amazon-travel-events-expense/expense-type-guide)) contains detailed descriptions of every expense type available for reimbursement in the Expense Tool ([Concur](https://expenses.corp.amazon.com/), [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com)), including country-specific restrictions.\n\nIf you don\u2019t see the **expense type** you\u2019re looking for in the Expense Tool ([Concur](https://expenses.corp.amazon.com/), [Emburse](https://app.us2.chromeriver.com/login/sso/saml?idp=amazon.com)), then that expense isn\u2019t available to you based on your location.\n"
+      ],
+      "reference_answer": "Yes. Because an expense tool migration is underway from Concur to Emburse (check the Expense Tool Migration Hub for your location's timeline), you'll use the resources for whichever tool applies to you. For submitting an expense report, use the 'How to Submit Expenses' user guides \u2014 Concur (w.amazon.com/bin/Concur_Global_Expense/User_Guide) or Emburse (atoz.amazon.work/pages/amazon-travel-events-expense/how-to-submit-expenses). For determining which expense types are reimbursable, use the Expense Type Guide \u2014 Concur (w.amazon.com/bin/view/Expense_Type/) or Emburse (atoz.amazon.work/pages/amazon-travel-events-expense/expense-type-guide), which describes every available expense type including country-specific restrictions. Note that if an expense type doesn't appear in your Expense Tool (Concur or Emburse), it isn't available to you based on your location."
+    },
+    {
+      "id": "ragas-040",
+      "query": "I'm based in India but often book and host candidates and contract workers traveling on Amazon's behalf \u2014 beyond the Global Travel and Expense Policy that we all follow, which additional policy documents do I need to check for my own India expenses versus theirs?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "70dfa225-0854-47db-95e0-ded3259e1518",
+        "cbfc28e5-8785-4de9-8e9d-1ff14afc8ed7"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **India-Specific Policy**\n\nEmployees based in India must also consult the [India Travel and Expense Policy](https://policy.a2z.com/docs/655286/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Non-Amazon Employee Policy**\n\nTravel and reimbursement expectations for non-Amazonians \u2014 including yellow badges (contract workers), green badges (temporary workers), candidates, or guests traveling on behalf of Amazon \u2014 are covered in the [Amazon Non-Employee Travel and Expense Policy.](https://policy.a2z.com/docs/610963/publication)\n\nFor further assistance, visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n"
+      ],
+      "reference_answer": "Everyone must first consult the Global Travel and Expense Policy to confirm an expense is eligible (and note that manager or PXT approval is not an acceptable exception). On top of that, for your own expenses as an India-based employee you must also consult the India Travel and Expense Policy in addition to the Global policy. For the non-Amazonians you support \u2014 yellow badges (contract workers), green badges (temporary workers), candidates, or guests traveling on Amazon's behalf \u2014 their travel and reimbursement expectations are instead covered by the Amazon Non-Employee Travel and Expense Policy. So you'd reference the India policy for yourself and the Non-Employee policy for them, with the Global policy applying in both cases."
+    },
+    {
+      "id": "ragas-041",
+      "query": "expense reimbursement rules germany employee vs contractor which extra policy applies",
+      "type": "multi_hop_abstract",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "cbfc28e5-8785-4de9-8e9d-1ff14afc8ed7",
+        "3bebdb8f-248e-404f-b4db-f3eeea3564ce"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Non-Amazon Employee Policy**\n\nTravel and reimbursement expectations for non-Amazonians \u2014 including yellow badges (contract workers), green badges (temporary workers), candidates, or guests traveling on behalf of Amazon \u2014 are covered in the [Amazon Non-Employee Travel and Expense Policy.](https://policy.a2z.com/docs/610963/publication)\n\nFor further assistance, visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Germany-Specific Policy**\n\nEmployees based in Germany must also consult the [Germany Travel and Expense Policy](https://policy.a2z.com/docs/634583/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n"
+      ],
+      "reference_answer": "Both groups follow the same baseline: Amazon defines reimbursable business expenses as those approved and necessary to your job, reflecting good judgment and the Leadership Principle of Frugality, and you must consult the Global Travel and Expense Policy before purchasing (manager or PXT approval is not a valid exception). Beyond that shared baseline, the extra policy differs by group: a Germany-based employee must also consult the Germany Travel and Expense Policy in addition to the Global Travel and Expense Policy, whereas a non-Amazonian (yellow badge contract worker, green badge temporary worker, candidate, or guest traveling on behalf of Amazon) is instead covered by the Amazon Non-Employee Travel and Expense Policy."
+    },
+    {
+      "id": "ragas-042",
+      "query": "team travel insurance coverage scope personal vs business trips booking tool",
+      "type": "multi_hop_abstract",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "7d3c74ad-ee31-4a44-867e-21fdacca6f99",
+        "ca272654-e5f7-409b-97eb-83c7c074d755"
+      ],
+      "reference_contexts": [
+        "# **Do I need travel insurance?**\n\nAmazon provides travel insurance and assistance coverage for business travel. You do not need to purchase separate travel insurance.\n\nRefer to the section 10.4 [Travel Insurance/Loss or Damage](https://policy.a2z.com/docs/176324/publication#a4c58a98-34fe-cd45-17a3-7cdb4b9ec853) in the Global Travel and Expense Policy.\n\n## **Your responsibilities while traveling**\n\nUnderstand your coverage options before traveling.\n\nSafeguard your luggage and personal belongings during business travel.\n\nFollow proper procedures for reporting loss or damage.\n\n## **Coverage details and claims**\n\nFor details on coverage, loss or damage to personal property guidelines, and how to file claims, visit the [Business Travel Insurance and Assistance Program](https://inside.hr.amazon.dev/content/inside/us/en/employment/your-career-global/insurance-and-assistance-program.html) page.\n",
+        "# **Am I allowed to book personal travel in the Self-Service Travel Booking Tool?**\n\nNo. The [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) is for business travel only. Amazon's preferred rates for airlines are reserved for business travel and are not available for personal trips.\n\nRefer to section 3.7 [Personal Travel](https://policy.a2z.com/docs/176324/publication#64c58a98-3504-2cb0-1873-9f43546b5385) in the Global Travel and Expense Policy.\n\n## **Why personal travel is not permitted in the tool**\n\nAmazon's preferred rates are negotiated exclusively for business travel.\n\nMaintaining business-only usage protects negotiated rate agreements with suppliers.\n\n## **Personal travel options**\n\nFor leisure travel promotions and personal booking options, visit [Amazon Extras](https://extrasforamazon.com/app/home).\n"
+      ],
+      "reference_answer": "Amazon's travel insurance and assistance coverage applies to business travel, which employees do not need to purchase separately (per section 10.4 of the Global Travel and Expense Policy). This coverage is tied to business travel because the Self-Service Travel Booking Tool is for business travel only and cannot be used for personal trips (per section 3.7) \u2014 Amazon's preferred rates and arrangements are negotiated exclusively for business use. As a result, personal/leisure trips are not booked through the business tool and would not fall under the business travel insurance coverage; for personal travel, employees should use Amazon Extras for leisure booking options."
+    },
+    {
+      "id": "ragas-043",
+      "query": "change flight and hotel same trip self service tool when do i call travel counselor",
+      "type": "multi_hop_abstract",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+        "29548b53-77d9-4269-8e99-9f28ddb25979"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **To cancel a flight**\n\n- Log in to the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/).\n- Navigate to Trips > Upcoming and select your trip.\n- Select Cancel next to the flight.\n- Confirm the cancellation twice to complete.\n\n## **To modify a flight**\n\n- Select your segment and select Modify.\n- Choose the flight to change.\n- Update your details.\n- Search for new flights and complete checkout.\n\nWatch this quick video: [Modify Your Flight & Hotel](https://broadcast.amazon.com/videos/1594156).\n",
+        "# **How do I cancel or modify a hotel booking?** (Global Access)\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to modify or cancel your hotel booking. Most hotel changes can be handled directly through self-service.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **Requirements before modifying**\n\nConfirm your reservation meets all of the following requirements:\n\n- You have not checked into the hotel.\n- Your request falls within the cancellation policy guidelines.\n- The hotel has not been paid for in advance.\n\nIf your reservation does not meet these requirements, contact [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n\n## **How to modify your hotel booking **\n\n- Log in to the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/).\n- Navigate to Trips > Upcoming and select your trip.\n- Find your hotel reservation and select Modify (or Cancel).\n- Make your changes: Update check-in and check-out dates by editing the date fields and selecting Check Availability, or Select a different room type or rate.\n- Review the changes and any price differences on the Checkout page.\n- Select Book Hotel to confirm your modifications.\n\nWatch this quick video: [Modify Your Flight & Hotel Booking](https://broadcast.amazon.com/videos/1594156).\n"
+      ],
+      "reference_answer": "Both flight and hotel changes are made in the same Self-Service Travel Booking Tool (booktravel.corp.amazon.com) under Trips > Upcoming, where you select your trip and choose Modify or Cancel for each booking, per section 3.10 (Itinerary Changes and Cancellations) of the Global Travel and Expense Policy. For a flight, you select the segment, choose the flight to change, update details, search for new flights, and complete checkout (or select Cancel and confirm twice to cancel). For a hotel, you find the reservation and select Modify or Cancel, update dates/room/rate, review price differences, and select Book Hotel to confirm. The key difference is that hotel changes only work through self-service if you have not checked in, the request falls within the cancellation policy, and the hotel was not pre-paid; if your hotel reservation does not meet those requirements you must contact a Travel Counselor instead. Flight changes in Document A do not list those pre-conditions, so the Travel Counselor escalation specifically applies to hotel bookings that fall outside the self-service requirements."
+    },
+    {
+      "id": "ragas-044",
+      "query": "If my booking can't be changed through self-service and I need to reach a counselor, what's the fastest way to do it when I'm flying out in the next couple of days, and does it matter which number I call from?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "1fc1d541-01ed-42b0-b70a-50ac9f095dfe",
+        "12b5f17e-2564-4fa5-91b6-4b6c19727141"
+      ],
+      "reference_contexts": [
+        "# **I need to change my travel plans**\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to cancel or rebook your trip. Self-service supports cancellations and modifications for most bookings.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **How to cancel or modify your flight **\n\n- Navigate to your Upcoming Trips in the Travel section of your home page.\n- If online self-service changes are not available for your booking, contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n- If further support is needed, visit the [Amazon Travel & Events Wiki](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for more information.\n",
+        "# **Where do I locate Travel Counselor contact information?**\n\nFind [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) contact information \u2014 including phone, email, chat, and hours by country \u2014 on the [Amazon Travel & Events Wiki](https://w.amazon.com/bin/view/TravelAndEvents/Support/). Travel Counselors are available 24/7, 365 days per year in most countries.\n\nContact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) from the phone number listed in your Travel Profile. This ensures proper call routing and identification.\n\nChat is available within the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) in most countries. Chat does not support new reservations.\n\n## **Before you call: Tips for faster service**\n\n- Have your Trip ID ready \u2014 this helps Travel Counselors assist you more quickly\n- Update your contact information \u2014 ensure your Travel Profile includes your current phone number for proper call routing\n- Departing within 72 hours? \u2014 you are automatically prioritized and moved to the top of the call queue\n- Do not want to wait on hold? \u2014 use the Callback Feature\n\n## ** International calling**\n\nTravelers outside their home country must have an international calling plan to reach the designated country contact number. If you do not have an international calling plan, use chat or email for assistance.\n"
+      ],
+      "reference_answer": "If online self-service changes aren't available for your booking, you should contact a Travel Counselor for assistance. To get the fastest service when you're departing within 72 hours, you're automatically prioritized and moved to the top of the call queue. It does matter which number you call from \u2014 you should call from the phone number listed in your Travel Profile to ensure proper call routing and identification, so make sure your Travel Profile has your current phone number. Having your Trip ID ready also helps the counselor assist you more quickly."
+    },
+    {
+      "id": "ragas-045",
+      "query": "I cancelled a hotel through the self-service booking tool but still got hit with a no-show charge \u2014 before I escalate this, what should I have confirmed at cancellation time, and what specifically do I need to gather before contacting support to get it sorted out?",
+      "type": "multi_hop_specific",
+      "persona": "finance",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "094f3031-efc8-4d58-b35e-8b22ff9ed346",
+        "289ab19b-8d21-408a-8aae-8f019b2130a3"
+      ],
+      "reference_contexts": [
+        "# **I was charged for a hotel after cancelling my booking**\n\nIf you cancelled a hotel booking through the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) and were still charged, contact Amazon Travel Support to investigate.\n\n## **Before requesting support**\n\nVerify the following information before contacting [Amazon Travel Support](https://w.amazon.com/bin/view/TravelAndEvents/Support/):\n\n- Cancellation was within the hotel's cancellation period\n\n- Date and time of cancellation\n\n- Receipt from the hotel for the no-show charge\n",
+        "# **How do I cancel or modify a hotel booking?** (Regional)\n\nUse the [Self-Service Travel Booking Tool](https://booktravel.corp.amazon.com/) to modify or cancel your hotel booking. Most hotel changes can be handled directly through self-service.\n\nRefer to section 3.10 [Itinerary Changes and Cancellations](https://policy.a2z.com/docs/176324/publication#3-10) in the Global Travel and Expense Policy.\n\n## **Requirements before modifying**\n\nConfirm your reservation meets all of the following requirements:\n\n- You have not checked into the hotel.\n- Your request falls within the cancellation policy guidelines.\n- The hotel has not been paid for in advance.\n\nIf your reservation does not meet these requirements, contact [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) for assistance.\n\n## **How to modify your hotel booking **\n\nThere are two types of hotel changes:\n\n- Modify the dates of your current hotel reservation.\n- Book an entirely new hotel (requires cancellation of the original reservation).\n\nIn both cases, book the new hotel or new dates first, then cancel the old reservation. This ensures you do not lose the current reservation if the preferred hotel is sold out.\n"
+      ],
+      "reference_answer": "To handle this, you need to confirm a couple of things across both the cancellation and support processes. First, when cancelling through the Self-Service Travel Booking Tool, your reservation must have met the cancellation requirements: you had not checked into the hotel, your request fell within the cancellation policy guidelines, and the hotel had not been paid for in advance (Document B). Then, before contacting Amazon Travel Support about the charge, you should verify and gather: that the cancellation was within the hotel's cancellation period, the exact date and time of your cancellation, and the receipt from the hotel for the no-show charge (Document A). With these confirmed and documented, you can escalate to Amazon Travel Support to investigate the charge."
+    },
+    {
+      "id": "ragas-046",
+      "query": "I'm a frequent traveler covering edge cases for my team - if I've got a Switzerland-based employee versus a yellow-badge contractor traveling for us, which specific supplementary policy does each need to consult on top of the usual one, and does a manager or PXT sign-off let either of them bypass it?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "1da0befd-6bc7-4ce1-a1a9-7707dc3c7a5c",
+        "cbfc28e5-8785-4de9-8e9d-1ff14afc8ed7"
+      ],
+      "reference_contexts": [
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Switzerland-Specific Policy**\n\nEmployees based in Switzerland must also consult the [Switzerland Travel and Expense Policy](https://policy.a2z.com/docs/703733/publication) in addition to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c).\n",
+        "# **What expenses are reimbursable?**\n\nAmazon defines business expenses as those approved and necessary to the performance of your job, reflecting good judgment and [Amazon's Leadership Principle of Frugality](https://w.amazon.com/bin/view/LeadershipPrinciples/Frugality/).\n\nConsult the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) before making a purchase to confirm the expense is eligible for reimbursement. Manager or PXT approval does not constitute an acceptable exception to policy.\n\n## **Non-Amazon Employee Policy**\n\nTravel and reimbursement expectations for non-Amazonians \u2014 including yellow badges (contract workers), green badges (temporary workers), candidates, or guests traveling on behalf of Amazon \u2014 are covered in the [Amazon Non-Employee Travel and Expense Policy.](https://policy.a2z.com/docs/610963/publication)\n\nFor further assistance, visit the [Employee Expense & Corporate Card RIVER](https://river.amazon.com/?org=EER).\n"
+      ],
+      "reference_answer": "Both still start with the Global Travel and Expense Policy, but each has an additional policy to consult depending on their category. A Switzerland-based employee must also consult the Switzerland Travel and Expense Policy in addition to the Global Travel and Expense Policy (Document A). A yellow-badge contract worker (a non-Amazonian) is instead covered by the Amazon Non-Employee Travel and Expense Policy (Document B). In neither case does manager or PXT approval constitute an acceptable exception to policy - that sign-off cannot be used to bypass the applicable rules for either person."
+    },
+    {
+      "id": "ragas-047",
+      "query": "first time booking flight economy upgrade business class who do i tell manager approval",
+      "type": "multi_hop_abstract",
+      "persona": "new_hire",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "b9ce83b0-b104-421f-82bd-52202ac1382c",
+        "6146c5df-bd75-4a26-8374-4737c4a7a8ed"
+      ],
+      "reference_contexts": [
+        "# **Am I allowed to upgrade my fare class?** (Regional)\n\nYes. Amazon reimburses only the Lowest Logical Fare in economy class. You must pay the difference between the policy-approved fare and the upgraded class out of pocket.\n\nRefer to section 4.1[Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#4-1) in the Global Travel and Expense Policy.\n\n## **How to upgrade**\n\n- Contact a Travel Counselor and request a personal upgrade for your trip.\n- Pay for the entire ticket cost upfront using your own payment method.\n- Obtain documentation showing the price difference between the Lowest Logical Fare and the upgraded class.\n- When you expense your trip, claim reimbursement only for the documented Lowest Logical Fare noted by the travel services provider.\n\nUpgrade fees and premium seating fees are not reimbursable.\n\n## **Manager notification**\n\nYour manager receives an email notification indicating you have added a personal upgrade. No manager action is required.\n",
+        "# **What flights am I allowed to book?**\n\nBook the Lowest Logical Fare in Coach/Economy Class that includes a seat assignment through the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/).\n\nRefer to section 4.1 [Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#dec58a98-34c2-2f68-ea13-80ffad035827) in the Global Travel and Expense Policy.\n\n## **Non-stop flight preference**\n\nYou may prioritize non-stop flights over connecting flights whenever possible and practical.\n\n## **Exception for non-stop flights**\n\nIf a non-stop flight is not the Lowest Logical Fare, consult with your manager to determine the most appropriate flight option, balancing frugality and well-being.\n"
+      ],
+      "reference_answer": "When booking your flight, you must use the Self-Service Booking Tool to book the Lowest Logical Fare in Coach/Economy Class with a seat assignment (Document B). If you want to upgrade your fare class, Amazon only reimburses the Lowest Logical Fare in economy, so you'd contact a Travel Counselor to request a personal upgrade, pay for the entire ticket upfront yourself, obtain documentation of the price difference, and then expense only the documented Lowest Logical Fare\u2014upgrade and premium seating fees are not reimbursable (Document A). For the upgrade itself, no manager approval is required; your manager only receives an email notification that you added a personal upgrade and does not need to take any action (Document A). The only time you'd actually consult your manager about flights is a separate situation\u2014when a non-stop flight is not the Lowest Logical Fare and you need to decide the most appropriate option balancing frugality and well-being (Document B)."
+    },
+    {
+      "id": "ragas-048",
+      "query": "If I want to book a non-stop flight in a higher cabin than economy, what exactly do I pay for myself versus what gets reimbursed, and do I need to loop in my manager for either the upgrade or the non-stop choice?",
+      "type": "multi_hop_specific",
+      "persona": "frequent_traveler",
+      "style": "natural_chat",
+      "source_node_ids": [
+        "1e6e74ea-4257-47d3-874d-628909348fc3",
+        "6146c5df-bd75-4a26-8374-4737c4a7a8ed"
+      ],
+      "reference_contexts": [
+        "# Am I Allowed to Upgrade My Fare Class? (Global Access)\n\nYes. Amazon reimburses only the Lowest Logical Fare in economy class. You must pay the difference between the policy-approved fare and the upgraded class out of pocket.\n\nRefer to section 4.1 [Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#4-1) in the Global Travel and Expense Policy.\n\n## **How to upgrade **\n\n- Search and select your preferred upgraded cabin class in the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) (desktop only). The fare indicator displays the policy-approved amount and personal upgrade cost.\n- On the Out of Policy pop-up, select Skip suggestions and proceed to the checkout page, then select Next.\n- On the Checkout page, review the breakdown of the two amounts.\n- Confirm your personal card is set as the form of payment.\n- Acknowledge the booking contains a personal upgrade.\n- Select Book flight to finalize your reservation.\n\nYou pay the full amount upfront and submit the policy-approved portion for reimbursement. The invoice/Itinerary you receive includes a Personal Upgrade Summary for your Expense Report.\n\nWatch this quick video: [How to Book a Personal Upgrade](https://broadcast.amazon.com/videos/1687601).\n\n## **Manager notification**\n\nYour manager receives an email notification indicating you have added a personal upgrade. No manager action is required.\n",
+        "# **What flights am I allowed to book?**\n\nBook the Lowest Logical Fare in Coach/Economy Class that includes a seat assignment through the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/).\n\nRefer to section 4.1 [Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#dec58a98-34c2-2f68-ea13-80ffad035827) in the Global Travel and Expense Policy.\n\n## **Non-stop flight preference**\n\nYou may prioritize non-stop flights over connecting flights whenever possible and practical.\n\n## **Exception for non-stop flights**\n\nIf a non-stop flight is not the Lowest Logical Fare, consult with your manager to determine the most appropriate flight option, balancing frugality and well-being.\n"
+      ],
+      "reference_answer": "Two separate things are going on. For the cabin upgrade: Amazon only reimburses the Lowest Logical Fare in economy/coach class, so you must pay the difference between the policy-approved economy fare and the upgraded cabin out of pocket. You book it via the Self-Service Booking Tool (desktop only), pay the full amount upfront on your personal card, and submit only the policy-approved economy portion for reimbursement (your itinerary includes a Personal Upgrade Summary). For the upgrade, your manager only receives an automatic email notification \u2014 no manager action or approval is required. For the non-stop preference: you may prioritize non-stops over connecting flights whenever possible and practical, but if the non-stop flight is NOT the Lowest Logical Fare, you do need to consult your manager to determine the most appropriate option (balancing frugality and well-being). So manager involvement differs: just a notification for the upgrade, but an actual consultation if your preferred non-stop isn't the Lowest Logical Fare."
+    },
+    {
+      "id": "ragas-049",
+      "query": "emea apac team seat baggage exceeds lowest logical fare nonstop exception manager approval",
+      "type": "multi_hop_abstract",
+      "persona": "manager",
+      "style": "web_search_keywords",
+      "source_node_ids": [
+        "046dc0ed-0bed-4b8f-8de7-817b5b20548e",
+        "6146c5df-bd75-4a26-8374-4737c4a7a8ed"
+      ],
+      "reference_contexts": [
+        "# **What is the process for booking a seat?**\n\nBook the Lowest Logical Fare with a seat assignment and baggage included. The [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) highlights in-policy fares for easy selection.\n\nRefer to section 4.7 [Air Travel Reimbursable Incidentals](https://policy.a2z.com/docs/176324/publication#76c58a98-34c4-136c-3e99-4d007e22b32c) in the Global Travel and Expense Policy.\n\n## **EMEA and APAC travelers: ancillary purchases**\n\nFares that include a standard seat or baggage may sometimes exceed the Lowest Logical Fare limits in EMEA and APAC regions. If this occurs:\n\n- Purchase the seat or baggage separately as an ancillary item directly with the airline.\n- Expense the additional cost separately.\n- Save all receipts for any ancillary purchases.\n",
+        "# **What flights am I allowed to book?**\n\nBook the Lowest Logical Fare in Coach/Economy Class that includes a seat assignment through the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/).\n\nRefer to section 4.1 [Airline Cabin Class](https://policy.a2z.com/docs/176324/publication#dec58a98-34c2-2f68-ea13-80ffad035827) in the Global Travel and Expense Policy.\n\n## **Non-stop flight preference**\n\nYou may prioritize non-stop flights over connecting flights whenever possible and practical.\n\n## **Exception for non-stop flights**\n\nIf a non-stop flight is not the Lowest Logical Fare, consult with your manager to determine the most appropriate flight option, balancing frugality and well-being.\n"
+      ],
+      "reference_answer": "For your team's bookings, the baseline rule is that travelers book the Lowest Logical Fare in Coach/Economy Class with a seat assignment (and baggage) included via the Self-Service Booking Tool (Document B, ref policy section 4.1; Document A, ref section 4.7). Two situations require your involvement or special handling: (1) Non-stop preference exception \u2014 non-stop flights may be prioritized when possible and practical, but if a non-stop flight is not the Lowest Logical Fare, the traveler must consult with you (the manager) to determine the most appropriate option, balancing frugality and well-being (Document B). (2) EMEA/APAC ancillary purchases \u2014 when a fare that includes a standard seat or baggage exceeds the Lowest Logical Fare limits in EMEA and APAC regions, the traveler should purchase the seat or baggage separately as an ancillary item directly with the airline, expense the additional cost separately, and save all receipts (Document A). So in those regions a seat/baggage overage is handled via separate ancillary expensing, while a non-stop-over-LLF situation requires your manager approval."
+    }
+  ]
+}

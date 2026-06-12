@@ -1,0 +1,22 @@
+{
+  "SchemaVersion": "1.0",
+  "SchemaType": "HydraJavaTestNG",
+  "HydraParameters": {
+  },
+  "HandlerParameters": {
+    "parameters": {
+      "domain": "beta",
+      "realm": "us-west-2"
+    },
+    "tests": [
+      {
+        "name": "ATESkywalkerQueryTests",
+        "packages": [
+          {
+            "name": "com.amazon.ateskywalkerquery.*"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,679 @@
+.
+├── _guard_ctrl_probe.py
+├── bakeoff
+│   ├── __init__.py
+│   ├── adapters
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── bedrock.py
+│   │   ├── inline_agent.py
+│   │   └── mock.py
+│   ├── aggregate.py
+│   ├── app.py
+│   ├── calibration.py
+│   ├── config.py
+│   ├── credentials.py
+│   ├── dataset.py
+│   ├── eval
+│   │   ├── __init__.py
+│   │   ├── catalog.py
+│   │   ├── event_store.py
+│   │   ├── experiment_runner.py
+│   │   ├── metric_engine.py
+│   │   ├── models.py
+│   │   ├── prompt_store.py
+│   │   ├── ragas_adapter.py
+│   │   ├── real_backfill.py
+│   │   ├── real_run.py
+│   │   └── retrieval_metrics.py
+│   ├── eventlog.py
+│   ├── ids.py
+│   ├── judge_phase2.py
+│   ├── main.py
+│   ├── planner.py
+│   ├── promptbench
+│   │   ├── __init__.py
+│   │   ├── backend.py
+│   │   ├── prompts
+│   │   │   ├── no_XML_long.txt
+│   │   │   ├── no_XML_short.txt
+│   │   │   ├── XML_long.txt
+│   │   │   └── XML_short.txt
+│   │   ├── prompts.py
+│   │   ├── runner.py
+│   │   ├── sample.py
+│   │   ├── scorer.py
+│   │   └── store.py
+│   ├── prompts.py
+│   ├── quality
+│   │   ├── __init__.py
+│   │   ├── closeness.py
+│   │   ├── dataset.py
+│   │   ├── judge.py
+│   │   ├── main.py
+│   │   ├── offline_adapter.py
+│   │   ├── optimize.py
+│   │   ├── optimizer
+│   │   │   ├── __init__.py
+│   │   │   ├── audit.py
+│   │   │   ├── author.py
+│   │   │   ├── backends.py
+│   │   │   ├── controller.py
+│   │   │   ├── convergence.py
+│   │   │   ├── events.py
+│   │   │   ├── failures.py
+│   │   │   ├── gepa_engine.py
+│   │   │   ├── ids.py
+│   │   │   ├── inline_session_adapter.py
+│   │   │   ├── island.py
+│   │   │   ├── judge_loop.py
+│   │   │   ├── main.py
+│   │   │   ├── orchestrator.py
+│   │   │   ├── probe_inline_session.py
+│   │   │   ├── prompting_guidance.py
+│   │   │   ├── ragas_adapter.py
+│   │   │   ├── retrieval.py
+│   │   │   ├── rungs.py
+│   │   │   ├── smoke_opensearch.py
+│   │   │   ├── stats.py
+│   │   │   ├── store.py
+│   │   │   ├── tournament.py
+│   │   │   ├── v3
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── backends.py
+│   │   │   │   ├── guards.py
+│   │   │   │   ├── island.py
+│   │   │   │   ├── orchestrator.py
+│   │   │   │   └── scorer.py
+│   │   │   └── validate.py
+│   │   ├── prompts.py
+│   │   ├── run.py
+│   │   ├── summary.py
+│   │   └── types.py
+│   ├── README.md
+│   ├── resilience.py
+│   ├── retrieval_client.py
+│   ├── runner.py
+│   ├── scoring
+│   │   ├── __init__.py
+│   │   ├── answerability.py
+│   │   ├── judge.py
+│   │   ├── pipeline.py
+│   │   ├── retrieval_aligned.py
+│   │   └── semantic.py
+│   ├── sessions.py
+│   ├── sounds
+│   │   ├── contender_audio.mp3
+│   │   ├── defended_audio.mp3
+│   │   └── promoted_audio.mp3
+│   ├── stats.py
+│   ├── tests
+│   │   ├── __init__.py
+│   │   ├── fixtures
+│   │   │   └── calibration_set.jsonl
+│   │   ├── test_adapters.py
+│   │   ├── test_aggregate_pbt.py
+│   │   ├── test_aggregate.py
+│   │   ├── test_app_eval_ondemand.py
+│   │   ├── test_app_eval_posture.py
+│   │   ├── test_app_eval_prompts.py
+│   │   ├── test_app_eval.py
+│   │   ├── test_app.py
+│   │   ├── test_calibration.py
+│   │   ├── test_credentials.py
+│   │   ├── test_cross_family_eval_pbt.py
+│   │   ├── test_dataset.py
+│   │   ├── test_eval_catalog.py
+│   │   ├── test_eval_event_store.py
+│   │   ├── test_eval_metric_engine.py
+│   │   ├── test_eval_models.py
+│   │   ├── test_eval_ragas_adapter.py
+│   │   ├── test_eval_retrieval_metrics.py
+│   │   ├── test_eval_runner_sweep.py
+│   │   ├── test_eval_runner.py
+│   │   ├── test_eventlog_pbt.py
+│   │   ├── test_eventlog.py
+│   │   ├── test_events_v2.py
+│   │   ├── test_gepa_engine.py
+│   │   ├── test_inline_agent.py
+│   │   ├── test_judge_phase2.py
+│   │   ├── test_main.py
+│   │   ├── test_optimizer_v3_core.py
+│   │   ├── test_optimizer_v3_routes.py
+│   │   ├── test_orchestrator_gepa.py
+│   │   ├── test_orchestrator_v2.py
+│   │   ├── test_persistent_session_adapter.py
+│   │   ├── test_planner.py
+│   │   ├── test_promptbench.py
+│   │   ├── test_prompts.py
+│   │   ├── test_quality_optimizer_cli.py
+│   │   ├── test_quality_optimizer_e2e.py
+│   │   ├── test_quality_optimizer_pbt.py
+│   │   ├── test_quality_optimizer.py
+│   │   ├── test_quality.py
+│   │   ├── test_ragas_adapter.py
+│   │   ├── test_resilience.py
+│   │   ├── test_retrieval_client.py
+│   │   ├── test_runner_pbt.py
+│   │   ├── test_runner.py
+│   │   ├── test_scaffold.py
+│   │   ├── test_scoring_judge_pipeline.py
+│   │   ├── test_scoring_retrieval_semantic.py
+│   │   ├── test_semantic_resilience.py
+│   │   ├── test_stats_pbt.py
+│   │   ├── test_stats.py
+│   │   ├── test_store.py
+│   │   ├── test_tournament.py
+│   │   └── test_types_smoke.py
+│   ├── types.py
+│   └── ui
+│       ├── bun.lock
+│       ├── dist
+│       │   ├── assets
+│       │   │   ├── index-BukMdPps.css
+│       │   │   ├── index-CtM1_7T0.js
+│       │   │   └── index-CtM1_7T0.js.map
+│       │   ├── index.html
+│       │   ├── skywalker_icon.jpeg
+│       │   └── sounds
+│       │       ├── contender_audio.mp3
+│       │       ├── defended_audio.mp3
+│       │       └── promoted_audio.mp3
+│       ├── index.html
+│       ├── package.json
+│       ├── public
+│       │   ├── skywalker_icon.jpeg
+│       │   └── sounds
+│       │       ├── contender_audio.mp3
+│       │       ├── defended_audio.mp3
+│       │       └── promoted_audio.mp3
+│       ├── README.md
+│       ├── src
+│       │   ├── api
+│       │   │   ├── client.ts
+│       │   │   ├── types.ts
+│       │   │   ├── useEvalStream.ts
+│       │   │   ├── useEventStream.ts
+│       │   │   ├── useOptimizerStream.ts
+│       │   │   ├── useOptimizerV2Stream.ts
+│       │   │   ├── useOptimizerV3Stream.ts
+│       │   │   ├── usePromptBenchStream.ts
+│       │   │   ├── useSnapshot.ts
+│       │   │   └── useTrialBuffer.ts
+│       │   ├── App.tsx
+│       │   ├── components
+│       │   │   ├── BakeOffSessionManager.tsx
+│       │   │   ├── CoverageLadderRail.tsx
+│       │   │   ├── EChart.tsx
+│       │   │   ├── FightArena.tsx
+│       │   │   ├── FleetLane.tsx
+│       │   │   ├── IslandLane.tsx
+│       │   │   ├── IslandRaceChart.tsx
+│       │   │   ├── KpiStrip.tsx
+│       │   │   ├── LatencyChart.tsx
+│       │   │   ├── LatencyScatter.tsx
+│       │   │   ├── LiveFrontierChart.tsx
+│       │   │   ├── ModelPanelV2.tsx
+│       │   │   ├── ModelPanelV3.tsx
+│       │   │   ├── ModelTable.tsx
+│       │   │   ├── OptimizerTriadChart.tsx
+│       │   │   ├── PromptDiff.tsx
+│       │   │   ├── RecentFeed.tsx
+│       │   │   ├── StartRunControl.tsx
+│       │   │   └── TournamentBracket.tsx
+│       │   ├── eval
+│       │   │   ├── __tests__
+│       │   │   │   ├── agentColor.p5.test.ts
+│       │   │   │   ├── axisMapping.p11.test.ts
+│       │   │   │   ├── axisMapping.p7.test.ts
+│       │   │   │   ├── catalog.p12.test.ts
+│       │   │   │   ├── charts2d.p9.test.ts
+│       │   │   │   ├── charts3d.p4.test.ts
+│       │   │   │   ├── evalExport.test.ts
+│       │   │   │   ├── evalQuality.p1.test.ts
+│       │   │   │   ├── evalQuality.p10.test.ts
+│       │   │   │   ├── evalQuality.p2.test.ts
+│       │   │   │   ├── evalQuality.p3.test.ts
+│       │   │   │   ├── evalQuality.p8.test.ts
+│       │   │   │   ├── evalSelectors.cues.test.ts
+│       │   │   │   ├── evalSelectors.p4.test.ts
+│       │   │   │   ├── evalSelectors.p6.test.ts
+│       │   │   │   ├── methodology.p13.test.ts
+│       │   │   │   └── onDemandRunControl.test.ts
+│       │   │   ├── agentColor.ts
+│       │   │   ├── axisMapping.ts
+│       │   │   ├── catalog.ts
+│       │   │   ├── charts2d.ts
+│       │   │   ├── charts3d.ts
+│       │   │   ├── ControlPanel.tsx
+│       │   │   ├── evalExport.ts
+│       │   │   ├── evalQuality.ts
+│       │   │   ├── evalSelectors.ts
+│       │   │   ├── methodology.ts
+│       │   │   ├── onDemandRun.ts
+│       │   │   └── OnDemandRunControl.tsx
+│       │   ├── exec
+│       │   │   ├── CohortHeatmap.tsx
+│       │   │   ├── ExecView.tsx
+│       │   │   ├── exportSnapshot.ts
+│       │   │   ├── FrontierChart.tsx
+│       │   │   ├── ProvenanceFooter.tsx
+│       │   │   ├── quality.ts
+│       │   │   └── SafetyPanel.tsx
+│       │   ├── lib
+│       │   │   ├── format.ts
+│       │   │   ├── liveStats.ts
+│       │   │   ├── sounds.ts
+│       │   │   └── useElapsed.ts
+│       │   ├── main.tsx
+│       │   ├── styles
+│       │   │   ├── app.css
+│       │   │   └── theme.css
+│       │   └── views
+│       │       ├── BakeOff.tsx
+│       │       ├── Eval2D.tsx
+│       │       ├── Eval3D.tsx
+│       │       ├── EvalMetrics.tsx
+│       │       ├── Judge.tsx
+│       │       ├── LiveMonitor.tsx
+│       │       ├── PerModelView.tsx
+│       │       ├── PromptBench.tsx
+│       │       ├── Quality.tsx
+│       │       ├── QualityOptimizer.tsx
+│       │       ├── QualityOptimizerV2.tsx
+│       │       └── QualityOptimizerV3.tsx
+│       ├── tsconfig.json
+│       ├── vite.config.ts
+│       └── vitest.config.ts
+├── build_corpus.py
+├── config.py
+├── data
+│   ├── bakeoff
+│   │   ├── _archive_v3_reset_20260610_140404
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260610_145058
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260610_150758
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260610_172853
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260610_180207
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260610_184631
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260610_213608
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260611_010050
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   ├── quality_opt_v3_errors.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── _archive_v3_reset_20260611_010524
+│   │   │   ├── quality_opt_v3_audit.jsonl
+│   │   │   └── quality_opt_v3_iterations.jsonl
+│   │   ├── cred_locks
+│   │   │   ├── alpha.lock
+│   │   │   ├── alpha.mint
+│   │   │   ├── author.lock
+│   │   │   ├── author.mint
+│   │   │   ├── embed.lock
+│   │   │   ├── embed.mint
+│   │   │   ├── execution.lock
+│   │   │   ├── execution.mint
+│   │   │   ├── judge.lock
+│   │   │   ├── judge.mint
+│   │   │   ├── promptbench-judge.lock
+│   │   │   ├── promptbench-judge.mint
+│   │   │   ├── promptbench.lock
+│   │   │   └── promptbench.mint
+│   │   ├── eval_instances.jsonl
+│   │   ├── eval_real_instances.jsonl
+│   │   ├── eval_real_judge.jsonl
+│   │   ├── eval_real_run_details.jsonl
+│   │   ├── gepa_live_progress.jsonl
+│   │   ├── gepa_live_status.json
+│   │   ├── prompt_bench
+│   │   │   ├── _archive_20260610_210520
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260610_210749
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260610_210926
+│   │   │   │   └── prompt_bench_points.jsonl
+│   │   │   ├── _archive_20260610_211446
+│   │   │   │   └── prompt_bench_points.jsonl
+│   │   │   ├── _archive_20260610_212628
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260610_214433
+│   │   │   │   └── prompt_bench_points.jsonl
+│   │   │   ├── _archive_20260610_215004
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_010307
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_010415
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_011354
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_013023
+│   │   │   │   ├── prompt_bench_points.jsonl
+│   │   │   │   └── prompt_bench_results.jsonl
+│   │   │   ├── _archive_20260611_013641
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_013858
+│   │   │   │   └── prompt_bench_points.jsonl
+│   │   │   ├── _archive_20260611_022622
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_023456
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_024032
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── _archive_20260611_031933
+│   │   │   │   ├── p.jsonl
+│   │   │   │   └── r.jsonl
+│   │   │   ├── prompt_bench_points.jsonl
+│   │   │   ├── prompt_bench_results.jsonl
+│   │   │   ├── sample_24.json
+│   │   │   └── sample_400.json
+│   │   ├── quality_opt_audit.jsonl
+│   │   ├── quality_opt_iterations.jsonl
+│   │   ├── quality_opt_v3_audit.jsonl
+│   │   ├── quality_opt_v3_errors.jsonl
+│   │   ├── quality_opt_v3_iterations.jsonl
+│   │   ├── quality_opt_v3_state.json
+│   │   ├── reports
+│   │   ├── rubric_ab.json
+│   │   ├── sessions
+│   │   │   ├── 20260611_123520_inline-run
+│   │   │   │   ├── judge_scores.jsonl
+│   │   │   │   ├── outcomes.jsonl
+│   │   │   │   ├── reports
+│   │   │   │   └── run_errors.jsonl
+│   │   │   ├── 20260611_123639_inline-run
+│   │   │   │   ├── judge_scores.jsonl
+│   │   │   │   ├── outcomes.jsonl
+│   │   │   │   ├── reports
+│   │   │   │   └── run_errors.jsonl
+│   │   │   ├── 20260611_123702_inline-run
+│   │   │   │   ├── judge_scores.jsonl
+│   │   │   │   ├── outcomes.jsonl
+│   │   │   │   ├── reports
+│   │   │   │   └── run_errors.jsonl
+│   │   │   ├── 20260611_123847_inline-run
+│   │   │   │   ├── judge_scores.jsonl
+│   │   │   │   ├── outcomes.jsonl
+│   │   │   │   ├── reports
+│   │   │   │   └── run_errors.jsonl
+│   │   │   ├── 20260611_140952_one-more
+│   │   │   │   ├── judge_scores.jsonl
+│   │   │   │   ├── outcomes.jsonl
+│   │   │   │   ├── reports
+│   │   │   │   └── run_errors.jsonl
+│   │   │   ├── active_session.json
+│   │   │   └── manifest.json
+│   │   ├── v3_seeds
+│   │   │   ├── haiku-4.5_i0.txt
+│   │   │   ├── haiku-4.5_i1.txt
+│   │   │   ├── sonnet-4.6-thinking-off_i0.txt
+│   │   │   └── sonnet-4.6-thinking-off_i1.txt
+│   │   └── verify_grounded.json
+│   ├── faq_corpus.csv
+│   ├── opt_v2_instrumented.log
+│   ├── opt_v2_server.log
+│   ├── opt_v2_supervisor_stdout.log
+│   ├── opt_v2_supervisor.log
+│   ├── prompts
+│   │   ├── author
+│   │   │   └── author_prompt.txt
+│   │   ├── gepa_engine
+│   │   │   └── reflection_lm_system.txt
+│   │   ├── image.png
+│   │   ├── judge
+│   │   │   ├── archive
+│   │   │   │   ├── answerability_full.txt
+│   │   │   │   ├── answerability_none.txt
+│   │   │   │   ├── answerability_partial.txt
+│   │   │   │   ├── judge_prompt.txt
+│   │   │   │   ├── rubric_completeness.txt
+│   │   │   │   ├── rubric_correctness.txt
+│   │   │   │   ├── rubric_faithfulness.txt
+│   │   │   │   └── system.txt
+│   │   │   └── model_quality_judgement.txt
+│   │   ├── no_XML_long.txt
+│   │   ├── no_XML_short.txt
+│   │   ├── prompting_guidance
+│   │   │   ├── grounding_abstention_excerpt.txt
+│   │   │   └── prompting_guidance.txt
+│   │   ├── seeds
+│   │   │   ├── haiku-4.5_i0.txt
+│   │   │   ├── haiku-4.5_i1.txt
+│   │   │   ├── sonnet-4.6-thinking-off_i0.txt
+│   │   │   └── sonnet-4.6-thinking-off_i1.txt
+│   │   ├── XML_long.txt
+│   │   └── XML_short.txt
+│   ├── real_source_no_custom
+│   │   ├── source_export_merged.csv
+│   │   └── source_with_content.jsonl
+│   ├── results.jsonl
+│   ├── source_export.csv
+│   └── synthetic
+│       ├── b.jsonl
+│       ├── cohort_alluvial_preview.html
+│       ├── cohort_alluvial_preview.png
+│       ├── cohort_evenness_bars.png
+│       ├── cohort_sunburst.html
+│       ├── cohort_sunburst.png
+│       ├── conversation_turn1_gold.jsonl
+│       ├── conversations.jsonl
+│       ├── corpus_index.tsv
+│       ├── perspectives_ledger.jsonl
+│       ├── PROGRESS.md
+│       ├── queries.jsonl
+│       └── staging
+│           └── done
+│               ├── conversations_b14.jsonl
+│               ├── conversations_b15.jsonl
+│               ├── conversations_b16.jsonl
+│               ├── conversations_b17.jsonl
+│               ├── conversations_b18.jsonl
+│               ├── conversations_b19.jsonl
+│               ├── ledger_b14.json
+│               ├── ledger_b15.json
+│               ├── ledger_b16.json
+│               ├── ledger_b17.json
+│               ├── ledger_b18.json
+│               ├── ledger_b19.json
+│               ├── queries_b14.jsonl
+│               ├── queries_b15.jsonl
+│               ├── queries_b16.jsonl
+│               ├── queries_b17.jsonl
+│               ├── queries_b18.jsonl
+│               ├── queries_b19.jsonl
+│               ├── turn1_b14.jsonl
+│               ├── turn1_b15.jsonl
+│               ├── turn1_b16.jsonl
+│               ├── turn1_b17.jsonl
+│               ├── turn1_b18.jsonl
+│               └── turn1_b19.jsonl
+├── docs
+│   ├── BAKEOFF.md
+│   ├── Building Short-Lived Calibration Judges for a RAG + QA System- A Practitioner-Verified Implementation Guide.md
+│   ├── modern_system_prompting.pdf
+│   ├── OPENSEARCH_ALPHA.md
+│   ├── OPTIMIZER_V2_DESIGN_NOTES.md
+│   ├── PROMPT_DESIGN.md
+│   ├── QUALITY_SIGNAL_DIAGNOSIS.md
+│   └── solo-model-prompt-iteration.md
+├── frontend-inspiration
+│   ├── app.js
+│   ├── charts.js
+│   ├── Model Eval Console.html
+│   ├── styles.css
+│   └── theme.js
+├── gbbo.sh
+├── logs
+│   ├── creds.log
+│   ├── dashboard.log
+│   ├── fullsuite.log
+│   ├── gepa_live_run.log
+│   ├── retrieval.log
+│   └── tests.log
+├── mise.toml
+├── ONBOARDING.md
+├── pbcopy
+├── qdrant_storage
+│   ├── aliases
+│   │   └── data.json
+│   ├── collections
+│   │   └── faq_corpus
+│   │       ├── 0
+│   │       │   ├── newest_clocks.json
+│   │       │   ├── replica_state.json
+│   │       │   ├── segments
+│   │       │   │   ├── 10973c1e-fffc-4691-83e7-9e1e7508cd65
+│   │       │   │   │   ├── mutable_id_tracker.mappings
+│   │       │   │   │   ├── mutable_id_tracker.versions
+│   │       │   │   │   ├── payload_index
+│   │       │   │   │   │   └── config.json
+│   │       │   │   │   ├── payload_storage
+│   │       │   │   │   │   ├── bitmask.dat
+│   │       │   │   │   │   ├── config.json
+│   │       │   │   │   │   ├── gaps.dat
+│   │       │   │   │   │   ├── page_0.dat
+│   │       │   │   │   │   └── tracker.dat
+│   │       │   │   │   ├── segment.json
+│   │       │   │   │   ├── vector_index-bm25
+│   │       │   │   │   ├── vector_storage-bm25
+│   │       │   │   │   │   ├── deleted
+│   │       │   │   │   │   │   ├── flags_a.dat
+│   │       │   │   │   │   │   └── status.dat
+│   │       │   │   │   │   └── store
+│   │       │   │   │   │       ├── bitmask.dat
+│   │       │   │   │   │       ├── config.json
+│   │       │   │   │   │       ├── gaps.dat
+│   │       │   │   │   │       ├── page_0.dat
+│   │       │   │   │   │       └── tracker.dat
+│   │       │   │   │   ├── vector_storage-dense
+│   │       │   │   │   │   ├── deleted
+│   │       │   │   │   │   │   ├── flags_a.dat
+│   │       │   │   │   │   │   └── status.dat
+│   │       │   │   │   │   └── vectors
+│   │       │   │   │   │       ├── chunk_0.mmap
+│   │       │   │   │   │       ├── config.json
+│   │       │   │   │   │       └── status.dat
+│   │       │   │   │   └── version.info
+│   │       │   │   └── 1a7a34ee-a571-4440-9ffa-14811cee7fc3
+│   │       │   │       ├── mutable_id_tracker.mappings
+│   │       │   │       ├── mutable_id_tracker.versions
+│   │       │   │       ├── payload_index
+│   │       │   │       │   └── config.json
+│   │       │   │       ├── payload_storage
+│   │       │   │       │   ├── bitmask.dat
+│   │       │   │       │   ├── config.json
+│   │       │   │       │   ├── gaps.dat
+│   │       │   │       │   ├── page_0.dat
+│   │       │   │       │   └── tracker.dat
+│   │       │   │       ├── segment.json
+│   │       │   │       ├── vector_index-bm25
+│   │       │   │       ├── vector_storage-bm25
+│   │       │   │       │   ├── deleted
+│   │       │   │       │   │   ├── flags_a.dat
+│   │       │   │       │   │   └── status.dat
+│   │       │   │       │   └── store
+│   │       │   │       │       ├── bitmask.dat
+│   │       │   │       │       ├── config.json
+│   │       │   │       │       ├── gaps.dat
+│   │       │   │       │       ├── page_0.dat
+│   │       │   │       │       └── tracker.dat
+│   │       │   │       ├── vector_storage-dense
+│   │       │   │       │   ├── deleted
+│   │       │   │       │   │   ├── flags_a.dat
+│   │       │   │       │   │   └── status.dat
+│   │       │   │       │   └── vectors
+│   │       │   │       │       ├── chunk_0.mmap
+│   │       │   │       │       ├── config.json
+│   │       │   │       │       └── status.dat
+│   │       │   │       └── version.info
+│   │       │   ├── shard_config.json
+│   │       │   └── wal
+│   │       │       ├── first-index
+│   │       │       ├── open-1
+│   │       │       └── open-2
+│   │       ├── config.json
+│   │       ├── shard_key_mapping.json
+│   │       └── version.info
+│   └── raft_state.json
+├── README.md
+├── requirements.txt
+├── run.sh
+├── scripts
+│   ├── _verify_prompt_attributes_fix.py
+│   ├── archive
+│   │   ├── _adhoc_examples.py
+│   │   ├── _adhoc_judge_analysis.py
+│   │   ├── _adhoc_multiturn.py
+│   │   ├── _adhoc_noisefloor.py
+│   │   ├── _adhoc_overrefuse.py
+│   │   ├── _adhoc_refusal.py
+│   │   ├── _adhoc_task3_verify.py
+│   │   ├── _aoss_probe.py
+│   │   ├── _e2e_v2_smoke.py
+│   │   ├── _gepa_live_smoke.py
+│   │   ├── _live_retrieval_proof.py
+│   │   ├── _v2_e2e_full.py
+│   │   ├── _v2_e2e_smoke.py
+│   │   ├── judge_supervisor.sh
+│   │   ├── opt_v2_supervisor.sh
+│   │   ├── quality_finish.sh
+│   │   └── run_supervisor.sh
+│   ├── creds.sh
+│   ├── dashboard.sh
+│   ├── diagnose_traces.py
+│   ├── gepa_live_run.py
+│   ├── retrieval.sh
+│   ├── rubric_ab.py
+│   ├── seed_vs_baseline.py
+│   ├── tests.sh
+│   └── verify_grounded.py
+├── SCRNSHOTS
+│   ├── CleanShot 2026-06-06 at 02.11.12@2x.png
+│   ├── CleanShot 2026-06-06 at 02.20.12@2x.png
+│   ├── CleanShot 2026-06-06 at 02.31.06@2x.png
+│   ├── CleanShot 2026-06-06 at 02.31.31@2x.png
+│   └── CleanShot 2026-06-06 at 02.57.18@2x.png
+├── skywalker_icon.jpeg
+├── src
+│   ├── __init__.py
+│   ├── bedrock_client.py
+│   ├── filters.py
+│   ├── ingest.py
+│   ├── retrieve.py
+│   └── server.py
+├── synth
+│   ├── __init__.py
+│   ├── build_index.py
+│   ├── frame.py
+│   ├── gen_b19.py
+│   ├── preview_alluvial.py
+│   ├── preview_more.py
+│   ├── progress.py
+│   └── TICK.md
+└── tests
+    └── test_bedrock_client_resilience.py
+
+118 directories, 559 files

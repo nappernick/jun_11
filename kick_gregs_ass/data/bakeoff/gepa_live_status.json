@@ -1,0 +1,12 @@
+{
+  "state": "running",
+  "model": "haiku-4.5",
+  "budget": 300,
+  "rollouts_done": 93,
+  "best_score": 0.9722,
+  "started_at": 1780739794.595325,
+  "elapsed_s": 3321.0,
+  "sec_per_rollout": 35.7,
+  "eta_s_remaining": 7391.9,
+  "last_ts": 1780743115.576283
+}

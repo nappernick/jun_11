@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Model Eval Console — Fleet Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <!-- top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark"></div>
+      <div class="wm">
+        <b>Model Eval Console</b>
+        <span>Fleet&nbsp;Comparison</span>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="synthbadge"><i></i> Synthetic dataset · internal base</div>
+    <div class="windowlabel" id="winlabel"></div>
+    <div class="themeswitch" id="themeswitch"></div>
+  </header>
+
+  <!-- tab nav -->
+  <nav class="tabs" id="tabs"></nav>
+
+  <!-- shared filter rail -->
+  <div class="filters">
+    <span class="flabel">Models</span>
+    <div class="modelchips" id="modelchips"></div>
+    <span class="mini" id="selAll">All&nbsp;7</span>
+    <span class="mini" id="selNone">Isolate&nbsp;3</span>
+  </div>
+
+  <!-- main stage -->
+  <main class="stage" id="stage"></main>
+</div>
+
+<script src="data.js"></script>
+<script src="theme.js"></script>
+<script src="charts.js"></script>
+<script src="tabs/overview.js"></script>
+<script src="tabs/latency.js"></script>
+<script src="tabs/quality.js"></script>
+<script src="tabs/multiturn.js"></script>
+<script src="tabs/geography.js"></script>
+<script src="tabs/tradeoff.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

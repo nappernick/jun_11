@@ -1,0 +1,53 @@
+package.ATESkywalkerQuery = {
+    interfaces = (1.0);
+
+    build-system = brazil-gradle;
+    build-tools = {
+        BrazilGradle = 8.x;
+        BrazilGradleJavaPresets = 8.x;
+        BrazilGradleJavaWrapperGenerator = 8.x;
+        BrazilGradleValidateClasspathPlugin = 8.x;
+        BrazilGradleAmazonJavaFormatter = 1.0;
+        CoralGenerator = 1.2;
+        JDK25 = 1.0;
+        ATESkywalkerQueryModel = 1.0;
+    };
+
+    dependencies = {
+        AmazonAppConfigJava = 2.0;
+        ApolloShimOpConfigHelpers = 2.1;
+        ApolloShimSetup = 7.0;
+        Bobcat = 3.0;
+        CoralGuice = 1.1_5.x;
+        CoralMetricsEmfReporter = 1.0;
+        CoralOrchestrator = 1.1;
+        CoralRpcSupport = 1.1; # This supports the different protocols declared in CoralModule.java
+        CoralService = 1.1;
+        GoogleGuava = 32.x;
+        GuiceAppConfig = 1.3;
+        log4j = 2.x;
+        CoralCloudAuthSupport = 1.1; # Coral CloudAuth
+        AwsJavaSdk-Core-Auth = 2.0;
+        Jackson-core = 2.x; # JSON build/parse for AOSS + Bedrock + SageMaker payloads
+        Jackson-databind = 2.x;
+        AwsJavaSdk-Core-Regions = 2.0; # Region for STS client
+        AwsJavaSdk-Sts = 2.0; # cross-account assume-role for AOSS retrieval
+        AwsJavaSdk-HttpClient-UrlConnectionClient = 2.0; # SDK HTTP client impl for STS
+    };
+
+    test-dependencies = {
+        JUnit5 = 5.x;
+    };
+
+    runtime-dependencies = {
+        AmazonCACerts = 1.0;
+        JDK25 = 1.0;
+        Maven-org-glassfish_jakarta_json = 1.x;# a JSON-P implementation required for CloudAuth
+    };
+
+    targets = {
+        ATESkywalkerQuery-1.0 = {
+            type = javalibrary;
+        };
+    };
+};

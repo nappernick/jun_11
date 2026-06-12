@@ -1,0 +1,4 @@
+### Error
+TimeoutError: browserBackend.callTool: Timeout 5000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m

@@ -1,0 +1,30 @@
+{
+  "smoke_results": {
+    "ettin-1b": {
+      "loads": true,
+      "max_context": 7999,
+      "sep_1pair": 15.49,
+      "kind": "logit",
+      "repo": "cross-encoder/ettin-reranker-1b-v1",
+      "load_s": 9
+    },
+    "qwen3-0.6B": {
+      "loads": true,
+      "max_context": 131072,
+      "sep_1pair": 15.18,
+      "kind": "margin",
+      "repo": "Qwen/Qwen3-Reranker-0.6B",
+      "load_s": 41
+    },
+    "nemotron-1b-v2": {
+      "loads": true,
+      "max_context": 4096,
+      "sep_1pair": 29.15,
+      "kind": "logit",
+      "repo": "nvidia/llama-nemotron-rerank-1b-v2",
+      "load_s": 75,
+      "trust_remote_code": true
+    }
+  },
+  "note": "All three load+score on transformers 5.10.2 / torch 2.12 / MPS. No license gate blocked download. Token-window finding: Qwen3=128K >> Ettin 8K > Nemotron 4K (=Cohere 3.5)."
+}

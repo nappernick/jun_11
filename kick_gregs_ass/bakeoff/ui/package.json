@@ -1,0 +1,30 @@
+{
+  "name": "gbbo-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "GBBO model-bakeoff dashboard — live monitoring + exec viz (React + TypeScript + ECharts).",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "5.5.1",
+    "echarts-gl": "^2.0.9",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.16.11",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.3",
+    "fast-check": "^4.8.0",
+    "typescript": "5.6.3",
+    "vite": "5.4.10",
+    "vitest": "^4.1.8"
+  }
+}

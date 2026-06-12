@@ -1,0 +1,71 @@
+{
+  "node_count": 4,
+  "geography": {
+    "Global": 4
+  },
+  "system_employee-class": {
+    "All Employee Classes": 2,
+    "F - Regular Full Time": 2,
+    "H - Regular Part Time - 20 + Hours": 1,
+    "I - Intern": 1,
+    "J - JV or RC Worker": 1,
+    "N - Trainee European": 1,
+    "P - Apprentice": 1,
+    "Q - Field Regular Part Time 20-29": 1,
+    "R - Regular Reduced Time 30 + Hrs": 1,
+    "S - Seasonal/Short-Term": 1,
+    "X - Regular Flex Time - < 20 Hrs": 1
+  },
+  "system_job-level": {
+    "All Job Levels": 3,
+    "L0": 1,
+    "L1": 1,
+    "L10": 2,
+    "L11": 2,
+    "L12": 2,
+    "L2": 2,
+    "L3": 2,
+    "L4": 2,
+    "L5": 2,
+    "L6": 2,
+    "L7": 2,
+    "L8": 2,
+    "L9": 2
+  },
+  "system_line-of-business": {
+    "All LOBs": 3,
+    "No Value (Blank in AEM)": 1,
+    "Advertising": 1,
+    "Amazon Games": 1,
+    "Amazon Pharmacy": 1,
+    "Amazon Video and Studios": 1,
+    "Amazon Web Services (AWS)": 1,
+    "Celeste": 1,
+    "Devices & Services": 1,
+    "Fabric": 1,
+    "General & Administrative": 1,
+    "Global Media & Entertainment": 1,
+    "Music & Podcasts/Wondery": 1,
+    "One Medical": 1,
+    "Shopbop": 1,
+    "Subsidiaries": 1,
+    "Worldwide Amazon Stores": 1,
+    "Zappos": 1
+  },
+  "all_metadata_keys": [
+    "content-type-19",
+    "content-type-26",
+    "entitlement-0",
+    "system_auto-translate",
+    "system_certified",
+    "system_certified-date",
+    "system_content-channel",
+    "system_employee-class",
+    "system_hourly-salaried",
+    "system_job-level",
+    "system_line-of-business",
+    "system_location-type",
+    "system_source-of-truth",
+    "system_visualization"
+  ]
+}

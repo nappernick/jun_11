@@ -1,0 +1,57 @@
+package com.amazon.ingestion.dispatch;
+
+import com.amazon.ingestion.contract.WorkItemResponse;
+import com.amazon.ingestion.contract.WorkItemRequest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Fan-out surface that invokes the Processor Lambda for each work item and collects results.
+ *
+ * Launch implementation is synchronous InvokeFunction calls. The Poller blocks until all work
+ * items complete. No work item can abort the run: a Processor that skips nodes or whose
+ * invocation fails is recorded and the run continues (R2).
+ */
+public interface WorkItemDispatcher {
+
+    /**
+     * Group node IDs into work items, invoke the Processor for each, and return all responses.
+     *
+     * @param runId         correlation ID for this rebuild run.
+     * @param indexName     index name the Processor must write into.
+     * @param corpusVersion the run's snapshot date marker, stamped on every fragment.
+     * @param nodeIds       full set of node IDs to dispatch across work items.
+     * @param groupSize     max node IDs per work item.
+     * @return one response per work item; ordering is not guaranteed.
+     */
+    List<WorkItemResponse> dispatch(
+            String runId, String indexName, String corpusVersion, List<String> nodeIds, int groupSize);
+
+    /**
+     * Default grouping: contiguous slices of size groupSize.
+     *
+     * @param runId         correlation ID for this rebuild run.
+     * @param indexName     index name the Processor must write into.
+     * @param corpusVersion the run's snapshot date marker.
+     * @param nodeIds       full set of node IDs to partition.
+     * @param groupSize     max node IDs per work item.
+     * @return work item requests covering every node ID exactly once.
+     */
+    default List<WorkItemRequest> groupIntoWorkItems(
+            String runId, String indexName, String corpusVersion, List<String> nodeIds, int groupSize) {
+        if (groupSize < 1) {
+            throw new IllegalArgumentException("groupSize must be >= 1");
+        }
+        int total = nodeIds.size();
+        int count = (total + groupSize - 1) / groupSize;
+        List<WorkItemRequest> items = new ArrayList<>(count);
+        for (int i = 0; i < count; i++) {
+            int from = i * groupSize;
+            int to = Math.min(from + groupSize, total);
+            items.add(new WorkItemRequest(
+                    runId, i, count, indexName, corpusVersion, "corex", nodeIds.subList(from, to)));
+        }
+        return List.copyOf(items);
+    }
+}

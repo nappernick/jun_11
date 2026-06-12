@@ -1,0 +1,128 @@
+[
+  {
+    "filename": "pools_5_10_20_20260605_172320.json",
+    "run_mode": "pool_sweep",
+    "models": [
+      "cohere-3.5"
+    ],
+    "record_count": 25,
+    "generated_at": "2026-06-05T17:23:20.478766",
+    "mtime": 1780701800.4809673
+  },
+  {
+    "filename": "combo_k5_base12_cap200000_20260604_205601.json",
+    "run_mode": "combo",
+    "models": [
+      "cohere-3.5",
+      "cohere-4-fast"
+    ],
+    "record_count": 9768,
+    "generated_at": "2026-06-04T20:56:01.677892",
+    "mtime": 1780628161.7838852
+  },
+  {
+    "filename": "pools_5_10_20260604_201708.json",
+    "run_mode": "pool_sweep",
+    "models": [
+      "cohere-3.5",
+      "cohere-4-fast"
+    ],
+    "record_count": 36,
+    "generated_at": "2026-06-04T20:17:08.161617",
+    "mtime": 1780625828.1643355
+  },
+  {
+    "filename": "combo_k5_base12_cap200000_20260604_184526.json",
+    "run_mode": "combo",
+    "models": [
+      "cohere-3.5",
+      "cohere-4-pro"
+    ],
+    "record_count": 9768,
+    "generated_at": "2026-06-04T18:45:26.072847",
+    "mtime": 1780620326.1752498
+  },
+  {
+    "filename": "pools_3_5_10_16_20_50_20260604_180752.json",
+    "run_mode": "pool_sweep",
+    "models": [
+      "cohere-3.5",
+      "cohere-4-pro"
+    ],
+    "record_count": 70,
+    "generated_at": "2026-06-04T18:07:52.041455",
+    "mtime": 1780618072.0443325
+  },
+  {
+    "filename": "combo_k5_base12_cap500_20260604_165905.json",
+    "run_mode": "combo",
+    "models": [
+      "cohere-3.5",
+      "cohere-4-pro"
+    ],
+    "record_count": 1848,
+    "generated_at": "2026-06-04T16:59:05.495336",
+    "mtime": 1780613945.5241735
+  },
+  {
+    "filename": "pools_5_10_20260604_164239.json",
+    "run_mode": "pool_sweep",
+    "models": [
+      "cohere-3.5",
+      "cohere-4-pro"
+    ],
+    "record_count": 12,
+    "generated_at": "2026-06-04T16:42:39.854174",
+    "mtime": 1780612959.8553543
+  },
+  {
+    "filename": "pools_5_10_20_20260604_143849.json",
+    "run_mode": "pool_sweep",
+    "models": [
+      "cohere-3.5"
+    ],
+    "record_count": 25,
+    "generated_at": "2026-06-04T14:38:49.297107",
+    "mtime": 1780605529.2976673
+  },
+  {
+    "filename": "combo_k3_base8_cap1000_20260604_061750.json",
+    "run_mode": "combo",
+    "models": [],
+    "record_count": 350,
+    "generated_at": "2026-06-04T06:17:50.717487",
+    "mtime": 1780575470.7205904
+  },
+  {
+    "filename": "combo_k5_base8_cap1000_20260604_061342.json",
+    "run_mode": "combo",
+    "models": [],
+    "record_count": 490,
+    "generated_at": "2026-06-04T06:13:42.128095",
+    "mtime": 1780575222.1334116
+  },
+  {
+    "filename": "pools_5_10_20_20260604_061255.json",
+    "run_mode": "pool_sweep",
+    "models": [],
+    "record_count": 25,
+    "generated_at": "2026-06-04T06:12:55.293827",
+    "mtime": 1780575175.2946181
+  },
+  {
+    "filename": "pools_5_20260604_061019.json",
+    "run_mode": "pool_sweep",
+    "models": [],
+    "record_count": 8,
+    "generated_at": "2026-06-04T06:10:19.031934",
+    "mtime": 1780575019.032327
+  },
+  {
+    "filename": "results.json",
+    "run_mode": null,
+    "models": [],
+    "record_count": null,
+    "generated_at": null,
+    "mtime": 1780574606.7004807
+  }
+]

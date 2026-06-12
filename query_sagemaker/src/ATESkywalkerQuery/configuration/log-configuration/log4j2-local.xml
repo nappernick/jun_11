@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" shutdownHook="disable">
+    <Properties>
+        <Property name="log-path">${sys:root}/var/output/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+        <AmazonRollingRandomAccessFile name="APPLICATION" filePattern="${log-path}/application.log.%d{yyyy-MM-dd-HH}" >
+            <PatternLayout>
+                <pattern>%d{ISO8601} %highlight{[%p]} %X{RequestId} (%t) %c: %m%n</pattern>
+            </PatternLayout>
+        </AmazonRollingRandomAccessFile>
+        <AmazonRollingRandomAccessFile name="METRICS"
+                                       filePattern="${log-path}/metrics.log.%d{yyyy-MM-dd-HH}" >
+        </AmazonRollingRandomAccessFile>
+        <AmazonRollingRandomAccessFile name="REQUEST"
+                                       filePattern="${log-path}/requests.log.%d{yyyy-MM-dd-HH}" >
+        </AmazonRollingRandomAccessFile>
+        <AmazonRollingRandomAccessFile name="WIRE"
+                                       filePattern="${log-path}/wire.log.%d{yyyy-MM-dd-HH}" >
+        </AmazonRollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="APPLICATION"/>
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+
+        <Logger name="com.amazon.coral.service.RequestLoggingInterceptor" level="TRACE" additivity="false">
+            <AppenderRef ref="REQUEST" level="TRACE"/>
+        </Logger>
+
+        <Logger name="emf.metrics" level="INFO" additivity="false">
+            <AppenderRef ref="METRICS" level="INFO"/>
+        </Logger>
+
+        <!-- Since additivity is false, wire logging will not go to the root logger. This prevents
+             wire logging from being interspersed with application logging.
+         -->
+        <Logger name="WIRE" level="TRACE" additivity="false">
+            <appender-ref ref="WIRE" level="TRACE"/>
+        </Logger>
+        <Logger name="com.amazon.coral" level="WARN"/>
+        <Logger name="com.amazon.coral.reflect" level="ERROR"/>
+        <Logger name="org.apache" level="WARN"/>
+    </Loggers>
+</Configuration>

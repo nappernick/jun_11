@@ -1,0 +1,4 @@
+boto3>=1.34
+requests>=2.31
+matplotlib>=3.8
+cohere>=5.13  # SageMaker client for the Rerank 4 Pro path (--models 4pro)

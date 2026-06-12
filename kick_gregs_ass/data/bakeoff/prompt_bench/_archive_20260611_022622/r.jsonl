@@ -1,0 +1,1 @@
+{"prompt_key":"a","label":"A","triad":0.42,"ci_half_width":0.05,"ci_low":0.37,"ci_high":0.47,"n_conversations":24,"per_dimension_mean":{"faithfulness":0.4},"abstention_reward_mean":0.5,"answered_when_unsure_rate":0.1,"confident_wrong_count":2,"created_at":"2026-06-11T08:26:22.288336+00:00"}

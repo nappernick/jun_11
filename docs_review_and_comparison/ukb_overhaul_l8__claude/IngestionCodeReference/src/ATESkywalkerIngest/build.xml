@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<project name="ATESkywalkerIngest-1.0" basedir="." default="release" xmlns:ht="happytrails">
+
+  <import file="${happytrails.root}/happytrails.xml"/>
+  <ht:import file="validate-classpath.xml" />
+
+  <!-- Ant properties are "write once." To override HappierTrails properties,
+    declare them after the happytrails.xml import and before the
+    happier-trails.xml import. For more information see:
+    https://w.amazon.com/bin/view/BrazilBuildSystem/HappierTrails/PropertiesGuide/ -->
+
+  <!-- Copy configurations -->
+  <property name="ht.include.cfg" value="true" />
+
+  <ht:import file="happier-trails.xml"/>
+
+  <!-- For more information on targets and how to override them, see:
+    https://w.amazon.com/bin/view/BrazilBuildSystem/HappierTrails/Targets -->
+  <target name="validate-classpath" extensionOf="ht-post-release">
+    <ht:validateClasspath classpath="${bp:run.classpath}" failOnConflicts="true" />
+  </target>
+
+</project>

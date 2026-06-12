@@ -1,0 +1,6 @@
+{"set_id":"c16-s01","batch":16,"turn":1,"gold_node_ids":["6146c5df-bd75-4a26-8374-4737c4a7a8ed"],"answerability":"full"}
+{"set_id":"c16-s02","batch":16,"turn":1,"gold_node_ids":["eb558531-15e7-4030-bed0-72eaa07b6f9c"],"answerability":"full"}
+{"set_id":"c16-s03","batch":16,"turn":1,"gold_node_ids":["dbd5222a-4eed-49c9-a87d-54b7edd051ac"],"answerability":"partial"}
+{"set_id":"c16-s04","batch":16,"turn":1,"gold_node_ids":["81b4a939-5ff3-432a-be7a-9cc5f492dc11","1ad8360d-d279-4f6e-a17b-fc014df462f4"],"answerability":"full"}
+{"set_id":"c16-s05","batch":16,"turn":1,"gold_node_ids":["ca272654-e5f7-409b-97eb-83c7c074d755"],"answerability":"full"}
+{"set_id":"c16-s06","batch":16,"turn":1,"gold_node_ids":["0765f678-af1f-47b9-adaf-c511037b9604"],"answerability":"full"}

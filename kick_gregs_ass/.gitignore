@@ -1,0 +1,44 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.hypothesis/
+.venv/
+venv/
+
+# --- OS / editor cruft ---
+.DS_Store
+*.swp
+
+# --- Local infra / data stores (regenerable, large, or machine-local) ---
+qdrant_storage/
+
+# --- Bakeoff run outputs (regenerable; the event log can be large) ---
+# The sampling plan is intentionally NOT ignored: it is the authoritative,
+# version-keyed experiment description and belongs in history. Only the bulky,
+# regenerable run artifacts are excluded.
+data/bakeoff/trial_events.jsonl
+data/bakeoff/pilot_events.jsonl
+data/bakeoff/cache/
+data/bakeoff/reports/
+data/bakeoff/outcomes.jsonl
+data/bakeoff/run_errors.jsonl
+data/bakeoff/judge_scores.jsonl
+data/bakeoff/sampling_plan.json
+data/bakeoff/_archive_pre_run_*/
+data/bakeoff/_archive_pre_*/
+
+# --- Quality study run outputs (regenerable; separate stores from the bake-off) ---
+data/bakeoff/quality_outcomes.jsonl
+data/bakeoff/quality_run_errors.jsonl
+data/bakeoff/quality_judge_scores.jsonl
+data/bakeoff/quality_prompts.json
+data/bakeoff/quality_optimizer_report.json
+
+# --- Node / frontend (TypeScript dashboard) ---
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+logs/

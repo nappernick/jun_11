@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "generated_at": "2026-06-05T03:53:54.481719",
+    "gen_model": "us.anthropic.claude-sonnet-4-6",
+    "judge_model": "us.anthropic.claude-opus-4-8",
+    "embed_model": "amazon.titan-embed-text-v2:0",
+    "topk": 5,
+    "metrics": [
+      "context_precision",
+      "context_relevance",
+      "faithfulness",
+      "response_relevancy",
+      "response_groundedness"
+    ],
+    "n_pairs": 2
+  },
+  "aggregate": {
+    "ettin-1b": {
+      "context_precision": 0.9334,
+      "context_relevance": 1.0,
+      "faithfulness": 1.0,
+      "response_relevancy": 0.6934,
+      "response_groundedness": 1.0,
+      "ragas_overall": 0.9254,
+      "n": 2
+    }
+  },
+  "rows": [
+    {
+      "reranker": "ettin-1b",
+      "query": "how do I book a flight and hotel for a business trip",
+      "top_ids": [
+        "ec0c13bb-da1a-4808-a2a1-42cd3e24c977",
+        "72c9d977-6140-4f01-8d82-ba48886704d9",
+        "e3e46a05-92f7-43b1-81bf-74710b447725",
+        "9b75108f-b8fe-4992-b008-4de72433d250",
+        "d0a649a4-0375-45cc-afbb-1a62fe2e5716"
+      ],
+      "answer": "## Booking a Flight and Hotel for Business Travel\n\n1. **Create a Travel Profile** first (if you haven't already) at the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) \u2014 you'll need your Phone Tool email address.\n\n2. **Book your travel** by logging into the [Self-Service Booking Tool](https://booktravel.corp.amazon.com/) and searching for flights and hotels.\n\n**For hotels, keep in mind:**\n- Book the **lowest refundable standard room rate** on a single-occupancy basis\n- Book accommodations **close to your work destination**\n- Use **Amazon preferred hotels** when possible for competitive rates and flexible cancellation\n\n**Need last-minute bookings?**\n- If within **6 hours of departure**, contact a [Travel Counselor](https://w.amazon.com/bin/view/TravelAndEvents/Support/) during business hours instead.\n\nFor additional guidance, refer to the [Global Travel and Expense Policy](https://policy.a2z.com/docs/176324/publication) or the [New Hire Travel Playbook](https://w.amazon.com/bin/view/TravelAndEvents/newhire_playbook/) if you're a new employee.",
+      "metrics": {
+        "context_precision": 1.0,
+        "context_relevance": 1.0,
+        "faithfulness": 1.0,
+        "response_relevancy": 0.7751,
+        "response_groundedness": 1.0
+      },
+      "errors": null
+    },
+    {
+      "reranker": "ettin-1b",
+      "query": "can I fly business class and how much will the company pay back",
+      "top_ids": [
+        "b9ce83b0-b104-421f-82bd-52202ac1382c",
+        "1e6e74ea-4257-47d3-874d-628909348fc3",
+        "a16a43a1-ba36-44bf-a33f-c2470902c267",
+        "df856485-44b7-4b7b-be6a-eee5c127d7ac",
+        "6146c5df-bd75-4a26-8374-4737c4a7a8ed"
+      ],
+      "answer": "**You cannot expense business class travel.** Amazon only reimburses the **Lowest Logical Fare in economy/coach class**.\n\nIf you choose to upgrade to business class:\n- You must **pay the full ticket cost upfront** using your own payment method\n- Amazon will **only reimburse the policy-approved Lowest Logical Fare** (economy)\n- You pay the **difference out of pocket**\n- Upgrade fees and premium seating fees are **not reimbursable**\n\nNote: Your manager will receive an email notification if you book a personal upgrade, but no action is required from them.",
+      "metrics": {
+        "context_precision": 0.8667,
+        "context_relevance": 1.0,
+        "faithfulness": 1.0,
+        "response_relevancy": 0.6117,
+        "response_groundedness": 1.0
+      },
+      "errors": null
+    }
+  ]
+}

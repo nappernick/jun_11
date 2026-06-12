@@ -1,0 +1,39 @@
+package.ATESkywalkerIngest = {
+    interfaces = (1.0);
+
+    build-system = happytrails;
+    build-tools = {
+        1.0 = {
+            HappierTrails = 3.7;
+            JDK17 = 1.0;
+        };
+    };
+
+    dependencies = {
+        1.0 = {
+            AwsJavaSdk-SecretsManager = 2.0;
+            AwsJavaSdk-Ssm = 2.0;
+            AwsJavaSdk-Sts = 2.0;
+            Jackson-databind = 2.x;
+            Maven-com-amazonaws_aws-lambda-java-core = 1.x;
+            Maven-com-amazonaws_aws-lambda-java-log4j2 = 1.x;
+            Maven-org-apache-logging-log4j_log4j-layout-template-json = 2.x;
+        };
+    };
+
+    test-dependencies = {
+        1.0 = {
+            JUnit5 = 5.x;
+            Maven-org-mockito_mockito-core = 5.x;
+        };
+    };
+
+    # For more information on how to declare targets for BrazilGradle packages (called tasks)
+    # see: https://w.amazon.com/bin/view/BrazilGradle
+    # and: https://docs.gradle.org/current/userguide/more_about_tasks.html
+    targets = {
+        ATESkywalkerIngest-1.0 = {
+            type = javalibrary;
+        };
+    };
+};

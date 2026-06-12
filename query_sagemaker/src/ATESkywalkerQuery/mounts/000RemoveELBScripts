@@ -1,0 +1,9 @@
+#!/apollo/bin/env /bin/bash
+
+set -eux
+
+rm -fv "${APOLLO_ACTUAL_ENVIRONMENT_ROOT}"/ApolloCmd/SanityTest/200RegisterWithELB
+rm -fv "${APOLLO_ACTUAL_ENVIRONMENT_ROOT}"/ApolloCmd/Deactivate/002RemoveFromELB
+
+exit 0
+

@@ -1,0 +1,17 @@
+# -*-perl-*-
+
+package.ATESkywalkerQueryCDK = {
+    interfaces = (1.0);
+
+    build-system = cdk-build;
+
+    build-tools = {
+        CDKBuild = 4.x;
+        NodeJS = default;
+        NpmPrettyMuch = 1.10;
+    };
+
+    test-dependencies = {
+        LilyUnofficialCDKPipelineVisualizer = 1.0;
+    };
+};

@@ -1,0 +1,18 @@
+{
+   "environment" : {
+     "environmentAlias" : "ATESkywalkerQuery",
+     "runAsUser" : "ecs-user"
+   },
+   "defaultStack" : "ATESkywalkerQuery.Automatic",
+   "ATESkywalkerQuery.Automatic" : {
+     "OCF" : {
+       "PubSub" : {
+         "domain" : "REPLACE_DOMAIN",
+         "realm"  : "REPLACE_REGION"
+       }
+     },
+     "environmentStage" : {
+         "name" : "REPLACE_DOMAIN_APOLLO"
+     }
+   }
+}

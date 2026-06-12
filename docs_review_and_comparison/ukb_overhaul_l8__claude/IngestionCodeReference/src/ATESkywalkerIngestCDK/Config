@@ -1,0 +1,24 @@
+# -*-perl-*-
+
+package.ATESkywalkerIngestCDK = {
+    interfaces = (1.0);
+
+    build-system = cdk-build;
+    build-tools = {
+        1.0 = {
+            CDKBuild = 4.x;
+            NodeJS = 24.x;
+            NpmPrettyMuch = 1.10;
+
+            # Having the Lambda package as a dependency to allow this package to be rebuilt when
+            # the Lambda code changes, and thus update the Lambda function version.
+            ATESkywalkerIngest = 1.0;
+        };
+    };
+
+    test-dependencies = {
+        1.0 = {
+            LilyUnofficialCDKPipelineVisualizer = 1.0;
+        };
+    };
+};

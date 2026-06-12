@@ -1,0 +1,2838 @@
+{
+  "run_id": "mock-sample-N3-5",
+  "gates": {
+    "accuracy_bar": 0.7,
+    "latency_budget_ms": 500.0,
+    "false_answer_ceiling": 0.05
+  },
+  "baseline_model_id": "mock",
+  "models": [
+    {
+      "id": "mock",
+      "display_name": "MockReranker (token-overlap)",
+      "params": "0",
+      "max_seq_len": 999999,
+      "deploy_path": "local/mock",
+      "license": "internal",
+      "instruction_following": false,
+      "calibrated_scores": false
+    }
+  ],
+  "cells": [
+    {
+      "model_id": "mock",
+      "N": 3,
+      "by_slice": {
+        "english=clean&topic=travel": {
+          "ndcg10": 0.5,
+          "ndcg10_ci": [
+            0.0,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 0.5,
+          "p50": 0.0213750172406435,
+          "p95": 0.0213750172406435,
+          "p99": 0.0213750172406435,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=clean&topic=expense": {
+          "ndcg10": 1.0,
+          "ndcg10_ci": [
+            1.0,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 1.0,
+          "p50": 0.008625007467344403,
+          "p95": 0.008625007467344403,
+          "p99": 0.008625007467344403,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=broken&topic=expense": {
+          "ndcg10": 1.0,
+          "ndcg10_ci": [
+            1.0,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 1.0,
+          "p50": 0.005459005478769541,
+          "p95": 0.005459005478769541,
+          "p99": 0.005459005478769541,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 1.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=broken&topic=nonsense": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.004750007065013051,
+          "p95": 0.004750007065013051,
+          "p99": 0.004750007065013051,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 1.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=clean&topic=leave": {
+          "ndcg10": 0.9197207891481876,
+          "ndcg10_ci": [
+            0.9197207891481876,
+            0.9197207891481876
+          ],
+          "recall10": 1.0,
+          "mrr10": 1.0,
+          "p50": 0.005332985892891884,
+          "p95": 0.005332985892891884,
+          "p99": 0.005332985892891884,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.75,
+            "recall": 1.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 1.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=clean&topic=mobility": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.0038750004023313522,
+          "p95": 0.0038750004023313522,
+          "p99": 0.0038750004023313522,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=broken&topic=mobility": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.003208988346159458,
+          "p95": 0.003208988346159458,
+          "p99": 0.003208988346159458,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=broken&topic=leave": {
+          "ndcg10": 0.8467132018086354,
+          "ndcg10_ci": [
+            0.6934264036172708,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 0.75,
+          "p50": 0.004582980182021856,
+          "p95": 0.004582980182021856,
+          "p99": 0.004582980182021856,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=clean&topic=nonsense": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.004292000085115433,
+          "p95": 0.004292000085115433,
+          "p99": 0.004292000085115433,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 1.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        }
+      },
+      "rows": [
+        {
+          "id": "q01",
+          "slice": {
+            "english": "clean",
+            "topic": "travel"
+          },
+          "rels": [
+            1,
+            1,
+            0
+          ],
+          "top_norm": 0.8807970779778823,
+          "latency": 0.0213750172406435
+        },
+        {
+          "id": "q02",
+          "slice": {
+            "english": "clean",
+            "topic": "expense"
+          },
+          "rels": [
+            1,
+            0,
+            0
+          ],
+          "top_norm": 0.9525741268224334,
+          "latency": 0.008625007467344403
+        },
+        {
+          "id": "q03",
+          "slice": {
+            "english": "broken",
+            "topic": "expense"
+          },
+          "rels": [
+            1,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.005459005478769541
+        },
+        {
+          "id": "q04",
+          "slice": {
+            "english": "broken",
+            "topic": "nonsense"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.004750007065013051
+        },
+        {
+          "id": "q05",
+          "slice": {
+            "english": "clean",
+            "topic": "leave"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.004790985258296132
+        },
+        {
+          "id": "q06",
+          "slice": {
+            "english": "clean",
+            "topic": "mobility"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.0038750004023313522
+        },
+        {
+          "id": "q07",
+          "slice": {
+            "english": "broken",
+            "topic": "mobility"
+          },
+          "rels": [
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.003208988346159458
+        },
+        {
+          "id": "q08",
+          "slice": {
+            "english": "clean",
+            "topic": "leave"
+          },
+          "rels": [
+            1,
+            0,
+            1
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.005332985892891884
+        },
+        {
+          "id": "q09",
+          "slice": {
+            "english": "broken",
+            "topic": "leave"
+          },
+          "rels": [
+            1,
+            0
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.003416993422433734
+        },
+        {
+          "id": "q10",
+          "slice": {
+            "english": "clean",
+            "topic": "nonsense"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.004292000085115433
+        },
+        {
+          "id": "q11",
+          "slice": {
+            "english": "clean",
+            "topic": "travel"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.0036669953260570765
+        },
+        {
+          "id": "q12",
+          "slice": {
+            "english": "broken",
+            "topic": "leave"
+          },
+          "rels": [
+            0,
+            1,
+            1
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.004582980182021856
+        }
+      ]
+    },
+    {
+      "model_id": "mock",
+      "N": 5,
+      "by_slice": {
+        "english=clean&topic=travel": {
+          "ndcg10": 0.5,
+          "ndcg10_ci": [
+            0.0,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 0.5,
+          "p50": 0.015458004781976342,
+          "p95": 0.015458004781976342,
+          "p99": 0.015458004781976342,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=clean&topic=expense": {
+          "ndcg10": 1.0,
+          "ndcg10_ci": [
+            1.0,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 1.0,
+          "p50": 0.006541988113895059,
+          "p95": 0.006541988113895059,
+          "p99": 0.006541988113895059,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=broken&topic=expense": {
+          "ndcg10": 1.0,
+          "ndcg10_ci": [
+            1.0,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 1.0,
+          "p50": 0.00462500611320138,
+          "p95": 0.00462500611320138,
+          "p99": 0.00462500611320138,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 1.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=broken&topic=nonsense": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.004250003257766366,
+          "p95": 0.004250003257766366,
+          "p99": 0.004250003257766366,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 1.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=clean&topic=leave": {
+          "ndcg10": 0.9197207891481876,
+          "ndcg10_ci": [
+            0.9197207891481876,
+            0.9197207891481876
+          ],
+          "recall10": 1.0,
+          "mrr10": 1.0,
+          "p50": 0.005249981768429279,
+          "p95": 0.005249981768429279,
+          "p99": 0.005249981768429279,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.75,
+            "recall": 1.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 1.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 1.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=clean&topic=mobility": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.003583001671358943,
+          "p95": 0.003583001671358943,
+          "p99": 0.003583001671358943,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=broken&topic=mobility": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.0027909991331398487,
+          "p95": 0.0027909991331398487,
+          "p99": 0.0027909991331398487,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        },
+        "english=broken&topic=leave": {
+          "ndcg10": 0.8467132018086354,
+          "ndcg10_ci": [
+            0.6934264036172708,
+            1.0
+          ],
+          "recall10": 1.0,
+          "mrr10": 0.75,
+          "p50": 0.0041669991333037615,
+          "p95": 0.0041669991333037615,
+          "p99": 0.0041669991333037615,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 0.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 0.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 1.0
+            }
+          ]
+        },
+        "english=clean&topic=nonsense": {
+          "ndcg10": 0.0,
+          "ndcg10_ci": [
+            0.0,
+            0.0
+          ],
+          "recall10": 0.0,
+          "mrr10": 0.0,
+          "p50": 0.003583991201594472,
+          "p95": 0.003583991201594472,
+          "p99": 0.003583991201594472,
+          "throughput_qps": 0.0,
+          "cost_per_1k": 0.0,
+          "sig_vs_baseline": 1.0,
+          "abstain": {
+            "operating_t": 0.05,
+            "recall": 1.0,
+            "false_answer_rate": 0.0,
+            "false_abstain_rate": 0.0
+          },
+          "abstain_curve": [
+            {
+              "t": 0.05,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.1,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.15,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.2,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.25,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.3,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.35,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.4,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.45,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.5,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.55,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.6,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.65,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.7,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.75,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.8,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.85,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.9,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            },
+            {
+              "t": 0.95,
+              "abstain_recall": 1.0,
+              "false_answer_rate": 0.0,
+              "false_abstain_rate": 0.0
+            }
+          ]
+        }
+      },
+      "rows": [
+        {
+          "id": "q01",
+          "slice": {
+            "english": "clean",
+            "topic": "travel"
+          },
+          "rels": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "top_norm": 0.8807970779778823,
+          "latency": 0.015458004781976342
+        },
+        {
+          "id": "q02",
+          "slice": {
+            "english": "clean",
+            "topic": "expense"
+          },
+          "rels": [
+            1,
+            0,
+            0
+          ],
+          "top_norm": 0.9525741268224334,
+          "latency": 0.006541988113895059
+        },
+        {
+          "id": "q03",
+          "slice": {
+            "english": "broken",
+            "topic": "expense"
+          },
+          "rels": [
+            1,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.00462500611320138
+        },
+        {
+          "id": "q04",
+          "slice": {
+            "english": "broken",
+            "topic": "nonsense"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.004250003257766366
+        },
+        {
+          "id": "q05",
+          "slice": {
+            "english": "clean",
+            "topic": "leave"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.0043330073822289705
+        },
+        {
+          "id": "q06",
+          "slice": {
+            "english": "clean",
+            "topic": "mobility"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.003583001671358943
+        },
+        {
+          "id": "q07",
+          "slice": {
+            "english": "broken",
+            "topic": "mobility"
+          },
+          "rels": [
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.0027909991331398487
+        },
+        {
+          "id": "q08",
+          "slice": {
+            "english": "clean",
+            "topic": "leave"
+          },
+          "rels": [
+            1,
+            0,
+            1
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.005249981768429279
+        },
+        {
+          "id": "q09",
+          "slice": {
+            "english": "broken",
+            "topic": "leave"
+          },
+          "rels": [
+            1,
+            0
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.003249995643272996
+        },
+        {
+          "id": "q10",
+          "slice": {
+            "english": "clean",
+            "topic": "nonsense"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.003583991201594472
+        },
+        {
+          "id": "q11",
+          "slice": {
+            "english": "clean",
+            "topic": "travel"
+          },
+          "rels": [
+            0,
+            0,
+            0
+          ],
+          "top_norm": 0.006692850924284856,
+          "latency": 0.003416993422433734
+        },
+        {
+          "id": "q12",
+          "slice": {
+            "english": "broken",
+            "topic": "leave"
+          },
+          "rels": [
+            0,
+            1,
+            1
+          ],
+          "top_norm": 0.7310585786300049,
+          "latency": 0.0041669991333037615
+        }
+      ]
+    }
+  ]
+}

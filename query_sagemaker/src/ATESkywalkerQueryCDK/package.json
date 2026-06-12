@@ -1,0 +1,48 @@
+{
+  "name": "@amzn/ate-skywalker-query-cdk",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "dist/app.js",
+  "types": "dist/app.d.ts",
+  "scripts": {
+    "clean": "rm -rf build dist cdk.out node_modules",
+    "lint": "eslint --max-warnings=0 --cache src && prettier --list-different --cache .",
+    "format": "eslint --max-warnings=0 --fix --cache src && prettier --write --cache .",
+    "prebuild": "npm run format",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepare": "npm run-script build",
+    "test": "vitest run --coverage",
+    "posttest": "generate-coverage-data --language typescript",
+    "visualize": "visualize-pipeline"
+  },
+  "files": [
+    "dist/",
+    "!/dist/**/__tests__/*"
+  ],
+  "dependencies": {
+    "@amzn/star-cdk-lib": "^1.0.0",
+    "@amzn/brazil": "^2.0.4",
+    "@amzn/hydra": "^4.0.60",
+    "@amzn/pipelines": "^4.0.94",
+    "@amzn/superstar-provisioner-cdk": "^4.0.7",
+    "aws-cdk-lib": "^2.196.0",
+    "@amzn/secure-cdk-sdo-blueprint": "^2.0.1",
+    "constructs": "^10.1.3"
+  },
+  "devDependencies": {
+    "@amzn/lily-cdk-pipeline-visualize": "*",
+    "@amzn/personal-stacks": "^4.0.25",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "*",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.18"
+  }
+}

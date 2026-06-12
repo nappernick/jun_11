@@ -1,0 +1,6 @@
+base = {
+  workspace = nmatnich_IngestionDelete; 
+  versionSet = "ATESkywalkerIngest/development";
+  dependencyModel = brazil;
+};
+packages = { ATESkywalkerIngest-1.0 = .; };

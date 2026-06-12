@@ -1,0 +1,670 @@
+{
+  "meta": {
+    "run_mode": "pool_sweep",
+    "queries": [
+      "how do I book a flight and hotel for a business trip",
+      "can I upgrade to business class and what does Amazon reimburse",
+      "what size rental car am I allowed and what happens if I have an accident",
+      "how do I set up my travel profile and book a seat assignment",
+      "do I need a visa and how do I get travel approval for international trips",
+      "what expense category do I use for airfare hotel and meals in Concur",
+      "how do I cancel or change a flight booking I already made",
+      "can I extend a business trip for personal travel and will Amazon pay",
+      "how do I request a travel accommodation for a medical condition",
+      "can I use my personal frequent flyer miles to upgrade and keep the points"
+    ],
+    "pools": [
+      5,
+      10
+    ],
+    "combo_k": null,
+    "combo_base": null,
+    "combo_cap": null,
+    "max_doc_chars": 32000,
+    "dropped_chunks": [
+      {
+        "query": "can I upgrade to business class and what does Amazon reimburse",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      },
+      {
+        "query": "what expense category do I use for airfare hotel and meals in Concur",
+        "source_id": "d8f9f890-1075-49ac-ad5c-aa98aea89312",
+        "char_count": 42460,
+        "limit": 32000,
+        "reason": "exceeds_bedrock_rerank_limit"
+      }
+    ],
+    "models": [
+      "cohere-3.5",
+      "cohere-4-fast"
+    ],
+    "models_errored": {},
+    "record_count": 36,
+    "generated_at": "2026-06-04T20:17:08.161617"
+  },
+  "rows": [
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 491.6,
+      "top_score": 0.7268,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7268,
+        0.6477,
+        0.3615,
+        0.2714,
+        0.204
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 358.0,
+      "top_score": 0.8262,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.8262,
+        0.7951,
+        0.6439,
+        0.5904,
+        0.5656
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 232.7,
+      "top_score": 0.727,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.727,
+        0.6477,
+        0.5747,
+        0.5632,
+        0.3614,
+        0.2713,
+        0.2421,
+        0.204,
+        0.1859,
+        0.1307
+      ]
+    },
+    {
+      "query": "how do I book a flight and hotel for a business trip",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 151.2,
+      "top_score": 0.8248,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.8248,
+        0.7992,
+        0.7954,
+        0.7948,
+        0.6421,
+        0.5885,
+        0.5676,
+        0.5656,
+        0.5541,
+        0.4126
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 202.4,
+      "top_score": 0.7767,
+      "top_id": "b9ce83b0-b104-421f-82bd-52202ac1382c",
+      "scores": [
+        0.7767,
+        0.771,
+        0.2617,
+        0.2108,
+        0.0926
+      ]
+    },
+    {
+      "query": "can I upgrade to business class and what does Amazon reimburse",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 109.7,
+      "top_score": 0.8661,
+      "top_id": "1e6e74ea-4257-47d3-874d-628909348fc3",
+      "scores": [
+        0.8661,
+        0.8642,
+        0.6474,
+        0.5771,
+        0.329
+      ]
+    },
+    {
+      "query": "what size rental car am I allowed and what happens if I have an accident",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 205.6,
+      "top_score": 0.5704,
+      "top_id": "dbd5222a-4eed-49c9-a87d-54b7edd051ac",
+      "scores": [
+        0.5704,
+        0.0948,
+        0.0573,
+        0.0332,
+        0.0144
+      ]
+    },
+    {
+      "query": "what size rental car am I allowed and what happens if I have an accident",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 115.9,
+      "top_score": 0.7481,
+      "top_id": "dbd5222a-4eed-49c9-a87d-54b7edd051ac",
+      "scores": [
+        0.7481,
+        0.4355,
+        0.336,
+        0.3154,
+        0.1742
+      ]
+    },
+    {
+      "query": "what size rental car am I allowed and what happens if I have an accident",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 244.7,
+      "top_score": 0.5704,
+      "top_id": "dbd5222a-4eed-49c9-a87d-54b7edd051ac",
+      "scores": [
+        0.5704,
+        0.0948,
+        0.0573,
+        0.0497,
+        0.038,
+        0.0332,
+        0.0294,
+        0.0283,
+        0.022,
+        0.0144
+      ]
+    },
+    {
+      "query": "what size rental car am I allowed and what happens if I have an accident",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 282.8,
+      "top_score": 0.7481,
+      "top_id": "dbd5222a-4eed-49c9-a87d-54b7edd051ac",
+      "scores": [
+        0.7481,
+        0.4355,
+        0.336,
+        0.3154,
+        0.2434,
+        0.2376,
+        0.2131,
+        0.2105,
+        0.1834,
+        0.1742
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 239.9,
+      "top_score": 0.7242,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.7242,
+        0.6819,
+        0.6318,
+        0.6039,
+        0.5195
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 147.9,
+      "top_score": 0.8811,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.8811,
+        0.8703,
+        0.8675,
+        0.8643,
+        0.7444
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 230.2,
+      "top_score": 0.724,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.724,
+        0.6822,
+        0.6351,
+        0.6315,
+        0.6036,
+        0.5194,
+        0.4769,
+        0.3731,
+        0.34,
+        0.066
+      ]
+    },
+    {
+      "query": "how do I set up my travel profile and book a seat assignment",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 155.5,
+      "top_score": 0.8811,
+      "top_id": "9b75108f-b8fe-4992-b008-4de72433d250",
+      "scores": [
+        0.8811,
+        0.8703,
+        0.8675,
+        0.8643,
+        0.8548,
+        0.7444,
+        0.6873,
+        0.6598,
+        0.5483,
+        0.3536
+      ]
+    },
+    {
+      "query": "do I need a visa and how do I get travel approval for international trips",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 196.1,
+      "top_score": 0.8084,
+      "top_id": "ea1d3ee7-fa27-4905-a6eb-d26dac5a676f",
+      "scores": [
+        0.8084,
+        0.236,
+        0.0805,
+        0.0644,
+        0.0578
+      ]
+    },
+    {
+      "query": "do I need a visa and how do I get travel approval for international trips",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 101.9,
+      "top_score": 0.8619,
+      "top_id": "ea1d3ee7-fa27-4905-a6eb-d26dac5a676f",
+      "scores": [
+        0.8619,
+        0.4509,
+        0.3395,
+        0.3188,
+        0.3021
+      ]
+    },
+    {
+      "query": "do I need a visa and how do I get travel approval for international trips",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 222.6,
+      "top_score": 0.8088,
+      "top_id": "ea1d3ee7-fa27-4905-a6eb-d26dac5a676f",
+      "scores": [
+        0.8088,
+        0.2816,
+        0.236,
+        0.1866,
+        0.1456,
+        0.0807,
+        0.0672,
+        0.0644,
+        0.0578,
+        0.045
+      ]
+    },
+    {
+      "query": "do I need a visa and how do I get travel approval for international trips",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 136.2,
+      "top_score": 0.8619,
+      "top_id": "ea1d3ee7-fa27-4905-a6eb-d26dac5a676f",
+      "scores": [
+        0.8619,
+        0.5074,
+        0.4509,
+        0.424,
+        0.3827,
+        0.3395,
+        0.3188,
+        0.3188,
+        0.3021,
+        0.2955
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 220.8,
+      "top_score": 0.4952,
+      "top_id": "2ce1871c-51f2-4fc1-ad25-b6b23119e190",
+      "scores": [
+        0.4952,
+        0.4129,
+        0.2217,
+        0.0249,
+        0.0176
+      ]
+    },
+    {
+      "query": "what expense category do I use for airfare hotel and meals in Concur",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 103.2,
+      "top_score": 0.6203,
+      "top_id": "2e074e68-3a67-404e-b05c-98d7965f2d79",
+      "scores": [
+        0.6203,
+        0.5752,
+        0.4859,
+        0.2105,
+        0.1392
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 205.9,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.7152,
+        0.5847,
+        0.2512
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 109.6,
+      "top_score": 0.8389,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8389,
+        0.8188,
+        0.7903,
+        0.6956,
+        0.5347
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 229.1,
+      "top_score": 0.8037,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.8037,
+        0.7522,
+        0.715,
+        0.5849,
+        0.2512,
+        0.1988,
+        0.1845,
+        0.138,
+        0.1095,
+        0.0502
+      ]
+    },
+    {
+      "query": "how do I cancel or change a flight booking I already made",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 152.2,
+      "top_score": 0.839,
+      "top_id": "bbbc8609-7cc8-4e90-9edc-cf1009020f63",
+      "scores": [
+        0.839,
+        0.8176,
+        0.7916,
+        0.6956,
+        0.5347,
+        0.4859,
+        0.4723,
+        0.3864,
+        0.2671,
+        0.2376
+      ]
+    },
+    {
+      "query": "can I extend a business trip for personal travel and will Amazon pay",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 202.8,
+      "top_score": 0.9106,
+      "top_id": "a16a43a1-ba36-44bf-a33f-c2470902c267",
+      "scores": [
+        0.9106,
+        0.5698,
+        0.4046,
+        0.2732,
+        0.2601
+      ]
+    },
+    {
+      "query": "can I extend a business trip for personal travel and will Amazon pay",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 136.9,
+      "top_score": 0.9481,
+      "top_id": "a16a43a1-ba36-44bf-a33f-c2470902c267",
+      "scores": [
+        0.9481,
+        0.7261,
+        0.6973,
+        0.6474,
+        0.5656
+      ]
+    },
+    {
+      "query": "can I extend a business trip for personal travel and will Amazon pay",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 243.2,
+      "top_score": 0.9106,
+      "top_id": "a16a43a1-ba36-44bf-a33f-c2470902c267",
+      "scores": [
+        0.9106,
+        0.5701,
+        0.4042,
+        0.3812,
+        0.2751,
+        0.2727,
+        0.2602,
+        0.2115,
+        0.2079,
+        0.193
+      ]
+    },
+    {
+      "query": "can I extend a business trip for personal travel and will Amazon pay",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 150.5,
+      "top_score": 0.9477,
+      "top_id": "a16a43a1-ba36-44bf-a33f-c2470902c267",
+      "scores": [
+        0.9477,
+        0.7246,
+        0.694,
+        0.6528,
+        0.6474,
+        0.5885,
+        0.5656,
+        0.5055,
+        0.4977,
+        0.4762
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 205.1,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1069,
+        0.1053,
+        0.0929,
+        0.0879
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 122.0,
+      "top_score": 0.9254,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9254,
+        0.4126,
+        0.4051,
+        0.379,
+        0.329
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 235.5,
+      "top_score": 0.874,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.874,
+        0.1069,
+        0.1052,
+        0.0929,
+        0.0879,
+        0.068,
+        0.0541,
+        0.0528,
+        0.0416,
+        0.0391
+      ]
+    },
+    {
+      "query": "how do I request a travel accommodation for a medical condition",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 135.5,
+      "top_score": 0.9257,
+      "top_id": "48046e91-af74-4c6d-8f0d-b93647a424d4",
+      "scores": [
+        0.9257,
+        0.4164,
+        0.4051,
+        0.379,
+        0.3395,
+        0.3325,
+        0.3154,
+        0.3154,
+        0.2955,
+        0.2764
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 5,
+      "model": "cohere-3.5",
+      "latency_ms": 190.2,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.342,
+        0.1107,
+        0.0955,
+        0.0449
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 5,
+      "model": "cohere-4-fast",
+      "latency_ms": 104.8,
+      "top_score": 0.8686,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8686,
+        0.5522,
+        0.5211,
+        0.4762,
+        0.2923
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 10,
+      "model": "cohere-3.5",
+      "latency_ms": 232.5,
+      "top_score": 0.7312,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.7312,
+        0.3422,
+        0.1301,
+        0.1108,
+        0.0956,
+        0.0449,
+        0.033,
+        0.0253,
+        0.0204,
+        0.0193
+      ]
+    },
+    {
+      "query": "can I use my personal frequent flyer miles to upgrade and keep the points",
+      "pool": 10,
+      "model": "cohere-4-fast",
+      "latency_ms": 137.1,
+      "top_score": 0.8677,
+      "top_id": "61598f6d-d0a2-4521-a2a5-fef356e5871f",
+      "scores": [
+        0.8677,
+        0.5502,
+        0.5172,
+        0.4703,
+        0.329,
+        0.2923,
+        0.2521,
+        0.2376,
+        0.2238,
+        0.1857
+      ]
+    }
+  ]
+}

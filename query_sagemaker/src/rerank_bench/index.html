@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rerank 3.5 Benchmark Explorer</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+  body { font: 14px/1.4 system-ui, sans-serif; margin: 0; background: #0f1115; color: #e6e6e6; }
+  header { padding: 14px 20px; background: #161a22; border-bottom: 1px solid #262b36; }
+  h1 { margin: 0; font-size: 18px; }
+  #status { font-size: 12px; color: #9aa4b2; margin-top: 4px; }
+  .controls { padding: 10px 20px; background: #12151c; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .controls label { font-size: 12px; color: #9aa4b2; }
+  select { background: #1c212b; color: #e6e6e6; border: 1px solid #2c333f; border-radius: 4px; padding: 4px 6px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; }
+  .card { background: #161a22; border: 1px solid #262b36; border-radius: 6px; padding: 4px; min-height: 340px; }
+  #drop { padding: 30px; text-align: center; color: #9aa4b2; border: 2px dashed #2c333f; margin: 20px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Cohere Rerank 3.5 &mdash; Benchmark Explorer</h1>
+  <div id="status">loading results.json&hellip;</div>
+</header>
+
+<div id="drop">Drag <code>results.json</code> here (or serve this folder with <code>python -m http.server</code>)</div>
+
+<div class="controls" style="display:none" id="controls">
+  <span>Relationship explorer:</span>
+  <label>X <select id="xsel"></select></label>
+  <label>Y <select id="ysel"></select></label>
+  <label>color <select id="csel"></select></label>
+</div>
+
+<div class="grid" id="grid" style="display:none">
+  <div class="card" id="scatter"></div>
+  <div class="card" id="corr"></div>
+  <div class="card" id="latency"></div>
+  <div class="card" id="score"></div>
+  <div class="card" id="dist"></div>
+  <div class="card" id="stability"></div>
+</div>
+
+<script>
+const NUMERIC = ["pool", "latency_ms", "top_score", "mean_score", "score_spread", "n_scores"];
+const LAYOUT = { paper_bgcolor: "#161a22", plot_bgcolor: "#161a22",
+  font: { color: "#cdd3dc", size: 11 }, margin: { t: 36, r: 16, b: 44, l: 52 },
+  legend: { font: { size: 9 } } };
+
+function enrich(rows) {
+  return rows.map(r => {
+    const s = r.scores || [];
+    const mean = s.length ? s.reduce((a, b) => a + b, 0) / s.length : 0;
+    return { ...r, mean_score: +mean.toFixed(4),
+      score_spread: s.length ? +(Math.max(...s) - Math.min(...s)).toFixed(4) : 0,
+      n_scores: s.length };
+  });
+}
+
+function groupBy(rows, key) {
+  const m = new Map();
+  rows.forEach(r => { (m.get(r[key]) || m.set(r[key], []).get(r[key])).push(r); });
+  return m;
+}
+
+function pearson(rows, a, b) {
+  const xs = rows.map(r => r[a]), ys = rows.map(r => r[b]), n = xs.length;
+  const mx = xs.reduce((p, c) => p + c, 0) / n, my = ys.reduce((p, c) => p + c, 0) / n;
+  let num = 0, dx = 0, dy = 0;
+  for (let i = 0; i < n; i++) { const a2 = xs[i] - mx, b2 = ys[i] - my; num += a2 * b2; dx += a2 * a2; dy += b2 * b2; }
+  return (dx && dy) ? num / Math.sqrt(dx * dy) : 0;
+}
+
+function render(rows) {
+  document.getElementById("drop").style.display = "none";
+  document.getElementById("controls").style.display = "flex";
+  document.getElementById("grid").style.display = "grid";
+  document.getElementById("status").textContent =
+    rows.length + " records | " + new Set(rows.map(r => r.query)).size + " queries | pools: " +
+    [...new Set(rows.map(r => r.pool))].sort((a, b) => a - b).join(", ");
+
+  ["xsel", "ysel", "csel"].forEach((id, i) => {
+    const sel = document.getElementById(id);
+    const opts = id === "csel" ? ["query", ...NUMERIC] : NUMERIC;
+    sel.innerHTML = opts.map(o => `<option>${o}</option>`).join("");
+    sel.value = [NUMERIC[0], NUMERIC[1], "query"][i];
+    sel.onchange = () => drawScatter(rows);
+  });
+
+  drawScatter(rows);
+  drawCorr(rows);
+  drawPerQuery(rows, "latency_ms", "latency", "Latency vs pool size (ms)");
+  drawPerQuery(rows, "top_score", "score", "Top-1 relevance score vs pool size");
+  drawDist(rows);
+  drawStability(rows);
+}
+
+function drawScatter(rows) {
+  const x = xsel.value, y = ysel.value, c = csel.value;
+  let traces;
+  if (c === "query") {
+    traces = [...groupBy(rows, "query").entries()].map(([q, rs]) => ({
+      x: rs.map(r => r[x]), y: rs.map(r => r[y]), mode: "markers", type: "scatter",
+      name: q.slice(0, 24), text: rs.map(r => r.query), marker: { size: 10 } }));
+  } else {
+    traces = [{ x: rows.map(r => r[x]), y: rows.map(r => r[y]), mode: "markers", type: "scatter",
+      text: rows.map(r => r.query),
+      marker: { size: 11, color: rows.map(r => r[c]), colorscale: "Viridis", showscale: true,
+        colorbar: { title: c, thickness: 10 } } }];
+  }
+  Plotly.newPlot("scatter", traces,
+    { ...LAYOUT, title: `${y} vs ${x}`, xaxis: { title: x }, yaxis: { title: y } },
+    { responsive: true, displayModeBar: false });
+}
+
+function drawCorr(rows) {
+  const z = NUMERIC.map(a => NUMERIC.map(b => +pearson(rows, a, b).toFixed(2)));
+  Plotly.newPlot("corr", [{ z, x: NUMERIC, y: NUMERIC, type: "heatmap", zmin: -1, zmax: 1,
+    colorscale: "RdBu", reversescale: true,
+    text: z, texttemplate: "%{text}", textfont: { size: 10 } }],
+    { ...LAYOUT, title: "Variable correlation (Pearson r) &mdash; the 'edges'" },
+    { responsive: true, displayModeBar: false });
+}
+
+function drawPerQuery(rows, yfield, div, title) {
+  const traces = [...groupBy(rows, "query").entries()].map(([q, rs]) => {
+    rs = rs.slice().sort((a, b) => a.pool - b.pool);
+    return { x: rs.map(r => r.pool), y: rs.map(r => r[yfield]), mode: "lines+markers",
+      type: "scatter", name: q.slice(0, 24) };
+  });
+  Plotly.newPlot(div, traces,
+    { ...LAYOUT, title, xaxis: { title: "pool size" }, yaxis: { title: yfield } },
+    { responsive: true, displayModeBar: false });
+}
+
+function drawDist(rows) {
+  const pools = [...new Set(rows.map(r => r.pool))].sort((a, b) => a - b);
+  const traces = pools.map(p => ({
+    y: rows.filter(r => r.pool === p).flatMap(r => r.scores || []),
+    type: "box", name: "pool " + p, boxpoints: "all", jitter: 0.4, marker: { size: 3 } }));
+  Plotly.newPlot("dist", traces,
+    { ...LAYOUT, title: "Relevance score distribution by pool size", yaxis: { title: "relevanceScore" } },
+    { responsive: true, displayModeBar: false });
+}
+
+function drawStability(rows) {
+  const queries = [...new Set(rows.map(r => r.query))];
+  const stable = [], shifts = [];
+  queries.forEach(q => {
+    const tops = new Set(rows.filter(r => r.query === q).map(r => r.top_id));
+    (tops.size === 1 ? stable : shifts).push(q);
+  });
+  Plotly.newPlot("stability", [{
+    values: [stable.length, shifts.length], labels: ["top-1 STABLE across pools", "top-1 SHIFTS"],
+    type: "pie", hole: 0.5, marker: { colors: ["#3fb950", "#d29922"] },
+    text: [stable.join("<br>"), shifts.join("<br>")], textinfo: "label+value" }],
+    { ...LAYOUT, title: "Top-1 stability across pool sizes" },
+    { responsive: true, displayModeBar: false });
+}
+
+function load(rows) { render(enrich(rows)); }
+
+fetch("./results/results.json").then(r => { if (!r.ok) throw 0; return r.json(); })
+  .then(load)
+  .catch(() => { document.getElementById("status").textContent =
+    "results.json not found via HTTP \u2014 drag the file in below."; });
+
+const drop = document.getElementById("drop");
+["dragover", "dragenter"].forEach(e => drop.addEventListener(e, ev => { ev.preventDefault(); drop.style.borderColor = "#3fb950"; }));
+drop.addEventListener("drop", ev => {
+  ev.preventDefault();
+  const f = ev.dataTransfer.files[0];
+  if (f) f.text().then(t => load(JSON.parse(t)));
+});
+</script>
+</body>
+</html>

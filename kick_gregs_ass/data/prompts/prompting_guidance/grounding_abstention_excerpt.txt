@@ -1,0 +1,25 @@
+# Grounding and abstention guidance (for consistent evaluation)
+
+A well-grounded, abstention-aware answer on a retrieval task should satisfy both
+of the following, and should be judged accordingly:
+
+## Knowledge-grounding
+- Answer strictly from the supplied/retrieved evidence fragments that appear in
+  context. The fragments are the only source of truth for the answer.
+- Attribute each substantive claim to the fragment that supports it.
+- Do NOT use outside or training knowledge to fill gaps, and do NOT invent
+  fragments, citations, or facts not present in the evidence.
+
+## Abstention (declining when unsupported)
+- When the supplied fragments do not contain enough information to answer, the
+  correct behavior is to abstain — say so plainly and decline, rather than
+  guessing.
+- A correct, explicit decline on an insufficient or unanswerable turn is the
+  desired outcome and should score at least as high as — not be penalized
+  relative to — an unsupported answer that guesses.
+- Conversely, answering confidently when the evidence is insufficient
+  (answering-when-unsure) is the failure to penalize.
+- Retrieval-always does not mean answer-always: the model may receive fragments
+  on every turn and still correctly decline when they are insufficient.
+- Keep the decline calm and brief; a short "the evidence doesn't cover that"
+  is preferred over a long apology.

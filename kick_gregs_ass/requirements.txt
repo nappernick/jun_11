@@ -1,0 +1,26 @@
+boto3>=1.35
+opensearch-py>=2,<3
+qdrant-client>=1.12
+fastembed>=0.4
+fastapi>=0.115
+uvicorn>=0.32
+pydantic>=2.0
+
+# model-bakeoff-harness (bakeoff/): async HTTP to the retrieval substrate +
+# model/judge endpoints, numeric stats (bootstrap CIs, variance decomposition),
+# and property-based tests for the load-bearing invariants.
+httpx>=0.27
+numpy>=1.26
+hypothesis>=6.100
+# pytest + a per-test timeout so a stray hang (e.g. an SSE/asyncio teardown
+# deadlock) is reported as a failing test rather than blocking the whole suite.
+pytest>=8.0
+pytest-timeout>=2.3
+
+# optimizer-ragas-gepa spec (bakeoff/quality/optimizer/): the GEPA prompt-evolution engine
+# (Tier 2) + the ragas RAG-eval cross-check (Tier 1). Both are imported LAZILY only on their
+# live paths; the offline test suite uses deterministic fakes (FakeGepaEngine /
+# FakeRagasAdapter) and needs NEITHER installed. External frameworks, not Amazon-internal
+# guidance (Req 16.4 / 18).
+gepa>=0.0.27        # standalone gepa-ai/gepa (already present in .venv; also a dspy dependency)
+ragas>=0.2          # LIVE ragas cross-check only; heavy tree (langchain/datasets) — install deliberately, see design.md
